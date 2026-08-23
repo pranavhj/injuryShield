@@ -1,0 +1,175 @@
+# Academic Papers — InjuryShield Research Foundation
+
+## CRITICAL PAPERS (directly applicable to our product)
+
+### Paper 1: Optimal IMU Configuration for Running Gait (2026)
+**Title:** "Optimizing wearable IMU configurations for running gait analysis: a machine learning-based sensor fusion approach"
+**Published:** Frontiers in Bioengineering and Biotechnology, 2026
+**URL:** https://www.frontiersin.org/journals/bioengineering-and-biotechnology/articles/10.3389/fbioe.2026.1762919/full
+**PMC:** https://pmc.ncbi.nlm.nih.gov/articles/PMC12932550/
+
+**KEY FINDINGS — THIS IS OUR HARDWARE BLUEPRINT:**
+
+| Configuration | Sensors | Locations | Asymmetry Detection |
+|---|---|---|---|
+| Config 1 | 1 IMU | Lumbosacral (L5/S1) | FAILS (R²=0.52) |
+| Config 2 | 2 IMUs | Bilateral ankles | Not tested alone |
+| Config 3 | **3 IMUs** | **Lumbosacral + bilateral ankles** | **SUCCESS (R²=0.91)** |
+| Gold standard | 17 IMUs | Full-body | R²>0.95 |
+
+- **3-sensor setup is the optimal minimum** — lower back + both ankles
+- Single lumbar sensor: cadence R²=0.99, vertical oscillation R²=0.96, ground contact time R²=0.95 — but BLIND to asymmetry
+- Adding ankle sensors enables "discrete foot-ground contact events" for asymmetry detection
+- **Model requires <200KB memory** — deployable on standard microcontrollers (ESP32, nRF52)
+- Robust across speeds (8-12 km/h)
+- All parameters: R²>0.91, MAPE=7.12%
+
+**Implication:** Our v1 product should be a 3-pod system. NOT 1, NOT 5+. Exactly 3.
+
+---
+
+### Paper 2: Real-time Wearable Biomechanics Framework (January 2026)
+**Title:** "Real-time wearable biomechanics framework for sports injury prevention and rehabilitation optimization"
+**Published:** Scientific Reports (Nature), January 10, 2026
+**URL:** https://www.nature.com/articles/s41598-025-34551-w
+
+**KEY FINDINGS:**
+- Hybrid IMU + sEMG (surface electromyography) model
+- **92.3% accuracy, 90.5% recall, AUC 0.93** for injury-risk classification
+- **Real-time feedback latency: 188 ± 15 ms**
+- Field experiments with 50 athletes
+- IMUs on knee, hip, shoulder joints; sEMG on biceps, triceps, quadriceps
+- Joint angle asymmetry >10° = risk flag
+- Muscle force imbalance >15% = risk flag
+- Recorded ranges: knee 125° (running), 110° (jumping), shoulder 90° (lifting)
+- Mean muscle forces: quadriceps 150N, hamstrings 170N, deltoid 230N
+
+**Implication:** Real-time is proven feasible. 188ms latency is achievable. But this paper used EMG which requires skin-contact electrodes — we should try IMU-only first, add EMG only if needed.
+
+---
+
+### Paper 3: Single IMU Lower Back Kinematics Prediction
+**Title:** "Prediction of Lower Limb Kinetics and Kinematics during Walking by a Single IMU on the Lower Back Using Machine Learning"
+**Published:** Sensors, 2020
+**PMC:** https://pmc.ncbi.nlm.nih.gov/articles/PMC6982819/
+
+**KEY FINDINGS:**
+- Single lumbosacral IMU can estimate 6 segment angles, 3 joint torques, 2 ground reaction forces
+- "Fair accuracy" — good enough for gross metrics, not fine biomechanics
+- Walking only (not running)
+
+**Implication:** Lower back is the best single-sensor location. But single sensor can't detect asymmetry — the most important injury predictor.
+
+---
+
+### Paper 4: Vertical Ground Reaction Force from Wearable Accelerations (2025)
+**Title:** "Prediction of Vertical Ground Reaction Forces Under Different Running Speeds: Integration of Wearable IMU with CNN-xLSTM Architecture"
+**Published:** Sensors, 2025
+
+**KEY FINDINGS:**
+- Can predict ground reaction forces from wearable IMU data
+- CNN-xLSTM architecture for temporal data
+- Works across different running speeds
+
+**Implication:** Ground reaction forces (linked to stress fractures, shin splints) can be estimated without force plates — just IMUs.
+
+---
+
+### Paper 5: Tennis Injury Spatiotemporal Patterns (March 2026)
+**Title:** Wearable sensor big data analysis reveals spatiotemporal injury patterns in professional tennis players
+**Published:** Scientific Reports (Nature), March 2026
+**URL:** https://www.nature.com/articles/s41598-026-44199-9
+
+**KEY FINDINGS:**
+- Multi-sensor fusion: 9-DOF IMU, PPG, GPS, force sensors
+- Comprehensive spatiotemporal coupling analysis
+- Advanced deep learning architectures
+- "Substantially improved prediction accuracy compared to conventional methods"
+
+**Implication:** Multi-modal sensor fusion (combining IMU + HR + GPS) improves accuracy. Our 3-pod + wrist HR data approach aligns with this.
+
+---
+
+### Paper 6: AI and Wearables in Sports Injury Risk Prediction — Survey (2026)
+**Title:** "Artificial intelligence and wearable sensors in sports injury risk prediction: current status and future perspectives"
+**Published:** Annals of Medicine, 2026
+**URL:** https://www.tandfonline.com/doi/full/10.1080/07853890.2026.2658879
+
+**KEY FINDINGS:**
+- Comprehensive review of ALL wearable sensor technologies for injury prediction
+- IMU, EMG, physiological monitors, flexible electronics all contribute
+- Deep learning (temporal + multimodal fusion) best for ACL tears, muscle fatigue, stress fractures
+- Up to 95% accuracy in controlled settings
+- Key gap: "unified frameworks bridging wearable sensing, biomechanical modeling, and biological validation under real-world conditions"
+- Indian patents (2024-2025) describe AI-embedded garments with edge intelligence — signal toward edge AI in sports textiles
+
+**Implication:** The field is converging on multi-modal, edge-AI, real-time systems. We're building exactly what the research says is needed.
+
+---
+
+### Paper 7: ACL Cutting Biomechanics via Wearable Sensors (2025)
+**Title:** "Testing ACL-Reconstructed Football Players on the Field: An Algorithm to Assess Cutting Biomechanics Injury Risk Through Wearable Sensors"
+**PMC:** https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12655897/
+
+**KEY FINDINGS:**
+- Wearable sensors CAN assess ACL risk during cutting movements on-field
+- Algorithm specifically for football (soccer) players
+- Validated against gold-standard motion capture
+
+**Implication:** Sport-specific cutting/deceleration models for ACL risk are proven. Applicable to basketball, soccer, football.
+
+---
+
+### Paper 8: Auto-Calibration of IMU Sensors (2026)
+**Title:** "Motion-Driven Automatic IMU Orientation Calibration via SO(3) Pattern Alignment"
+**Published:** Sensors, 2026
+**URL:** https://doi.org/10.3390/s26144342
+
+**KEY FINDINGS:**
+- Automatic calibration framework using activity-specific orientation distributions
+- No explicit calibration poses needed
+- Handles sensor slippage and drift during physical activity
+- Auto re-calibration after detecting device movement
+
+**Implication:** Auto-calibration is solvable. This directly addresses our "setup friction" problem — users don't need to do a calibration routine.
+
+---
+
+### Paper 9: Step-Length Estimation in Asymmetric Gait (2025)
+**Title:** "Step-Length Estimation in Asymmetric Gait Using a Single Lower-Back IMU Data and a Biomechanical Model Inspired by a Double Inverted Pendulum"
+**PMC:** https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12837442/
+
+**KEY FINDINGS:**
+- Novel inverted double pendulum model for asymmetric gait
+- Single lower-back IMU
+- Median absolute error <0.04m (healthy), <0.06m (impaired)
+- Explicitly incorporates pelvic rotation
+
+**Implication:** Gait impairment detection from a single sensor is possible with the right biomechanical model.
+
+---
+
+## SAMPLING RATE REQUIREMENTS (compiled from multiple papers)
+
+| Activity | Required IMU Rate | Notes |
+|---|---|---|
+| Walking | 100 Hz | Accelerometer + gyroscope |
+| Running | 200 Hz | Gyroscope more important than accelerometer |
+| High-speed cutting/jumping | 400 Hz | Sprint, direction changes |
+| Fall/impact detection | 20 Hz | CNN-LSTM at 20Hz was optimal |
+| General fatigue detection | 50-100 Hz | Sufficient for workload metrics |
+
+**Critical finding:** Accelerometer rates above 100 Hz DECREASE accuracy due to excessive orientation updates. Gyroscope sampling rate matters MORE.
+
+## KEY METRICS THAT PREDICT INJURY (compiled)
+
+| Metric | Threshold | Sensor Needed | Injury Type |
+|---|---|---|---|
+| Joint angle asymmetry | >10° deviation from baseline | IMU on joints | ACL, muscle strain |
+| Muscle force imbalance | >15% left/right difference | EMG (not IMU) | Muscle tears |
+| Ground contact time increase | >10% increase over session | Ankle IMU | Fatigue → soft tissue |
+| Stride length decrease | >5% decrease mid-session | Back + ankle IMU | Fatigue → overuse |
+| Cadence drift | Deviation from personal baseline | Any IMU | General fatigue |
+| Vertical oscillation increase | >15% increase | Back IMU | Running form breakdown |
+| HRV decline | Below personal threshold | Wrist HR sensor | Overtraining |
+| ACWR (deprecated) | >1.5 ratio | GPS + accelerometer | Workload — BUT DEBUNKED |
