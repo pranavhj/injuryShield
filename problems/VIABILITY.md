@@ -50,14 +50,53 @@ motivated founder who owns the company skips days, no customer will do better.
 
 **Cost:** one prototype set, 30 days, near-zero cash. **Do this first.**
 
-**Open sub-question:** is there a 1–2 pod configuration that captures bilateral asymmetry?
-Two ankle pods is the minimum for left/right comparison and is only marginally worse
-friction than one. That may be the whole product. Worth explicit analysis before defaulting
-to 5.
+**Open sub-question — ANSWERED 2026-08-23, and it substantially defuses K2.** The
+best-evidenced intervention (K3, `predictive-validity.md` §4B) was delivered in the field
+with **two IMUs, one on each tibia.** Peak tibial acceleration, per-leg audio cues,
+within-subject thresholds. 100% session adherence in the feasibility cohort.
+
+**Two pods is not five, and it is the same wear burden as Playermaker's two cleat sensors —
+which sells at $249 into 50+ D1 colleges and 100+ US clubs.** The one-sensor survival
+pattern in `market-teardown.md` §0 does not indict a two-pod symmetric configuration
+anywhere near as hard as it indicts 5–7.
+
+**Revised probability: ~55% → ~30%**, conditional on the product shipping as **two tibial
+pods**, not five. If we go back to 5–7 for joint-angle completeness, K2 returns to ~55% and
+the 30-day wear test becomes mandatory before any further commitment.
+
+**The 30-day founder wear test is still worth running** — but its job has changed. It is no
+longer "will anyone tolerate this"; it is "confirm two pods is a habit you actually keep,"
+and to gather the first within-subject baseline data.
 
 ---
 
-### K3 — The output may not be valuable, even as coaching · **~45%** · CHEAP TO TEST
+### K3 — The output may not be valuable, even as coaching · **RESOLVED ~45% → ~15%** · 2026-08-23
+**Tested and largely cleared.** See `predictive-validity.md` §4B.
+
+**Chan et al. 2018, AJSM.** n=320 novice runners, RCT, 2 weeks of gait retraining with
+real-time feedback, 12-month follow-up. Injury occurrence **16% vs 38%**;
+**HR 0.38 (95% CI 0.25–0.59) — 62% risk reduction.** In runners who were *not injured at
+baseline*. This directly answers the NURVV objection: retraining pain-free runners reduced
+their injuries substantially.
+
+**The field version needs two pods.** A feasibility study (PMC11945614) delivered it outdoors
+with IMUs on both tibias, real-time audio cues from a phone when peak tibial acceleration
+exceeded **80% of the runner's own baseline**, different tone per leg, faded over the final
+four of eight sessions. PTA −29%, loading rate −36%, held at one month, 100% adherence.
+
+**Residual risk (~15%):** Chan studied *novice* runners — highest incidence, most form
+headroom. Generalization to trained runners is unproven. It is a single trial, lab-delivered
+with visual feedback. The field study is n=7. And the mechanism is not understood — §2 shows
+GRF impact metrics do not track tibial bone load, yet impact-reduction feedback reduced
+injuries. **We know it works; we do not know why. Do not claim otherwise.**
+
+**Remaining work:** the 20 runner interviews (still worth doing, now about willingness to
+pay rather than whether the thing works), and eventually a trained-runner replication.
+
+<details>
+<summary>Original K3 framing, retained for the record</summary>
+
+### K3 (original) — The output may not be valuable, even as coaching · ~45%
 The reframe rests on the ARION mechanism — real-time cues improve mechanics. But the
 sharpest line in the NURVV post-mortem is a value-proposition attack, not a product one:
 
@@ -77,10 +116,54 @@ that answer is worthless. Ask: *when did you last change something about how you
 prompted it, and what would have made you trust the advice?*
 
 **Cost:** two days of literature, two weeks of interviews. **Do this second.**
+</details>
 
 ---
 
-### K4 — Platform absorption · **~40%** · FREE TO TEST
+### K4 — Platform absorption · **RESOLVED ~40% → ~15%** · 2026-08-23
+**Tested and contained.** See `research/capability-envelope.md`.
+
+The test was: does the value proposition survive deleting every metric an alternative can
+produce? **It does.** Four capabilities are structurally ours for physical reasons, not
+software reasons:
+
+1. **Peak tibial acceleration measured at the tibia** — no camera or wrist device can obtain it
+2. **Real-time feedback during the activity** — every alternative measures; only a body-worn
+   pod intervenes
+3. **Location independence** — no venue, no install, no calibrated volume
+4. **Per-limb bilateral data outside an instrumented venue** — a wrist is on one arm and is
+   permanently blind to asymmetry
+
+Decisive point: the intervention with the best evidence in the field (K3 above) is built on
+**exactly these four capabilities and nothing else.** It cannot be delivered by any
+alternative — not on cost grounds, but because they cannot measure the variable or close
+the loop.
+
+**Camera threat, checked properly.** Optical skeletal tracking is further along than assumed:
+Hawk-Eye SkeleTRACK does **29 body points per player in real time**, powering FIFA
+semi-automated offside; NFL and NBA use Hawk-Eye. So "cameras can't track everyone on a big
+field" is false at elite level. **But it is league-level infrastructure installed in
+stadiums and funded centrally** — goal-line tech alone ran £125–250k per ground, and
+*"for 99% of the football world… you cannot buy them for your club."* Markerless accuracy is
+also 3–15° sagittal and **3–57° transverse** — and transverse rotation is where ACL
+mechanism lives.
+
+**Cameras own the instrumented venue on match day. Nothing owns the training ground, the
+road, or the amateur field.** The gap is structural because camera cost is per-site and the
+athlete must be inside the volume.
+
+**Residual risk (~15%):** further wrist absorption of context metrics (assume anything
+derivable from a single trunk/wrist signal ships natively within 24 months), and the
+possibility that a platform ships bilateral asymmetry — a red trigger in
+`market/WATCHLIST.md`.
+
+**Standing design rule:** never let a wrist-replicable metric be load-bearing. Cadence, GCT,
+vertical oscillation, stride and running power are context, never the pitch. NURVV died
+charging $299 for exactly those.
+
+---
+
+### K4-old — Platform absorption · original framing, superseded above
 Garmin now computes running power from the wrist on Fenix 7 / Epix Gen 2, deprecating its
 own Running Dynamics Pod. Apple Watch Ultra ships running dynamics natively. Cadence, GCT,
 vertical oscillation, stride length are all now wrist-derivable.
@@ -163,6 +246,47 @@ asking for it.
 
 ---
 
+### K11 — The science says the customer should graduate · **NEW, ~40%** · 2026-08-23
+**Surfaced by the K3 research. This is the new hardest problem.**
+
+The evidence-based intervention is **a 2–3 week retraining block with feedback deliberately
+faded out.** Fading is not a limitation — it is the design. Faded feedback produces
+*superior* retention and transfer versus constant feedback, because constant feedback
+creates dependence. Chan's trial: two weeks of retraining, benefits measured at **twelve
+months**. The field study: eight sessions, faded across the last four, gains held at one
+month with no device.
+
+**That is in direct conflict with hardware-as-subscription.** WHOOP retains >80% because you
+never take it off. A gait retrainer works *because you eventually don't need it*. A product
+that succeeds makes itself unnecessary in three weeks.
+
+If we ignore this and design for perpetual wear, we are (a) contradicting the mechanism that
+makes the intervention work, and (b) building the dependence the motor-learning literature
+says to avoid.
+
+**Options, none yet chosen:**
+1. **Program / rental model.** Pay for a retraining block; return the pods. Matches the
+   science exactly. Kills recurring revenue per customer but **fixes the HaaS working-capital
+   problem outright** — one pod set serves many customers in sequence.
+2. **Clinic / physio channel.** The clinic buys one or a few sets and cycles patients
+   through a structured programme. Payer exists (patient or insurance), device is reused,
+   the professional supplies the coaching judgement we cannot. Strong fit with the
+   claim-language constraints in `buyer-and-liability.md` §2.
+3. **Periodic re-check subscription.** Quarterly form audit rather than continuous wear.
+   Lower value, lower price, but genuinely recurring and honest.
+4. **Broaden the job.** Give a reason to keep wearing — training load, performance, other
+   sports, return-to-play tracking. Risks becoming the undifferentiated thing Garmin absorbs.
+
+**Note options 1 and 2 invert the economics in our favour** and were invisible while the
+business model was assumed to be WHOOP's. `buyer-and-liability.md` §3 needs revisiting in
+light of this — it argues for subscription on the assumption of perpetual use.
+
+**Resolves by:** modelling all four against COGS and reuse cycles (cheap, desk work), and by
+asking physios in the K3 interviews whether they would run such a programme and what they
+would pay.
+
+---
+
 ### K10 — Founder capacity and immigration · **~15%**, reduced
 Weaker than believed. The Jan 2025 DHS rule permits founder self-sponsorship at >50%
 ownership. Remaining constraints: specialty-occupation framing, independent-oversight
@@ -173,26 +297,38 @@ plus a distributed cofounder.
 
 ---
 
-## 2. What This Ordering Implies
+## 2. Test Ordering and Status
 
-Sorted by information gained per dollar:
+Sorted by information gained per dollar. **Updated 2026-08-23 after tests 1 and 3.**
 
-| Order | Test | Resolves | Cost | Duration |
+| # | Test | Resolves | Cost | Status |
 |---|---|---|---|---|
-| **1** | Classify every metric wrist-replicable vs wrist-impossible | K4 | free | 1 day |
-| **2** | Model fully-loaded COGS, payback, churn sensitivity | K7 | free | 1 day |
-| **3** | Literature: does gait retraining help *asymptomatic* runners? | K3 | free | 2 days |
-| **4** | Founder wears full pod set, 30 days — measure **days actually worn** | K2, part K5 | 1 prototype set | 30 days |
-| **5** | 20 structured runner interviews | K3 | free | 2 weeks |
-| **6** | Beta cohort, 30–50 runners, 90 days | K5 | 30–50 sets | 4 months |
+| 1 | Capability envelope vs wrist / camera / fixed equipment | K4 | free | ✅ **DONE — K4 40%→15%** |
+| 3 | Literature: does gait retraining help *asymptomatic* runners? | K3 | free | ✅ **DONE — K3 45%→15%** |
+| 2 | Model fully-loaded COGS, payback, churn sensitivity | K7, **K11** | free | ⬜ next — now must model program/rental/clinic, not just subscription |
+| 4 | Founder wears **two tibial pods**, 30 days — days actually worn | K2, part K5 | 1 prototype pair | ⬜ next |
+| 5 | 20 runner interviews **+ 5 physio interviews** | K3 residual, **K11** | free | ⬜ |
+| 6 | Beta cohort, 30–50 runners, 90 days | K5 | 30–50 pairs | ⬜ gated |
 
-**Items 1–3 cost nothing but time and could each individually reshape or end the project.
-None of them requires a single line of firmware.** They should be done before any hardware
-decision is revisited.
+**Two of the three free tests are done and both came back favourable.** The remaining free
+test (COGS/business-model modelling) is now more important than it was, because K11 changed
+what has to be modelled.
 
-**Item 4 is the pivotal one** and it is nearly free. One honest number — how many days out
-of 30 did you actually wear five pods — tells you more about this company's future than any
-amount of sensor-fusion work.
+**Item 4's job has changed.** It is no longer "will anyone tolerate five pods" — the
+evidence points at two. It is now: confirm two tibial pods is a habit that sticks, and
+capture the first within-subject baseline data.
+
+### Kill register at a glance, after 2026-08-23
+
+| Risk | Was | Now | Note |
+|---|---|---|---|
+| K1 prediction doesn't work | fired | mitigated | reframe holds |
+| K2 multi-pod architecture | 55% | **30%** | conditional on shipping **two** pods |
+| K3 output not valuable | 45% | **15%** | Chan RCT, HR 0.38 |
+| K4 platform absorption | 40% | **15%** | four structural capabilities survive |
+| K5 retention | 50% | 50% | untested |
+| K7 working capital | 25% | 25% | untested — and K11 may fix it |
+| **K11 customer graduates** | — | **40%** | **new; now the hardest open problem** |
 
 ---
 
@@ -251,52 +387,80 @@ or to the industrial market where wear is mandated rather than chosen.
 
 ---
 
-## 5. The Three Live Options
+## 5. The Live Options
 
-**A · Consumer running product.** Honest verdict: **the evidence is against it.** 97%
-base rate, every multi-sensor consumer product dead, platform absorption active, value
-unproven even as coaching, and the closest honest comparable (ARION) is 19 people after
-11 years. Not impossible — Stryd survived — but Stryd did it with one pod, one metric, and
-a community that funded it up front.
+**A · Consumer running product — upgraded, but now shaped differently.** The evidence
+review that cleared K3 and K4 makes this materially more attractive than it was this
+morning: there is a real RCT-backed intervention (HR 0.38), it needs only two pods, and it
+sits inside a capability envelope no camera or wrist device can enter. What remains against
+it is the 97% hardware base rate, K5 retention (untested), and **K11 — the customer
+graduates in three weeks.** A perpetual-subscription consumer product is now the *worst*
+fit for the evidence; a programme is the best fit.
 
-**B · Industrial athlete / workers' comp.** Materially better on every structural axis:
-a payer who directly eats the injury cost, proven ROI (250%, 52–64% injury reduction),
-funded comparables (StrongArm $50M, Soter $12M, Modjoul $11.7M), **no consumer retention
-problem because the employer mandates wear**, and no platform-absorption risk. Costs: less
-personally interesting, and no dogfooding.
+**A′ · Clinic / physio channel — newly the strongest sports option.** Falls directly out of
+K11. A clinic buys one or two pod pairs and cycles patients through a structured 2–3 week
+retraining programme. It matches the intervention's actual shape, has an existing payer,
+reuses hardware across many customers (which dissolves K7 working capital), and puts a
+qualified professional between us and the claim-language risk in `buyer-and-liability.md`
+§2. **This did not exist as an option until K11 surfaced. It deserves proper scoping.**
 
-**C · Open instrument + dataset.** Cheap, keeps every option open, fits the current phase,
-and builds the one asset nobody has — the dataset from `predictive-validity.md` §9. Stryd's
-community-calibrated model is the validated playbook. **This is the only option that makes
-A and B more likely to work later rather than less.**
+**B · Industrial athlete / workers' comp.** Still strong on structure: a payer who eats the
+injury cost, proven ROI (250%, 52–64% injury reduction), funded comparables (StrongArm
+$50M, Soter $12M, Modjoul $11.7M), employer-mandated wear so no retention problem, no
+platform-absorption risk. Kinetic's REFLEX is mechanically the same intervention. Costs:
+less personally interesting, no dogfooding.
 
-**These are not exclusive, and C is the correct next move regardless of whether A or B is
-the eventual business.** Option C is also the cheapest way to run tests 1–6.
+**C · Open instrument + dataset.** Cheap, keeps everything open, fits the current phase,
+builds the asset nobody has. Stryd's community-calibrated playbook. **Still the correct
+next move regardless of which of A / A′ / B becomes the business**, and still the cheapest
+way to run the remaining tests.
 
 ---
 
 ## 6. Honest Overall Read
 
-The project is in better shape than it was a day ago, because the thing that would have
-killed it in year three has been found in year zero, for the price of a day's research.
-That is the process working.
+**Updated 2026-08-23, after tests 1 and 3.**
 
-But the honest position is: **the central architectural decision (multi-pod) points
-directly at the market's strongest failure pattern, and the value proposition that survived
-the evidence review has not yet been shown to be worth paying for.** Two open killers, both
-cheap to test, neither tested.
+Two free desk tests moved three risks and surfaced a fourth. Net position is meaningfully
+better than this morning:
 
-**The correct posture is not "build it" or "abandon it." It is: spend the next month and
-almost no money answering K4, K7, K3 and starting K2.** If those pass, this is worth
-serious commitment. If K2 fails at the founder's own wrists — if you will not wear five
-pods for thirty days — that is the answer, and it cost one prototype set to learn.
+- **K3 was the big one and it cleared.** Chan et al. — n=320, RCT, 12-month follow-up,
+  **HR 0.38 (0.25–0.59)** — is the strongest evidence in the entire project, in either
+  direction, and it is *for* us. Gait retraining reduces injuries in runners who are not
+  hurting. That was the open question the whole reframe rested on.
+- **K4 cleared.** Four capabilities are structurally ours. Decisively, the RCT-backed
+  intervention is built on exactly those four and nothing else.
+- **K2 halved.** The field-validated configuration is **two tibial pods**, not five. The
+  one-sensor survival pattern does not indict two symmetric pods the way it indicts 5–7.
+- **K11 appeared and is now the hardest open problem.** The intervention is a 2–3 week
+  programme with feedback deliberately faded. The customer is *supposed* to graduate. That
+  breaks the subscription model we adopted from WHOOP — and points at rental, clinic, or
+  programme economics instead.
 
-Nothing about the current evidence says stop. Several things say *do not build hardware
-yet.*
+**The honest position now: the science is more supportive than expected and the business
+model is less settled than assumed.** That is a much better problem to have than the
+reverse. Business models are chosen; evidence is not.
+
+Two genuinely untested risks remain: **K5 (retention)** and **K11 (graduation)** — and note
+they are closely related, and K11 may be why K5 looked so bad. A product nobody wears after
+three weeks is a catastrophe for a subscription and completely fine for a programme.
+
+**Posture: still do not build hardware. Do run test 2 (now including programme/rental/clinic
+economics) and test 4 (two pods, 30 days).** Add five physio interviews to test 5 — they are
+the buyer in option A′ and nobody has spoken to one.
+
+Nothing says stop. Rather more than yesterday says this could work — provided the business
+model is designed around the intervention rather than borrowed from a company with a
+different one.
 
 ---
 
 ## Changelog
+- **2026-08-23 (later)** — Ran tests 1 and 3. K3 45%→15% (Chan 2018 RCT, HR 0.38, n=320,
+  asymptomatic runners). K4 40%→15% (`capability-envelope.md`; four structural capabilities;
+  camera threat is real but stadium-bound). K2 55%→30% (field-validated config is **two**
+  tibial pods). **New K11 at 40%** — faded feedback means the customer graduates, which
+  conflicts with hardware-as-subscription and opens the clinic/rental option A′.
 - **2026-08-23** — Created. Kill register K1–K10, cheapest-first test ordering, unknown-unknowns
   practices, decision gates, three live options. Backing research: `market-teardown.md`,
   `predictive-validity.md`, `buyer-and-liability.md`, `sensor-architecture.md`.

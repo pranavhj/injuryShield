@@ -18,7 +18,8 @@ The product concept quietly bundles four claims. They have wildly different supp
 |---|---|---|---|
 | 1 | Baseline biomechanics identify who will get injured | 23 of 25 meta-analyses null | **FAILS** |
 | 2 | Workload ratios (ACWR) guide training to prevent injury | Cluster RCT, 482 players, null | **FAILS** |
-| 3 | Real-time gait feedback reduces injury rate | 1 RCT, ITT null / as-treated HR 0.53 | **WEAK POSITIVE** |
+| 3 | Real-time gait feedback reduces injury rate | ARION RCT: ITT null / as-treated HR 0.53 | **WEAK POSITIVE** |
+| **3B** | **Gait *retraining* reduces injury in ASYMPTOMATIC runners** | **RCT n=320, HR 0.38 (0.25–0.59), 12mo** | **STRONG — see §4B** |
 | 4 | Prevention programs given to *everyone* reduce injury | Multiple meta-analyses, 39–50% reduction | **STRONG** |
 
 The uncomfortable synthesis: **what works is the intervention, not the identification.**
@@ -175,6 +176,94 @@ biomechanics did. That maps exactly onto Barrier 1 and Barrier 4 in `crux-analys
 
 ---
 
+## 4B. Gait Retraining in ASYMPTOMATIC Runners: STRONG (researched 2026-08-23)
+
+The open question after the ARION trial was whether real-time coaching helps runners who
+are **not currently hurting** — the NURVV post-mortem's attack on the value proposition
+(*"if running pain-free, you may be best advised not to change your Pronation"*). If the
+addressable moment were only symptomatic runners, the market would be a fraction of the size.
+
+**It is answered, and the answer is yes.** This is stronger evidence than anything else in
+this file, in either direction.
+
+### Chan et al. 2018 — *American Journal of Sports Medicine*
+"Gait Retraining for the Reduction of Injury Occurrence in Novice Distance Runners:
+1-Year Follow-up of a Randomized Controlled Trial."
+
+- **n = 320 novice runners**, randomized: 166 gait retraining, 154 control
+- Intervention: **2 weeks of gait retraining with real-time visual feedback**
+- Control: identical treadmill running, no feedback
+- Follow-up: **12 months**, with running-related musculoskeletal injury as the outcome
+
+| Group | Injury occurrence at 12 months |
+|---|---|
+| Gait retraining | **16%** |
+| Control | **38%** |
+
+**Hazard ratio 0.38 (95% CI 0.25–0.59) — a 62% reduction in injury risk.**
+
+Compare this against everything else in the file: n=320 not 50, a real injury outcome not a
+thresholded label, 12-month follow-up not a lab session, a tight confidence interval not a
+range spanning 0.24–0.92, and randomization that held. **This is the only intervention in
+the entire evidence base that both (a) reduced actual injuries in initially uninjured
+runners and (b) works through a signal a wearable can measure.**
+
+**Honest caveats:**
+- **Novice** runners specifically — the highest-incidence group with the most form headroom.
+  Generalization to trained runners is unproven and should not be assumed.
+- Lab-based treadmill retraining with **visual** feedback, not a field wearable.
+- Single trial. The 2026 cadence systematic review still notes most evidence in this area is
+  "surrogate biomechanical outcomes over clinically meaningful endpoints."
+
+### The field version works too — and needs only two pods
+"Field-Based Gait Retraining to Reduce Impact Loading Using Tibial Accelerometers in
+High-Impact Recreational Runners: A Feasibility Study" (PMC11945614).
+
+This is, almost line for line, the product:
+
+| Study design element | Detail |
+|---|---|
+| Sensors | **IMUs on both tibias** |
+| Feedback | **Real-time audible cue via smartphone app** when peak tibial acceleration exceeds target |
+| Threshold | **80% of the participant's own field-measured baseline** — within-subject, exactly as `CLAUDE.md` requires |
+| Laterality | **Different tone per leg** to indicate which side exceeded |
+| Cues | Verbal: increase step rate, soften landing |
+| Setting | **Outdoors, real runs**, 8 sessions over 2–3 weeks, 15 → 30 min |
+| Feedback schedule | **Faded across the final four sessions** |
+
+**Results:** axial peak tibial acceleration −29% in the field (−33% in lab), vertical
+loading rate −36%, shift toward forefoot strike, **improvements persisted at one-month
+follow-up**. 100% session adherence, 100% completion, 85% retention at one month.
+n=7 — a feasibility study, so treat the effect sizes as directional.
+
+**Two pods. Both tibias. A phone. Audio feedback. Within-subject thresholds. Faded.**
+That is a published, feasible specification for the product, and it is materially simpler
+than the 5–7 pod architecture in `sensor-architecture.md`.
+
+### Supporting: cadence manipulation
+A 2026 systematic review on cadence: a **5–10% increase** above self-selected produces lower
+vertical GRF and loading rates (~20% decrease at the knee), shorter stride and contact time,
+reduced dynamic knee valgus (~2°), reduced hip adduction — **without harming running
+economy**, and sometimes improving it. One prospective study found cadence ≤166 spm carried
+**6–7× the tibial injury risk** of ≥178 spm.
+
+The review's own caution stands: small samples, heterogeneous methods, mostly surrogate
+outcomes, high individual variability, and *"long-term adherence remains a challenge"*
+without continued feedback.
+
+### An unresolved tension worth flagging
+`predictive-validity.md` §2 shows GRF impact metrics do **not** correlate with actual tibial
+bone load (Matijevich: impact peak r = −0.29). Yet feedback aimed at reducing impact loading
+reduced real injuries in Chan's trial.
+
+Both can be true — peak tibial acceleration measured *at the tibia* is a different quantity
+from ground reaction force measured at the ground, and the retraining changed several things
+at once (strike pattern, cadence, stride). **But it means we do not know the mechanism.**
+Do not claim we do. The honest statement is: this intervention reduced injuries in an RCT;
+why it works is not established.
+
+---
+
 ## 5. Claim 4 — Universal Prevention Programs: STRONG
 
 | Program | Effect | Evidence |
@@ -324,8 +413,12 @@ publish a peer-reviewed specificity number.
 
 What is defensible to build today, in descending order of evidential support:
 
-1. **Real-time movement coaching** — the ARION mechanism. Cue better mechanics
-   continuously. Weak RCT support, plausible mechanism, no prediction claim required.
+0. **Gait retraining with real-time feedback** — §4B. **The strongest evidence in this
+   file: HR 0.38 (0.25–0.59) over 12 months, n=320, in initially uninjured runners.** The
+   field version needs two tibial pods, a phone, audio cues, within-subject thresholds and
+   faded feedback. This is the product.
+1. **Real-time movement coaching, continuous** — the ARION mechanism. Weaker than §4B
+   (ITT null) but the same family. No prediction claim required.
 2. **Fatigue and mechanical-degradation detection** — well-supported as *measurement*.
    GCT ↑, stride ↓, stiffness ↓, tibial accel ↑ are real and IMU-visible. Report them as
    what they are: "your mechanics have degraded X% from your baseline," not "you are at

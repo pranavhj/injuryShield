@@ -5,6 +5,37 @@ Process and checklist: `WATCHLIST.md`.
 
 ---
 
+## 2026-08-23b — Camera / optical tracking threat assessment
+
+Triggered by the question: can camera systems track every athlete on a large field?
+
+**Answer: yes, at elite level — but only inside instrumented venues.**
+- Hawk-Eye **SkeleTRACK**: dedicated 4K arrays, ball + **29 points per player, in real time**,
+  marketed for performance analysis and injury prevention
+- Powers FIFA semi-automated offside; FIFA/Hawk-Eye joint Football Technology Centre
+- NFL adopted Hawk-Eye virtual measurement from the 2025 season; NBA uses Hawk-Eye
+- Competitors: TRACAB (EA), Second Spectrum
+- **Wrexham AFC took SkeleTRACK for home matches, Sept 2025** — moving below the top tier
+
+**The constraint is economic, not technical.** Goal-line technology alone ran
+**£125,000–250,000 per ground**; SkeleTRACK adds a dedicated array on top. Quoted:
+*"for 99% of the football world… you cannot buy them for your club. They are league-level
+infrastructure, installed in stadiums, funded centrally."*
+
+**Accuracy caveat:** markerless error is 3–15° sagittal but **3–57° transverse**.
+Transverse rotation is where ACL mechanism lives. Plus occlusion, identity swaps in crowds,
+and degradation under sunlight and shadow (pose models are mostly trained indoors).
+
+**Conclusion:** cameras own the instrumented venue on match day. Nothing owns the training
+ground, the road, or the amateur field — and cameras structurally cannot, since cost is
+per-site and the athlete must be inside the capture volume. Full analysis in
+`research/capability-envelope.md`.
+
+**New watch item (amber trigger):** SkeleTRACK moving further down-market (Wrexham is the
+signal), or any portable/temporary camera rig that removes the per-venue install cost.
+
+---
+
 ## 2026-08-23 — Baseline (first full teardown)
 
 **Scope:** full landscape sweep, graveyard analysis, platform threat assessment.
