@@ -264,7 +264,21 @@ If we ignore this and design for perpetual wear, we are (a) contradicting the me
 makes the intervention work, and (b) building the dependence the motor-learning literature
 says to avoid.
 
-**Options, none yet chosen:**
+**RESOLVED 2026-08-23 — see `research/unit-economics.md`. K11 40% → ~10%.**
+
+The economics were modelled across all four options. **Perpetual subscription requires
+every customer to stay 9 months just to return the cash spent acquiring them** ($90 COGS +
+$80 CAC ÷ $19/mo). The intervention takes three weeks. Even at optimistic COGS/CAC the
+break-even is ~5 months. Subscription is the *worst* fit for this intervention.
+
+**Outright sale at $299 (2-pod kit + 6-week programme + 12 months app) contributes $129 per
+unit from unit one**, matching Playermaker's proven $249 structure in this exact segment.
+**Graduation stops being churn and becomes the success story.**
+
+This resolves K11 *and* K7 (the working-capital "fish" problem disappears with no
+subscription to fund), and downgrades K5 from existential to cosmetic.
+
+**Options as modelled:**
 1. **Program / rental model.** Pay for a retraining block; return the pods. Matches the
    science exactly. Kills recurring revenue per customer but **fixes the HaaS working-capital
    problem outright** — one pod set serves many customers in sequence.
@@ -277,13 +291,25 @@ says to avoid.
 4. **Broaden the job.** Give a reason to keep wearing — training load, performance, other
    sports, return-to-play tracking. Risks becoming the undifferentiated thing Garmin absorbs.
 
-**Note options 1 and 2 invert the economics in our favour** and were invisible while the
-business model was assumed to be WHOOP's. `buyer-and-liability.md` §3 needs revisiting in
-light of this — it argues for subscription on the assumption of perpetual use.
+**Decision: launch with outright sale (option 5, added after modelling).** Keep rental as
+the best capital-efficiency alternative (17× hardware turn), subscription only as a cheap
+$8–10/mo post-programme monitoring tier, and clinic as a later channel.
 
-**Resolves by:** modelling all four against COGS and reuse cycles (cheap, desk work), and by
-asking physios in the K3 interviews whether they would run such a programme and what they
-would pay.
+**On clinics — the regulatory assumption was inverted.** FDA's Jan 2026 CDS guidance
+*loosened* the rules ("FDA cuts red tape"; single-recommendation CDS now qualifies for the
+non-device exemption), and **the exemption is specifically for software intended for health
+care professionals** — patient-facing software gets *less* latitude. VALD sells ForceDecks
+into US PT clinics with no regulatory friction reported by practitioners. **Clinics are the
+lowest-regulatory-exposure option of the four.** The real objection to them is commercial —
+~10× CAC, long sales cycles, a B2B motion a solo founder cannot run. Right conclusion,
+wrong reason.
+
+`buyer-and-liability.md` §3 is now partly superseded — it argued for subscription on the
+assumption of perpetual use.
+
+**Residual K11 (~10%):** if gait changes decay in 3–6 months, a genuine re-training cycle
+exists and subscription becomes viable after all. That would be good news. Watch for
+retention studies.
 
 ---
 
@@ -305,7 +331,7 @@ Sorted by information gained per dollar. **Updated 2026-08-23 after tests 1 and 
 |---|---|---|---|---|
 | 1 | Capability envelope vs wrist / camera / fixed equipment | K4 | free | ✅ **DONE — K4 40%→15%** |
 | 3 | Literature: does gait retraining help *asymptomatic* runners? | K3 | free | ✅ **DONE — K3 45%→15%** |
-| 2 | Model fully-loaded COGS, payback, churn sensitivity | K7, **K11** | free | ⬜ next — now must model program/rental/clinic, not just subscription |
+| 2 | Model COGS + all four revenue models | K7, **K11** | free | ✅ **DONE — K11 40%→10%, K7 25%→10%** |
 | 4 | Founder wears **two tibial pods**, 30 days — days actually worn | K2, part K5 | 1 prototype pair | ⬜ next |
 | 5 | 20 runner interviews **+ 5 physio interviews** | K3 residual, **K11** | free | ⬜ |
 | 6 | Beta cohort, 30–50 runners, 90 days | K5 | 30–50 pairs | ⬜ gated |
@@ -326,9 +352,13 @@ capture the first within-subject baseline data.
 | K2 multi-pod architecture | 55% | **30%** | conditional on shipping **two** pods |
 | K3 output not valuable | 45% | **15%** | Chan RCT, HR 0.38 |
 | K4 platform absorption | 40% | **15%** | four structural capabilities survive |
-| K5 retention | 50% | 50% | untested |
-| K7 working capital | 25% | 25% | untested — and K11 may fix it |
-| **K11 customer graduates** | — | **40%** | **new; now the hardest open problem** |
+| K5 retention | 50% | **20%** | cosmetic under outright sale, not existential |
+| K7 working capital | 25% | **10%** | no subscription to fund; inventory only |
+| K11 customer graduates | 40% | **10%** | resolved by outright sale — graduation is the success story |
+
+**After 2026-08-23, the largest remaining risks are K2 (30%, untested — the 30-day wear
+test) and K6 (the 97% consumer-hardware base rate, structural). CAC is the biggest
+un-measured number in the business and is cheap to measure.**
 
 ---
 
@@ -432,30 +462,41 @@ better than this morning:
   intervention is built on exactly those four and nothing else.
 - **K2 halved.** The field-validated configuration is **two tibial pods**, not five. The
   one-sensor survival pattern does not indict two symmetric pods the way it indicts 5–7.
-- **K11 appeared and is now the hardest open problem.** The intervention is a 2–3 week
-  programme with feedback deliberately faded. The customer is *supposed* to graduate. That
-  breaks the subscription model we adopted from WHOOP — and points at rental, clinic, or
-  programme economics instead.
+- **K11 appeared, then resolved the same day.** The intervention is a 2–3 week programme
+  with feedback deliberately faded, so the customer graduates. Modelling all four revenue
+  options showed **perpetual subscription needs 9 months of average customer life just to
+  break even** — the worst possible fit. **Outright sale at $299 contributes $129 from unit
+  one**, and turns graduation from a churn event into the success story. K11 40%→10%,
+  and it took K7 down with it (no subscription to fund ⇒ no working-capital hole).
+- **K5 downgraded 50%→20%** as a consequence. Retention was existential under subscription;
+  under outright sale it only affects word-of-mouth and renewals.
 
-**The honest position now: the science is more supportive than expected and the business
-model is less settled than assumed.** That is a much better problem to have than the
-reverse. Business models are chosen; evidence is not.
+**The honest position now: the science is more supportive than expected, and the business
+model is settled and simpler than assumed.** Selling the product outright is not a retreat
+to the old plan — the old plan was $35/pod hardware with no programme attached. This is a
+$299 kit wrapped around an RCT-backed intervention, which is a different product.
 
-Two genuinely untested risks remain: **K5 (retention)** and **K11 (graduation)** — and note
-they are closely related, and K11 may be why K5 looked so bad. A product nobody wears after
-three weeks is a catastrophe for a subscription and completely fine for a programme.
+**Largest remaining risks: K2 (30%, untested) and K6 (97% consumer-hardware base rate,
+structural).** And **CAC is the biggest un-measured number in the business** — every model
+is more sensitive to it than to BOM, and it can be measured with a landing page and a small
+ad spend before anything is built.
 
-**Posture: still do not build hardware. Do run test 2 (now including programme/rental/clinic
-economics) and test 4 (two pods, 30 days).** Add five physio interviews to test 5 — they are
-the buyer in option A′ and nobody has spoken to one.
+**Posture: still do not build hardware.** Run test 4 (two pods, 30 days) and add a CAC probe
+ahead of it, since it is cheaper and faster. Physio interviews stay on the list but drop in
+priority — clinics are a later channel, not the launch.
 
-Nothing says stop. Rather more than yesterday says this could work — provided the business
-model is designed around the intervention rather than borrowed from a company with a
-different one.
+Nothing says stop. Considerably more than yesterday says this could work.
 
 ---
 
 ## Changelog
+- **2026-08-23 (latest)** — Ran test 2 (`research/unit-economics.md`). **K11 40%→10%,
+  K7 25%→10%, K5 50%→20%.** Decision: **launch with outright sale, $299 for a two-pod kit +
+  6-week programme + 12 months app.** Perpetual subscription needs 9 months average customer
+  life to break even against a 3-week intervention. Clinic channel's regulatory burden was
+  found to be *inverted* — FDA's Jan 2026 CDS guidance loosened rules and the exemption is
+  specifically for clinician-facing software, so clinics are the lowest-regulatory-exposure
+  option; the real objection is commercial (10× CAC, B2B motion). Kept as a later channel.
 - **2026-08-23 (later)** — Ran tests 1 and 3. K3 45%→15% (Chan 2018 RCT, HR 0.38, n=320,
   asymptomatic runners). K4 40%→15% (`capability-envelope.md`; four structural capabilities;
   camera threat is real but stadium-bound). K2 55%→30% (field-validated config is **two**
