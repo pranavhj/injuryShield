@@ -81,13 +81,18 @@ score, never a safety clearance.
 ### Always read first (after /clear or new session):
 1. This file (CLAUDE.md) — project identity and principles
 2. `PROGRESS.md` — current state, what's done, what's next
-3. `problems/TRACKER.md` — master problem index. **P0 gates everything else.**
+3. **`problems/VIABILITY.md` — the kill register and decision gates. This decides whether
+   the work list matters; `TRACKER.md` is only the work list.**
+4. `problems/TRACKER.md` — master problem index. **P0 gates everything else.**
 
 ### Read when working on specific areas:
 
 | Working on... | Read this file |
 |---|---|
+| **Deciding whether to build anything at all** | **`problems/VIABILITY.md` — kill register K1–K10, gates** |
 | **Anything touching a claim about injury** | **`research/predictive-validity.md` — READ FIRST** |
+| Competitors, who wins/dies, what to copy or avoid | `research/market-teardown.md` |
+| Quarterly market review, trigger signals | `market/WATCHLIST.md` → log to `market/LOG.md` |
 | Sensor count, placement, compute split, BLE budget | `research/sensor-architecture.md` |
 | Who pays, pricing, liability, FDA, founder/entity structure | `research/buyer-and-liability.md` |
 | Hardware specs, sampling rates | `research/academic-papers.md` — **but see the corrections in `predictive-validity.md` §7** |
@@ -105,16 +110,21 @@ score, never a safety clearance.
 ```
 research/                        # All research findings — read selectively
   predictive-validity.md         # * Does any of this predict injury? (answer: no) — READ FIRST
+  market-teardown.md             # * Who wins, who died, what to duplicate/avoid
   sensor-architecture.md         # * Pod count, placement, hybrid compute, BLE budget
   buyer-and-liability.md         # * Who pays, claim language, FDA, subscription, H-1B
   academic-papers.md             # 9 key papers — see predictive-validity.md section 7 for corrections
-  competitors.md                 # Full competitive landscape + Athos failure
+  competitors.md                 # Superseded by market-teardown.md; kept for the Athos detail
   crux-analysis.md               # WHY multi-point sensors haven't worked (5 barriers)
   ecosystem-business-model.md    # Revenue model — pricing superseded
-  market-sizing.md               # TAM/SAM/SOM, market numbers
+  market-sizing.md               # TAM/SAM/SOM — top-down numbers, low value; see teardown
   regulations.md                 # League-by-league wearable rules
   fitbit-air-reference.md        # Design reference (user's preferred form factor)
+market/                          # Standing market-watch discipline — quarterly, never ends
+  WATCHLIST.md                   # Who to watch, trigger signals, review checklist
+  LOG.md                         # Dated review entries, append-only
 problems/
+  VIABILITY.md                   # * Kill register K1-K10, test ordering, decision gates
   TRACKER.md                     # Master index — P0 (existential) gates P1-P7
 knowledge/                       # Learnings accumulated over time (create as needed)
 ideas/                           # Product ideas, feature concepts (create as needed)
@@ -157,5 +167,12 @@ company, so the structure choice matters.
 - **Academic papers are evidence, not authority.** Check what a result actually measured.
   Two of the nine founding papers were being read for more than they showed.
 - **Never report sensitivity without the flag rate.** Applies to us and to everyone else.
+- **Not every problem is equal.** ~5 of the 80+ tracked items can kill the company; the rest
+  are engineering. Work the killers first, cheapest test first. See `problems/VIABILITY.md`.
+- **A day of research beats a month of building.** K1 (injury prediction doesn't work) would
+  have killed this in year three. It cost one day to find in year zero.
+- **The market is watched forever, not once.** NURVV went Series A → insolvent in 3.5 years;
+  Garmin deprecated its own accessory category in a firmware update. Quarterly review,
+  `market/WATCHLIST.md`. Intel older than 12 months is actively misleading.
 - User is the first test subject (runner) — v1 must work for their own runs
 - This is a SEPARATE context from makingDollarsInIndia — don't mix projects

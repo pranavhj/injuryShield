@@ -1,9 +1,11 @@
 # InjuryShield
 
 ## State
-Currently: **Premise audit complete — the core claim did not survive.** Injury prediction
-is killed by the evidence; the project reframed around real-time movement coaching and
-within-subject degradation measurement. Tracker restructured by kill criteria.
+Currently: **Viability assessment, pre-build.** Premise audit killed injury prediction;
+project reframed around real-time coaching + within-subject degradation. Market teardown
+complete. Kill register open with two untested killers (K2 multi-pod architecture,
+K3 value of the output). **Verdict: nothing says stop; several things say don't build
+hardware yet.** Next month is free desk tests + a 30-day founder wear test.
 Last session: 2026-08-23
 
 ## Done
@@ -18,17 +20,25 @@ Last session: 2026-08-23
 - **Buyer / liability / structure research** (`research/buyer-and-liability.md`) — HS and
   NCAA budgets, workers' comp ROI, FDA wellness line, WHOOP economics, H-1B 2025 rule
 - Tracker restructured: P0 (existential) added and gates everything; 6 decisions reversed
+- **Market teardown** (`research/market-teardown.md`) — full landscape, graveyard analysis
+  (NURVV insolvent 2023, Athos, UA HealthBox, Lumo), winners (Catapult $140.7M/94% recurring,
+  VALD 4,000+ orgs with *no wearable*, Stryd, Playermaker, WHOOP), platform-absorption threat
+- **Kill register** (`problems/VIABILITY.md`) — K1–K10, cheapest-first test order, gates
+- **Standing market watch** (`market/WATCHLIST.md` + `LOG.md`) — quarterly, first due 2026-11-23
 
-## Next
-1. **P0.4.1 — define kill criteria** with dates and a budget cap. Nothing else starts first.
-2. **P1.10 / P0.4.1(a) — founder self-experiment.** Can we detect within-subject mechanical
-   change above measurement noise in 30 days of the founder's own runs? Fastest real signal.
-3. **P0.2.2/P4.4.6 — rename.** "InjuryShield" is the claim we can't make.
-4. **P0.2.3/P0.2.4 — spec green/yellow/red** as deviation-from-baseline, with the statistics
-   defined (baseline length, variance model, multiple-comparison handling).
-5. **P4.1.5 — scope the "industrial athlete" market properly.** Proven payer, proven ROI,
-   same hardware. May be the better business.
-6. **P1.7 — community validation** of the *honest* framing, not the original pitch.
+## Next — in this order, first three cost nothing
+1. **Classify every metric wrist-replicable vs wrist-impossible** (1 day, free). Resolves K4.
+   If the value prop dies without wrist-replicable metrics, the product is a feature waiting
+   to be absorbed.
+2. **Model fully-loaded COGS, payback period, churn sensitivity** (1 day, free). Resolves K7.
+3. **Literature search: does gait retraining help *asymptomatic* runners?** (2 days, free).
+   Highest-value unanswered research question in the project. Resolves much of K3.
+4. **Founder wears the full pod set for 30 days.** Measure **days actually worn out of 30**,
+   not comfort. Resolves K2 and part of K5. One prototype set. *The pivotal test.*
+5. 20 structured runner interviews — "when did you last change how you run, and why?"
+6. Rename — "InjuryShield" is the claim we can't make (TRACKER P4.4.6).
+
+**Do not revisit hardware decisions until 1–4 are done.**
 
 ## Key Decisions
 - **Not an injury predictor.** Real-time movement coaching + within-subject degradation.
