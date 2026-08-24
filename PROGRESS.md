@@ -49,6 +49,13 @@ Last session: 2026-08-23
 the field-validated configuration is two tibial pods, not the five in `sensor-architecture.md`.
 
 ## Key Decisions
+- **Attachment: removable pods, mounted to what the athlete already puts on.** Shoe/lace
+  mount at the low end (zero laundry exposure - Stryd and Playermaker both prove it), straps
+  at the high end. NOT apparel: it is the only carrier washed after every session, and WHOOP
+  at $1B ARR has not solved it (their answer is "always remove sensors before washing" plus
+  a spare pod in the box). No apparel line for now.
+- **There is no low-friction way to do 5-7 pods and nobody has one.** Friction tolerance
+  scales with the customer, so the attachment system should too.
 - **Setup friction is the governing constraint.** Wrist wearables - zero extra decisions -
   are abandoned at ~30% in 6 months; 50% of college students quit in 2 weeks. Every added
   pod is another decision. Fewest pods that works, attached to something already worn (shoe
