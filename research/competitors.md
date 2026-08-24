@@ -1,5 +1,13 @@
 # Competitive Landscape — InjuryShield
 
+> ## ⚠️ SUPERSEDED — 2026-08-24
+> Replaced by `research/market-teardown.md`, which covers ~20 more companies and the
+> graveyard analysis. **This file also contains one wrong conclusion:** it frames Catapult as
+> vulnerable. Catapult posted US$140.7M revenue, 94% recurring, EBITDA +67%, and is acquiring.
+>
+> Kept only for the Athos failure detail, which is still accurate.
+
+
 ## Direct Competitors (injury prevention focus)
 
 ### Catapult Sports (Australia) — Market Leader

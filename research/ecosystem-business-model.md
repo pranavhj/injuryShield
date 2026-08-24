@@ -1,5 +1,14 @@
 # Ecosystem Business Model — InjuryShield
 
+> ## ⚠️ SUPERSEDED ON PRICING AND MODEL — 2026-08-24
+> This file argues for hardware-as-subscription at $35/pod. **Both are reversed.**
+> Current model is **outright sale at ~$249 for a 2-pod Core kit** — see `DECISIONS.md` D3, D8
+> and `research/unit-economics.md`.
+>
+> Also note: the Section 44ADA point applies to an *individual professional*, not a company.
+> See `research/buyer-and-liability.md` §4.
+
+
 ## Core Principle
 Sell an ecosystem, not a product. Customers buy whichever parts they need.
 

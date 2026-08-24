@@ -1,5 +1,14 @@
 # Market Sizing — InjuryShield
 
+> ## ⚠️ LOW VALUE — 2026-08-24
+> Top-down market-report numbers turned out to be nearly useless for decisions here. The real
+> constraints are the 97% consumer-hardware failure rate, CAC, and the one-sensor survival
+> pattern — see `research/market-teardown.md` and `problems/VIABILITY.md`.
+>
+> The genuinely useful numbers in this space are in `research/buyer-and-liability.md` §1
+> (actual buyer budgets) and `research/bom-and-pricing.md` (actual costs).
+
+
 ## Sports Tech Market (Global)
 
 | Segment | Current | Projected | CAGR | Source |

@@ -79,30 +79,39 @@ score, never a safety clearance.
 ## Context Management — What to Read and When
 
 ### Always read first (after /clear or new session):
-1. This file (CLAUDE.md) — project identity and principles
-2. `PROGRESS.md` — current state, what's done, what's next
-3. **`problems/VIABILITY.md` — the kill register and decision gates. This decides whether
-   the work list matters; `TRACKER.md` is only the work list.**
-4. `problems/TRACKER.md` — master problem index. **P0 gates everything else.**
+1. **`DECISIONS.md` — SINGLE SOURCE OF TRUTH. If any other file contradicts it, DECISIONS.md
+   wins.** Lists what is locked, what was reversed, what is still open, and which research
+   files are stale. Read this before trusting anything else.
+2. This file (CLAUDE.md) — project identity and principles
+3. `PROGRESS.md` — current state, what's done, what's next
+4. `problems/VIABILITY.md` — kill register and decision gates. Decides *whether* to build.
+5. `problems/TRACKER.md` — the work list. Decides *what* to build. Has a research index at
+   the bottom.
 
 ### Read when working on specific areas:
 
 | Working on... | Read this file |
 |---|---|
-| **Deciding whether to build anything at all** | **`problems/VIABILITY.md` — kill register K1–K10, gates** |
-| **Anything touching a claim about injury** | **`research/predictive-validity.md` — READ FIRST** |
-| Competitors, who wins/dies, what to copy or avoid | `research/market-teardown.md` |
-| Quarterly market review, trigger signals | `market/WATCHLIST.md` → log to `market/LOG.md` |
-| Sensor count, placement, compute split, BLE budget | `research/sensor-architecture.md` |
-| Who pays, pricing, liability, FDA, founder/entity structure | `research/buyer-and-liability.md` |
-| Hardware specs, sampling rates | `research/academic-papers.md` — **but see the corrections in `predictive-validity.md` §7** |
-| Competitive positioning, why we're different | `research/competitors.md` |
-| Why multi-point sensors haven't taken off | `research/crux-analysis.md` (5 barriers, Athos failure) |
-| Business model, pricing, revenue | `research/ecosystem-business-model.md` — **superseded on pricing by `buyer-and-liability.md` §3** |
-| Market size, funding landscape | `research/market-sizing.md` |
-| League rules, what's allowed in games | `research/regulations.md` |
-| Pod design inspiration | `research/fitbit-air-reference.md` |
-| Exploding a specific problem | `problems/TRACKER.md` → find the P-number → create sub-file in `problems/` |
+| **Anything at all — check first** | **`DECISIONS.md` — what is currently true** |
+| Deciding whether to build | `problems/VIABILITY.md` — kill register K1–K11, gates |
+| Any claim about injury | `research/predictive-validity.md` |
+| Running only? Universal pod? Expansion | `research/scope-and-expansion.md` |
+| Embedded vs removable vs apparel vs straps | `research/attachment-strategy.md` |
+| Setup friction, retention, abandonment | `research/friction-and-retention.md` |
+| BOM, volume pricing, certification, test hardware | `research/bom-and-pricing.md` |
+| Revenue models, why subscription fails | `research/unit-economics.md` |
+| What only we can do vs wrist/camera/force plate | `research/capability-envelope.md` |
+| Competitors, who died and why | `research/market-teardown.md` |
+| Who pays, claim language, FDA, H-1B | `research/buyer-and-liability.md` |
+| Why multi-point sensors haven't taken off | `research/crux-analysis.md` |
+| Compute split, BLE budget, flash sizing | `research/sensor-architecture.md` §2 — **§1 pod count is SUPERSEDED** |
+| League rules (deferred, year 3) | `research/regulations.md` |
+| Pod design reference | `research/fitbit-air-reference.md` |
+| Quarterly market review | `market/WATCHLIST.md` → log to `market/LOG.md` |
+
+**Stale files — do not read without their banner:** `competitors.md` (superseded),
+`ecosystem-business-model.md` (pricing reversed), `market-sizing.md` (low value),
+`academic-papers.md` (two papers misread). Each carries a warning at the top.
 
 ### Do NOT load all research files at once — they total 3000+ lines. Read only what's relevant to the current task.
 

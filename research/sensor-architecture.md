@@ -1,5 +1,14 @@
 # Sensor Architecture — How Many Pods, Where, and Who Computes
 
+> ## ⚠️ PARTLY SUPERSEDED — 2026-08-24
+> **The pod-count recommendation in this file is WRONG.** It says "Design target: 5 pods."
+> The current decision is **Core = 2 pods (both tibias)**, with 3/5/7 as an opt-in customer
+> ladder. See `DECISIONS.md` D3 and `research/bom-and-pricing.md` §3.
+>
+> **Still valid and useful here:** the hybrid compute split (pods collect, phone infers),
+> the BLE throughput data, flash sizing, and the IMU placement-error tables.
+
+
 **Researched 2026-08-23.** Supersedes the "3 pods, edge-first" decisions in `CLAUDE.md`.
 
 Two decisions changed based on evidence:
