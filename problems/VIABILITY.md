@@ -60,13 +60,23 @@ which sells at $249 into 50+ D1 colleges and 100+ US clubs.** The one-sensor sur
 pattern in `market-teardown.md` §0 does not indict a two-pod symmetric configuration
 anywhere near as hard as it indicts 5–7.
 
-**Revised probability: ~55% → ~30%**, conditional on the product shipping as **two tibial
-pods**, not five. If we go back to 5–7 for joint-angle completeness, K2 returns to ~55% and
-the 30-day wear test becomes mandatory before any further commitment.
+**Revised probability: ~55% → ~30%**, conditional on **two tibial pods being the default
+tier**, not five.
 
-**The 30-day founder wear test is still worth running** — but its job has changed. It is no
-longer "will anyone tolerate this"; it is "confirm two pods is a habit you actually keep,"
-and to gather the first within-subject baseline data.
+**Resolved further 2026-08-24 by the tier ladder** (`research/bom-and-pricing.md` §3).
+The 5–7 pod question stops being an architecture bet and becomes a **customer choice**:
+Core (2 pods, the RCT-validated config), Plus (3, + sacrum), Pro (5, + thighs → knee angle),
+Full (7, + feet → ankle angle). Same analysis pipeline; the app **states what is missing**
+at each tier.
+
+That defuses the market-pattern objection in `market-teardown.md` §0, because the *default*
+product is two pods — the low-friction configuration — and higher pod counts are opt-in for
+customers who have already decided they want more. Nobody is forced up the ladder.
+
+**The 30-day founder wear test is still the gating experiment**, but its job has changed
+twice: it is no longer "will anyone tolerate five pods," it is (a) confirm two pods is a
+habit that sticks, and (b) measure actual don/doff seconds at 2, 3, 5 and 7 pods to find
+where the friction cliff is. **That is now a ladder-pricing input, not just a kill test.**
 
 ---
 
@@ -332,9 +342,15 @@ Sorted by information gained per dollar. **Updated 2026-08-23 after tests 1 and 
 | 1 | Capability envelope vs wrist / camera / fixed equipment | K4 | free | ✅ **DONE — K4 40%→15%** |
 | 3 | Literature: does gait retraining help *asymptomatic* runners? | K3 | free | ✅ **DONE — K3 45%→15%** |
 | 2 | Model COGS + all four revenue models | K7, **K11** | free | ✅ **DONE — K11 40%→10%, K7 25%→10%** |
-| 4 | Founder wears **two tibial pods**, 30 days — days actually worn | K2, part K5 | 1 prototype pair | ⬜ next |
-| 5 | 20 runner interviews **+ 5 physio interviews** | K3 residual, **K11** | free | ⬜ |
-| 6 | Beta cohort, 30–50 runners, 90 days | K5 | 30–50 pairs | ⬜ gated |
+| 4 | **Wear test on bought hardware** — 30 days; days actually worn + don/doff seconds at 2/3/5/7 pods | K2, part K5 | **~$600, no build** | ⬜ **next** |
+| 5 | 20 runner interviews | K3 residual | free | ⬜ |
+| 6 | Beta cohort, 30–50 runners, 90 days | K5 | 30–50 kits | ⬜ gated |
+
+**Test 4 requires no manufacturing.** `research/bom-and-pricing.md` §5: 2 × mbientlab
+MetaMotionS ($260, 400 Hz logging to onboard flash, CSV + Python SDK) replicates the
+RCT-validated two-tibia protocol with zero firmware written; 1 × SlimeVR set ($219,
+open-source, MIT/Apache) explores the 3/5/7 ladder cheaply; ~$120 of IMU samples answers
+chip selection on our own task. **≈$600 total.**
 
 **Two of the three free tests are done and both came back favourable.** The remaining free
 test (COGS/business-model modelling) is now more important than it was, because K11 changed

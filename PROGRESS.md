@@ -49,6 +49,12 @@ Last session: 2026-08-23
 the field-validated configuration is two tibial pods, not the five in `sensor-architecture.md`.
 
 ## Key Decisions
+- **Tier ladder, not a fixed pod count.** Core 2 (RCT-validated) / Plus 3 / Pro 5 / Full 7.
+  Same analysis; the app states what is missing at each tier. Pod count becomes a customer
+  choice rather than an architecture bet.
+- **BOM is not the constraint.** ~$29 landed/pod at 1k units, ~$16 at 10k. Kit COGS
+  $76-$256 against $249-$749 retail. ~$150-200 of margin per Core kit is available to spend
+  on ease of use, which is where the value and the difficulty actually live.
 - **Not an injury predictor.** Real-time movement coaching + within-subject degradation.
 - **5-pod core / 7-pod full / 3-pod entry.** Trustworthy joint data first, then optimize cost.
 - **Hybrid compute:** pods collect and stream at high rate; the phone does all inference.
