@@ -236,6 +236,25 @@ Ordered by information gained per dollar. **Nothing here requires building hardw
 - [ ] **P8.2** **30-day founder wear test.** Primary metric: **days actually worn out of 30**, unprompted. Secondary: don/doff seconds at 2/3/5/7 pods (P3.3.1). Also captures first within-subject baseline data.
 - [ ] **P8.3** **Resolve P3.2.1** — tibia vs shoe vs insole placement for peak tibial acceleration. This decides whether the low-friction Core tier can deliver the validated measurement.
 - [ ] **P8.4** **20 runner interviews.** Not "would you buy this." Ask: when did you last change how you run, what prompted it, what would make you trust the advice, **and would you buy a second programme.**
+
+### P8.4a: Community validation — staged sequence
+Full operational guide: `validation/POSTING-PLAYBOOK.md`. Content ready in
+`scripts/posting/posts/`. **Nothing posted yet.**
+
+- [ ] **P8.4a.1** **Build standing in the target subs FIRST — ~1 week, before any post.**
+      Several subs auto-remove posts from accounts with no prior comment history, and
+      u/pranavhj1998 has none in any running sub. Target 5–10 genuine comments per sub.
+      **These must be posted by the founder, not automated** — see `validation/comment-drafts.md`
+      for research-grounded starting points that require no fabricated personal experience.
+- [ ] **P8.4a.2** Post 1 → r/AdvancedRunning: "Has anyone actually changed their form and had it stick?" (trigger + retention)
+- [ ] **P8.4a.3** Post 2 → r/running: "What do you blame, and what do you change?" (attribution + substitutes). **+1 week after post 1.**
+- [ ] **P8.4a.4** Post 3 → r/C25K: "Did anyone tell you *how* to run?" (**settles O7 — novice vs experienced**). **+1 week.**
+- [ ] **P8.4a.5** Post 4 → r/AdvancedRunning: "Gait analysis — worth paying for?" (pricing + repeat purchase). **Post LAST, with disclosure in the post.** Only after 2 of the above land well.
+- [ ] **P8.4a.6** X thread (8 tweets, research findings). **Stagger 2–3 days from any Reddit post.**
+- [ ] **P8.4a.7** Verify r/C25K is the right novice sub — rules and activity unchecked. Alternatives: r/beginnerrunning, r/running's daily thread.
+- [ ] **P8.4a.8** Reply to every comment within 24 hours. Unanswered OPs read as drive-by marketing.
+- [ ] **P8.4a.9** Log outcomes to `makingDollarsInIndia/engagement/log.md` and update `research/demand-side.md` §5 + the O2/O7/O8/O9 rows in `DECISIONS.md`.
+- [ ] **P8.4a.10** Timing: **8–11 PM IST** (US morning). Never during Indian business hours. Max 1 post/platform/day.
 - [ ] **P8.5** Measure CAC once there is something concrete to show (P4.2.5).
 - [ ] **P8.6** Quarterly market review — `market/WATCHLIST.md`. **First due 2026-11-23.**
 

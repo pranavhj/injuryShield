@@ -41,6 +41,10 @@ Last session: 2026-08-23
 - **Community validation drafts written** (`validation/reddit-twitter-drafts.md`) - 4 Reddit
   posts + an X thread. NOTHING POSTED YET, awaiting review and a manual subreddit rules check.
 
+- **Posting infra + comment drafts ready** (`validation/POSTING-PLAYBOOK.md`,
+  `validation/comment-drafts.md`, `scripts/posting/`). Sequence is in TRACKER P8.4a.
+  **Nothing posted.** Karma-building comments must be posted by the founder, not automated.
+
 ## Next
 1. **Model the business model against the intervention** (free, ~1 day). Now the top
    priority because of K11: the evidence-based intervention is a 2–3 week programme with
