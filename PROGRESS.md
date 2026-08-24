@@ -38,6 +38,9 @@ Last session: 2026-08-23
   says change form only when injured. **And we are no longer early: Aletheia Run ships a
   sacrum sensor at $239/yr hardware-included, plus a $59/yr phone-app floor (Ochy).** K12.
 
+- **Community validation drafts written** (`validation/reddit-twitter-drafts.md`) - 4 Reddit
+  posts + an X thread. NOTHING POSTED YET, awaiting review and a manual subreddit rules check.
+
 ## Next
 1. **Model the business model against the intervention** (free, ~1 day). Now the top
    priority because of K11: the evidence-based intervention is a 2–3 week programme with
