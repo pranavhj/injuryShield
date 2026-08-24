@@ -2,7 +2,9 @@
 
 > **The name is provisional and must change before launch.** "InjuryShield" asserts a claim
 > the evidence does not support, and creates exactly the liability described in
-> `research/buyer-and-liability.md` §2. See TRACKER P4.4.6.
+> `research/buyer-and-liability.md` §2. See TRACKER P4.3.6.
+>
+> **`DECISIONS.md` is the single source of truth. If this file contradicts it, that one wins.**
 
 ## What This Is
 A startup building real-time movement-quality monitoring using lightweight wearable sensor
@@ -34,36 +36,47 @@ still valuable.
   overload — not because the tech doesn't work.
 
 ## The Product Vision
-Sensor pods (~10–15 g each) that snap onto compression apparel or clip to straps. Pods do
-high-rate data collection and reliable transport. **The phone does all inference.** The
-output is a real-time coaching cue and a within-subject deviation report — never a risk
-score, never a safety clearance.
+
+**A two-pod running gait-retraining programme.** Pods mount to the shoe. The phone does all
+inference. **Eight sessions over 2–3 weeks** with real-time audio cues on peak tibial
+acceleration against the runner's own baseline, feedback **faded across the last four
+sessions**. Sold outright at ~$249. Higher pod tiers (3/5/7) are opt-in for customers who
+want joint angles. The output is a coaching cue and a within-subject deviation report —
+never a risk score, never a safety clearance.
+
+> Full decision list, including what was reversed and what is still open: **`DECISIONS.md`**
 
 ### Key Design Principles
-1. **Trustworthy joint data first, then cost.** 5-pod core (lumbar + 2 shanks + 2 ankles),
-   scaling to 7 (+2 thighs) for full lower-limb kinematics. 3-pod is the *entry* tier — it
-   gives spatiotemporal metrics and asymmetry but **no joint angles**.
-2. **Hybrid compute.** Pods collect and stream; the phone infers. No edge ML in v1 —
-   nothing in the product needs sub-200 ms on-device inference.
-3. **Within-subject always.** Every metric is deviation from that athlete's own baseline.
-   Fatigue responses are highly individual; group models underperform individuals. Also,
-   IMU knee RMSE ~6° against a 10° threshold means only within-subject change is resolvable.
-4. **Claim discipline.** Describe measured mechanics. Never assert risk or safety.
-5. **Hybrid form factor.** Snap-on pods for branded apparel OR standalone straps/clips.
-6. **Sport-agnostic hardware.** Same pods, sport-specific models.
-7. **Subscription, not hardware margin.** BOM is a payback input, not a price ceiling.
+1. **Core = 2 pods, both tibias — the RCT-validated configuration.** Ladder to 3/5/7 is a
+   customer choice, not an architecture bet. Core is not a cut-down version.
+2. **Setup friction is the governing constraint.** Wrist wearables — zero extra decisions —
+   are abandoned at ~30% in 6 months; 50% of college students quit in 2 weeks. Every added
+   pod is another decision.
+3. **The programme is finite.** People abandon habits; people complete courses. Published
+   field adherence for the 8-session protocol: 100% completion. **Graduation is the success
+   story, not churn.**
+4. **Hybrid compute.** Pods collect and stream; the phone infers. No edge ML in v1.
+5. **Within-subject always.** Deviation from that athlete's own baseline. Fatigue responses
+   are highly individual, and IMU knee RMSE ~6° against a 10° threshold means only
+   within-subject change is resolvable.
+6. **Claim discipline.** Describe measured mechanics. Never assert risk or safety.
+7. **Removable pods, mounted to what the athlete already puts on.** Shoe/lace at the low end,
+   straps at the high end. **No apparel line** — it is the only carrier washed every session.
+8. **Outright sale, not subscription.** Subscription needs 9 months of average customer life
+   to break even against a 3-week intervention.
+9. **Running only.** It is the only domain where we have a defensible claim.
 
 ### Target Markets (in order)
 1. **Individual runners** (v1) — the only sports buyer who holds their own budget and
    needs no injury claim. 37–56% annual injury incidence; 7.7 per 1000 hr.
-2. **Industrial athlete / workers' comp** — a genuine pivot option, not a footnote. Same
-   hardware, same real-time coaching, a payer who directly eats the injury cost, and proven
-   ROI (250% average, 52–64% injury reduction). See `research/buyer-and-liability.md` §1.
-3. **High school / college programs** — **budget-constrained to the point of non-viability
-   as a hardware sale.** $3–8K total annual athletic training budget; $96–926 per athlete.
-   Only works as a cheap subscription.
-4. Professional training — small TAM, long sales cycles, entrenched incumbents.
-5. In-game use — requires league approval, long-term.
+2. **Youth/club, per-player and parent-funded, sold through the club** — Playermaker proves
+   it at $249 into 50+ D1 colleges and 100+ US clubs.
+3. **Industrial athlete / workers' comp** — a genuine pivot, not a footnote. Same hardware,
+   same real-time coaching, a payer who directly eats the injury cost, proven ROI (250%
+   average, 52–64% injury reduction), employer-mandated wear so no retention problem.
+4. **High school / college as an institutional purchase — not viable.** $3–8K total annual
+   athletic training budget; $96–926 per athlete.
+5. Professional training and in-game use — small TAM, long cycles, league approval.
 
 ## Founder Profile
 - Semiconductor software engineer (mid-layer abstraction between customer software and firmware)
@@ -146,19 +159,19 @@ Revised 2026-08-23. Struck-through rows were reversed by evidence — see TRACKE
 
 | Decision | Rationale | Source |
 |---|---|---|
-| **5-pod core / 7-pod full / 3-pod entry** | 3 pods give no joint angles (no thigh/shank sensor). Optimized set: ankle 3.90°, knee 6.35°, hip 5.93° RMSE. Placement matters more than count. | `sensor-architecture.md` |
+| **Core = 2 pods (both tibias); ladder 3/5/7 opt-in** | 2 tibias is the RCT-validated config. Higher tiers add joint angles as a customer choice. Placement matters more than count (ankle 3.90°, knee 6.35°, hip 5.93° RMSE optimized). | `bom-and-pricing.md` §3 |
 | **Pods collect, phone infers** | No use case needs sub-200 ms on-device inference. ACL rupture ~50 ms (can't pre-empt); gait cues need seconds; fatigue needs minutes. Phone logic ships in an app update; pod logic needs an OTA campaign. | `sensor-architecture.md` |
 | **Within-subject baselines only** | Fatigue responses are highly individual; cadence shows no consistent group-level change. IMU knee RMSE ~6° vs a 10° threshold = noise is 60% of signal. | `predictive-validity.md` §7–8 |
 | **No injury-risk claims; deviation-from-baseline only** | Liability is asymmetric — a false "safe" is company-ending. Also keeps us inside FDA general wellness. | `buyer-and-liability.md` §2 |
-| **Subscription, hardware included** | WHOOP: $1B ARR, >80% retention, LTV:CAC 4.5x. Makes a 5–7 pod BOM a payback input rather than a price ceiling. | `buyer-and-liability.md` §3 |
+| **Outright sale, ~$249 Core** | Subscription needs 9 months average customer life to break even against a 3-week intervention. Graduation becomes the success story. | `unit-economics.md` §2–3 |
 | 200 Hz distal / 100–150 Hz proximal | BLE fits 3–6 sensors @ 200 Hz. Joint angle needs less bandwidth than foot-strike detection. | `sensor-architecture.md` |
 | 64–128 MB flash per pod, log raw always | The dataset is the moat and the bottleneck. ~35–60 MB compressed per 4 hr session. | `sensor-architecture.md` |
 | Auto-calibration (no poses) | Motion-driven SO(3) alignment. Solves setup friction. | Paper 8 (Sensors 2026) |
 | Removable pods (NOT embedded in fabric) | Solves wash degradation. Athos failed with embedded. Also makes subscription refurbishment viable. | `crux-analysis.md` |
 | Sport-agnostic hardware | Same pods everywhere, sport-specific models. | Architecture decision |
-| ~~3-pod system~~ | Reversed — a measurement-fidelity result misread as a product spec. | — |
+| ~~3-pod system~~ / ~~5-pod core~~ | Reversed — Core is 2 pods. Multi-pod friction is what kills companies in this category. | — |
 | ~~<200 KB edge ML model, <200 ms~~ | Reversed — inherited from a paper, not derived from a user need. | — |
-| ~~$35/pod hardware sale, $105 kit~~ | Retired — replaced by subscription. | — |
+| ~~$35/pod, $105 kit~~ / ~~subscription~~ | Retired — replaced by outright sale at ~$249. | — |
 | ~~EMG for 92.3% accuracy~~ | Reversed — that result is circular (labels thresholded from the same signals). | — |
 
 ## Connection to makingDollarsInIndia

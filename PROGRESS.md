@@ -77,7 +77,8 @@ the field-validated configuration is two tibial pods, not the five in `sensor-ar
   $76-$256 against $249-$749 retail. ~$150-200 of margin per Core kit is available to spend
   on ease of use, which is where the value and the difficulty actually live.
 - **Not an injury predictor.** Real-time movement coaching + within-subject degradation.
-- **5-pod core / 7-pod full / 3-pod entry.** Trustworthy joint data first, then optimize cost.
+- **Core = 2 pods (both tibias) - the RCT-validated config.** Ladder 3/5/7 is an opt-in
+  customer choice, not an architecture bet.
 - **Hybrid compute:** pods collect and stream at high rate; the phone does all inference.
   No edge ML in v1.
 - **Within-subject baselines only** — group models underperform individuals, and IMU noise
