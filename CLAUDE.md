@@ -134,7 +134,19 @@ scripts/check-decisions.sh   — guards the corpus against self-contradiction.
                                DECISIONS.md freshness, and the research file cap.
                                Run before committing research changes:
                                  bash scripts/check-decisions.sh
+
+scripts/posting/post_reddit.py         — post to Reddit. DRY RUN BY DEFAULT.
+                                           python post_reddit.py --file posts/X.json
+                                           add --post to actually submit
+scripts/posting/post_twitter_thread.py — post an X thread. DRY RUN BY DEFAULT.
+                                           validates 280 chars + em dashes first
+scripts/posting/posts/*.json           — post content, one file each
 ```
+
+**Before using the posting scripts, read `validation/POSTING-PLAYBOOK.md`.** It carries the
+account/profile paths, the shadow-DOM gotchas, timing rules, and the automod warning —
+u/pranavhj1998 has NO history in running subreddits, and several subs auto-remove posts from
+accounts with no prior comment history.
 
 ## File Hygiene — Non-Negotiable
 

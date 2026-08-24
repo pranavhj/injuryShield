@@ -1,0 +1,12 @@
+{
+  "tweets": [
+    "Spent the last week reading every study I could find on whether running wearables can predict injury.\n\nShort answer: they can't, and the evidence against it is much stronger than the industry lets on.\n\nThread on what I found",
+    "The definitive paper is Bahr 2016 in BJSM. To validate an injury screening test you need three things. Nobody has ever cleared the third.\n\nHis conclusion: \"there is currently no example of a screening test for sports injuries with adequate test properties.\"",
+    "Ruddy 2018 tested the three best-known hamstring injury risk factors with ML on elite AFL players.\n\nMedian AUC 0.58. Between-year prediction: 0.52.\n\nThat's a coin flip.",
+    "ACWR -- the workload metric the entire industry runs on -- got a proper RCT.\n\n34 teams. 482 players. 10 months.\n\nNo difference in injury rates.",
+    "Here's the one that surprised me most. GRF impact metrics -- what your wearable calls \"impact load\" -- don't track actual tibial bone load.\n\nImpact peak: r = -0.29. Loading rate: r = -0.20.\n\nNegative. 76 of 80 subject correlations pointed the wrong way.",
+    "But there IS something that works, and it isn't prediction.\n\nChan et al. 2018, AJSM. 320 novice runners. Two weeks of gait retraining with real-time feedback. 12-month follow-up.\n\nInjury rate: 16% vs 38%. HR 0.38.",
+    "The pattern across everything I read:\n\nWhat works is the intervention, not the identification.\n\nNobody has ever shown that screening *who* gets the intervention beats just giving it to everyone.",
+    "If you're a runner who has tried changing your form -- deliberately, with any kind of feedback -- I'd genuinely like to hear whether it stuck.\n\nBuilding something in this space, and the honest version looks very different from what's on the market."
+  ]
+}
