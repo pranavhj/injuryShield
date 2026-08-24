@@ -33,6 +33,11 @@ Last session: 2026-08-23
 - **Tests 1 and 3 run** — capability envelope (K4 40%→15%) and gait-retraining literature
   (K3 45%→15%, Chan 2018 RCT HR 0.38). K2 halved to 30%. New K11 at 40%.
 
+- **Demand-side research** (`research/demand-side.md`) - runners spend ~$1,000/yr incl.
+  $328-729 on coaching; they already believe biomechanics causes injury; but the culture
+  says change form only when injured. **And we are no longer early: Aletheia Run ships a
+  sacrum sensor at $239/yr hardware-included, plus a $59/yr phone-app floor (Ochy).** K12.
+
 ## Next
 1. **Model the business model against the intervention** (free, ~1 day). Now the top
    priority because of K11: the evidence-based intervention is a 2–3 week programme with

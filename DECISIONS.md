@@ -85,6 +85,9 @@ at 12 files and ~5k lines a server is overhead without a capability gain.
 | O4 | **Will two pods actually get worn?** (K2, 30%) | Everything | TRACKER P8.2 |
 | O5 | IMU chip choice — measure on our task, not VR benchmarks | BOM | TRACKER P2.2.3 |
 | O6 | Does Chan's result generalise beyond **novice** runners? | Target market | TRACKER P1.7 |
+| O7 | **Novice vs experienced: evidence is in novices, money is in experienced** | Target market | `demand-side.md` §5 |
+| O8 | **Is honest claim discipline a wedge or a handicap** vs Aletheia's bolder claims? | Positioning | `demand-side.md` §4 |
+| O9 | **$249 upfront vs Aletheia's $239/yr at $0 upfront** — which converts? | Pricing | `demand-side.md` §4 |
 
 ---
 

@@ -362,6 +362,41 @@ retention studies.
 
 ---
 
+### K12 — We are not early any more · **NEW, ~35%** · 2026-08-24
+**Surfaced by the demand-side research. See `research/demand-side.md` §4.**
+
+`crux-analysis.md`'s founding premise — *"nobody has productised real-time running
+biomechanics"* — **is no longer true.**
+
+**Aletheia Run** launched ~Dec 2025: a sacrum-mounted sensor measuring symmetry across all
+three planes, braking impulse, impact, hip stability L&R, with **real-time in-run tracking**.
+**$239/year with sensor, charger and belt included, cancel anytime, 30-day free trial.**
+Founded by a physical therapist who also runs a performance lab — device plus clinic, which
+is option A′ already executed.
+
+And a **phone-camera app layer** sets the floor: **Ochy at ~$59/year**, 4.6★, no hardware,
+analysis in 60 seconds.
+
+**We are squeezed: $59/year below, $239/year with $0 upfront alongside.**
+
+**What is genuinely still ours:**
+- **They took the sacrum. The tibia is open.** A sacrum sensor cannot measure peak tibial
+  acceleration — the variable Chan's RCT actually used. They measure impact *proxies*.
+- Per-limb bilateral measurement at the shank.
+- The 8-session faded-feedback *programme* structure, versus their open-ended monitoring.
+
+**And an uncomfortable asymmetry:** Aletheia's marketing asserts *"70% of injuries stem from
+poor biomechanics"* and *"catch problems before they sideline you."* Our evidence review says
+that is unsupported, and we decided not to say it. **Either our honesty earns trust, or it
+is a handicap in a market that wants to hear the bolder claim.** Assume it costs conversion
+and price that in. It does mean they carry liability exposure we do not.
+
+**Resolves by:** watching whether Aletheia survives the subscription economics we calculated
+(9-month break-even against a short intervention) — a free live experiment on our own
+rejected hypothesis. Add to `market/WATCHLIST.md` as a standing red-trigger entry.
+
+---
+
 ### K10 — Founder capacity and immigration · **~15%**, reduced
 Weaker than believed. The Jan 2025 DHS rule permits founder self-sponsorship at >50%
 ownership. Remaining constraints: specialty-occupation framing, independent-oversight
@@ -410,6 +445,7 @@ capture the first within-subject baseline data.
 | K5 retention / friction | 50% | **30%** | reframed 2026-08-24: finite programme, not perpetual wear. Published 100% session adherence. Residual = repeat-purchase rate |
 | K7 working capital | 25% | **10%** | no subscription to fund; inventory only |
 | K11 customer graduates | 40% | **10%** | resolved by outright sale — graduation is the success story |
+| **K12 not early any more** | — | **35%** | **new 2026-08-24.** Aletheia Run shipping at $239/yr hardware-included; Ochy app layer at $59/yr |
 
 **After 2026-08-23, the largest remaining risks are K2 (30%, untested — the 30-day wear
 test) and K6 (the 97% consumer-hardware base rate, structural). CAC is the biggest

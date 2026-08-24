@@ -15,6 +15,8 @@ probabilities in `problems/VIABILITY.md`.
 ### Direct — running / gait wearables
 | Entity | Why watched | Key question each review |
 |---|---|---|
+| **Aletheia Run** | **Closest live competitor.** Sacrum sensor, real-time symmetry, $239/yr hardware included, PT founder + lab | **Are they surviving the subscription economics?** (9-month break-even vs a short intervention.) Headcount, funding, Android launch, any claim changes |
+| **Ochy / Movaia / GaitLab** | Phone-camera gait apps, ~$59/yr — the price floor | Feature creep toward what needs a wearable? Ratings, install base |
 | **ARION / ATO-Gear** | Closest living analogue; source of the only positive RCT | Still alive? Headcount? Pivoted? Any new trial data? |
 | **Stryd** | The survival role model | Still one pod? Community/open-data posture intact? New metrics? |
 | **NURVV (assets)** | Insolvent 2023 — who bought the IP? | Has anyone relaunched it? Ex-employees findable? |
@@ -72,6 +74,9 @@ the deliverable; the rest is working notes.
 ## 3. Trigger Signals — Check Immediately, Don't Wait For The Quarter
 
 **Red — may invalidate the thesis:**
+- **Aletheia Run adds a tibia or per-limb shank sensor** → our last structural differentiator goes
+- Aletheia raises a large round or is acquired → the category consolidates around them
+- A phone-camera app credibly claims per-limb impact loading → the $59 floor eats the category
 - Garmin or Apple ships **bilateral asymmetry or per-limb mechanics** from the wrist or a
   single device → K4 fires hard; our only structurally defensible ground is gone
 - Catapult, VALD or WHOOP launches a multi-pod body-worn product → the friction problem is

@@ -1,5 +1,14 @@
 # The Crux Problem: Why Multi-Point Body Sensors Haven't Taken Off
 
+> ## ⚠️ ONE PREMISE NOW FALSE — 2026-08-24
+> This file's framing assumes nobody has productised real-time running biomechanics.
+> **That is no longer true.** Aletheia Run launched ~Dec 2025: sacrum sensor, real-time
+> symmetry, **$239/year hardware included**. A phone-camera app layer (Ochy, ~$59/yr) sets
+> the floor below. See `research/demand-side.md` §4 and VIABILITY K12.
+>
+> **The five-barrier analysis below is still the best strategic work in this repo and
+> remains valid.** Only the "nobody has done it" premise has expired.
+
 This is the foundational analysis. Every design decision flows from understanding these 5 barriers.
 
 ## Barrier 1: Setup Friction (THE #1 KILLER)
