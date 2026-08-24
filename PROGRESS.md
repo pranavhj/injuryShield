@@ -49,6 +49,16 @@ Last session: 2026-08-23
 the field-validated configuration is two tibial pods, not the five in `sensor-architecture.md`.
 
 ## Key Decisions
+- **Running only for v1 - because it is the only domain where we have a defensible claim.**
+  Chan's HR 0.38, peak tibial acceleration, the 8-session protocol and the insole validation
+  are all running-specific; step outside and all of them go to zero at once. Expansion axis
+  is LOCOMOTION (return-to-sport/ACL asymmetry is the best v2), not "all movement". Gym form
+  is the worst option - a wrist IMU already hits 89-93% and Atlas Wearables was absorbed by
+  Peloton in 2021.
+- **Hardware platform yes, "app analyses everything" no.** Xsens DOT is already the universal
+  snap-anywhere pod and sells itself as a "development platform" - because the analysis is the
+  product and they do not have it. Analysis transfers ~10% between domains; datasets 0%.
+  Build mount-agnostic hardware and a domain-free app shell; do not market a platform.
 - **Attachment: removable pods, mounted to what the athlete already puts on.** Shoe/lace
   mount at the low end (zero laundry exposure - Stryd and Playermaker both prove it), straps
   at the high end. NOT apparel: it is the only carrier washed after every session, and WHOOP
