@@ -53,6 +53,28 @@ sessions. Sold outright at ~$249. No injury-prediction claim, ever.
 | Gym / resistance form as v2 | Return-to-sport as v2 | A single wrist IMU already does gym at 89–93% |
 | "Cannot monetize on H-1B" | Founder self-sponsorship possible | DHS rule effective 17 Jan 2025 |
 
+## Tooling decisions
+
+| Decision | Status | Reasoning |
+|---|---|---|
+| **Retrieval is split by content type, not unified** | Decided 2026-08-24 | See below |
+
+**Decisions / research / tracker → grep + `DECISIONS.md`.** These need *completeness* and
+*authority*. Vector top-k retrieval hides contradictions (it returns the best-matching chunk
+and may never surface the one that disagrees — the exact 5-pod/2-pod failure we fixed), and
+chunking strips supersession banners so a stale chunk arrives looking authoritative.
+Embeddings have no concept of recency; a stale and a current chunk on the same topic are
+semantically near-identical by design.
+
+**Transcripts / interview notes / user feedback → semantic search.** Unstructured, vocabulary
+unpredictable, completeness does not matter. Grep is genuinely bad at this. Use the existing
+**Notebook API on port 18790** (workspace `CLAUDE.md`) — store sources, query in natural
+language. No MCP server needed; it already exists.
+
+**Revisit a dedicated MCP when:** there is real sensor data (session logs, IMU time series,
+per-athlete baselines) that Claude cannot grep, or the corpus passes ~50k lines. Not before —
+at 12 files and ~5k lines a server is overhead without a capability gain.
+
 ## Open — genuinely undecided
 
 | # | Question | Blocks | Where |
