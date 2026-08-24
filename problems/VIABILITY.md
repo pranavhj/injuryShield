@@ -194,7 +194,45 @@ whole spec.**
 
 ---
 
-### K5 — Retention · **~50%** · EXPENSIVE TO TEST
+### K5 — Retention and setup friction · **REFRAMED 2026-08-24** · see `research/friction-and-retention.md`
+**An external startup consultant independently identified setup friction and retention as
+the two killers. They are right, and the data is worse than stated.**
+
+**Wrist wearables — the lowest-friction category that exists — are abandoned at ~30% within
+6 months** (Gartner), 42% by one analysis, and **50% of college students quit within two
+weeks** (IEEE). The critical window is the first 2–4 weeks. Most-cited reason: *"most
+wearables give you data, but they do not tell you what to do with it."*
+
+That is the floor for a device requiring **zero** additional decisions. Anything with a
+separate attachment step starts worse. **Multi-pod makes it strictly worse.**
+
+**But the conclusion "therefore only pro teams, where compliance can be enforced" does not
+follow — because our product is not a perpetual wearable.** The RCT-validated intervention
+is a **finite 8-session programme over 2–3 weeks**, and the published field study reports
+**100% session adherence and 100% completion, with 85% retention at one month.**
+
+**People abandon habits. People complete courses.** The graduation property that broke the
+subscription model (K11) is the same property that solves retention here — and since we now
+sell outright, graduation costs us nothing.
+
+**The ask must be framed as:** *"Wear these for 8 runs over 3 weeks, then you're done and
+you keep the benefit."* Never *"wear these forever."*
+
+**Form factor rule that follows:** attach to something the athlete already puts on. Runners
+already put on shoes. Playermaker (cleat-mounted, $249, 50+ D1 colleges) and Stryd (foot
+pod, survived a decade) both prove it. **Insole placement has moderate-to-high association
+with impact loading and is "easily and consistently fixated"** — heel-mounted specifically
+has *poor* association, so placement is not a free choice.
+
+**Residual risk (~30%, down from 50%):** the 100% adherence figure is n=7; field adherence
+at scale is unproven; and **one programme per customer is a small business unless there is a
+repeat trigger** (new injury, new shoes, new training block). Repeat rate is unmeasured and
+determines whether this is a company or a product.
+
+<details>
+<summary>Original K5 framing, retained</summary>
+
+### K5 (original) — Retention · ~50% · EXPENSIVE TO TEST
 Hardware-as-subscription dies without retention, and churn before BOM payback is a total
 loss of hardware cost — far worse than SaaS churn.
 
@@ -207,6 +245,7 @@ employees after 11 years.
 **Fully resolves only by:** a beta cohort of 30–50 runners tracked for 90 days. Cost:
 30–50 prototype sets. That is the first genuinely expensive experiment, and it should not
 be run until K2, K3 and K4 have passed.
+</details>
 
 ---
 
@@ -368,7 +407,7 @@ capture the first within-subject baseline data.
 | K2 multi-pod architecture | 55% | **30%** | conditional on shipping **two** pods |
 | K3 output not valuable | 45% | **15%** | Chan RCT, HR 0.38 |
 | K4 platform absorption | 40% | **15%** | four structural capabilities survive |
-| K5 retention | 50% | **20%** | cosmetic under outright sale, not existential |
+| K5 retention / friction | 50% | **30%** | reframed 2026-08-24: finite programme, not perpetual wear. Published 100% session adherence. Residual = repeat-purchase rate |
 | K7 working capital | 25% | **10%** | no subscription to fund; inventory only |
 | K11 customer graduates | 40% | **10%** | resolved by outright sale — graduation is the success story |
 

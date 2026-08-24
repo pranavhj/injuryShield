@@ -36,6 +36,27 @@ and effort on setup time, auto-detection, and feedback that a runner understands
 
 ---
 
+## 0.5 Cost Terms — What The Numbers Mean
+
+Four different "costs" get quoted and they are not interchangeable.
+
+| Term | What it includes | Example (1k units) |
+|---|---|---|
+| **Component cost / BOM** | Just the parts on the board plus the enclosure. Nothing else. | **$19.96** |
+| **Factory gate** | BOM **+ assembly + test + yield loss + packaging.** The finished unit sitting at the factory door in Shenzhen. | **$23.50** |
+| **Landed** | Factory gate **+ freight + insurance + import duty/tariffs + customs + warranty reserve + expected returns.** What it costs to have it in your warehouse, ready to ship to a customer. | **$29** |
+| **Fully loaded** | Landed **+ amortised tooling, certification, R&D, app development, CAC, support.** The real cost of one sold unit. | **~$45–60** |
+
+**Landed is the number to price against.** BOM is the number engineers quote and it is
+always misleadingly low — the gap between $19.96 and $29 is 45%, and the gap to fully
+loaded is another 60–100% on top.
+
+For scale reference: the Fitbit Air teardown puts factory gate at $20–22 but **fully loaded
+at $37–43** against a $99 retail — leaving roughly $20 of contribution on a device selling
+at 8–12 million units a year.
+
+---
+
 ## 1. Component Selection — Real Prices
 
 ### IMU — the one part worth thinking about
@@ -73,10 +94,46 @@ scale, and it answers the question with our data rather than VR gamers' data.
 1.5 MB memory, sub-1 µA sleep, 22 nm. Community guidance: *"pick the 54L15 for anything
 shipping past 2026."* No USB, which we do not need.
 
-**The fork:** at 1,000 units, amortising $25k of certification is **$25/pod** — the module
-wins by a mile. At 20,000 pods it is $1.25/pod and the bare chip wins. **Use a
-pre-certified module until roughly 5,000 pods, then switch.** Design the PCB so the swap is
-a drop-in from day one.
+### Certification — what it is and what it actually costs
+
+**Certification is legal permission to sell a radio transmitter.** Any device with a
+Bluetooth radio broadcasts on public spectrum, so before you can sell it you must prove in
+an accredited lab that it does not interfere with other equipment and is safe to wear.
+It is not optional and there is no way around it.
+
+What a BLE wearable typically needs:
+
+| Requirement | Region | Covers |
+|---|---|---|
+| **FCC Part 15** | US | Intentional + unintentional RF emissions |
+| **CE / RED** | EU | Radio Equipment Directive, EMC, Low Voltage — self-declared but you own a full technical file |
+| **Bluetooth SIG Declaration** | Global | Legal right to use the Bluetooth name and logo |
+| **SAR exemption report** | US | Body-worn RF exposure — usually just an exemption for a low-power BLE device |
+| **UN38.3** | Global | Lithium battery air-shipping safety |
+| IC / UKCA / others | CA, UK, … | As markets are added |
+
+**Actual 2026 costs (corrected — my earlier $25k figure was for the custom-RF route only):**
+
+| Route | Cost |
+|---|---|
+| **Pre-certified module** | **$3,000–10,000** total. Under $5,000 for FCC-only. Typically $500–2,000 paperwork + $4,000–8,000 SIG Declaration |
+| **Bare chip / custom RF** | **Starts at $8,000; $15,000–50,000+** for full FCC + CE + SIG |
+| UN38.3 battery testing | $2,000–20,000+ depending on pack complexity |
+| **First-pass failure** | **adds $5,000–30,000 and 4–12 weeks** |
+
+Why the module is so much cheaper: **the module vendor's FCC grant already covers the
+intentional RF emissions.** You only test your host device for unintentional emissions,
+which is a fraction of the work. The FCC itself charges almost nothing — 40–50% of the cost
+is lab testing, 15–20% is TCB review.
+
+**Realistic all-in for a first product on the module route: $10,000–15,000** (FCC + CE +
+SIG + UN38.3), assuming it passes first time. Book the lab 4–6 weeks ahead; queues surge
+Jan–Mar and Jul–Sep.
+
+**The fork:** at 1,000 pods, amortising $12k of certification is **$12/pod** — the module
+wins decisively. At 20,000 pods, custom RF at $30k is $1.50/pod and the bare chip wins.
+**Use a pre-certified module until roughly 5,000 pods, then switch.** Design the PCB so the
+swap is a drop-in from day one.
 
 ### Everything else
 
@@ -169,19 +226,72 @@ At the **10,000-unit tier ($16/pod)**, COGS falls to $46 / $67 / $111 / $155 —
 retail prices yield 81–79% gross margin, or prices can drop to $199 / $279 / $429 / $579
 while holding ~65–73%.
 
-**Why ~3×:** consumer hardware needs the multiple to absorb CAC ($50–150), support, returns,
-channel margin if any, and warranty. At 2× you have no room for CAC. Playermaker sells at
-$249 including a year of app access, which anchors the Core tier exactly.
+### The SlimeVR challenge — answered honestly
 
-### The competitive reality check
-**SlimeVR sells 5–6 body IMU trackers for $219** — roughly $40/tracker retail, against our
-$110/pod. They achieve it with cheap IMUs, hobbyist enclosures, community support, and
-near-zero margin expectations.
+**"If SlimeVR sells 5–6 trackers for $219, how is ours 3× that?"** Fair, and the 3× was
+anchored on Playermaker rather than derived. Working it properly:
 
-**This means "pods on your body" cannot be the value proposition.** A price of $549 for our
-5-pod Pro tier against $219 for SlimeVR's set is only defensible because of the programme,
-the validated protocol, the analysis, and the app — never because of the hardware. If a
-customer is comparing on hardware alone, we lose that comparison and should not be in it.
+**Why SlimeVR can price where they do:**
+| Their structure | Effect |
+|---|---|
+| Open source, community-built firmware | **No software cost to recover** |
+| Discord/community self-support | **No support cost** |
+| Crowd Supply pre-orders | **No inventory risk, no working capital** |
+| Cheap IMUs, hobbyist enclosure, no IP68 | Low BOM |
+| Word of mouth in a passionate niche | **Near-zero CAC** |
+
+At roughly $15–20 COGS per tracker and ~$40 retail, they run at **~2–2.5× with almost no
+CAC and no software amortisation.** That is a viable structure — for a hobbyist hardware
+project. It is not viable for anything that has to fund an app, a coaching protocol, and
+customer support.
+
+**Where the multiple actually goes** (per Core kit at $249, $76 landed COGS):
+
+| Line | Amount |
+|---|---|
+| Landed COGS | $76 |
+| CAC | $50–150 |
+| Support, warranty, returns | $15–25 |
+| Amortised app + protocol development | $20–40 |
+| Amortised tooling + certification | $10–15 |
+| Payment processing, platform fees | $8 |
+| **Total** | **$179–314** |
+
+**At $249 the honest contribution is $0–70, not $173.** The 3× multiple is not margin —
+it is the cost of being a company rather than a community project.
+
+**Two consequences:**
+1. **CAC is the whole game.** At $50 CAC the Core kit works comfortably; at $150 it does
+   not work at all. This is why measuring CAC matters more than shaving $3 off the BOM.
+2. **"Pods on your body" cannot be the value proposition.** Cheap body-worn IMU hardware
+   already exists, open source, at $40/node. If a customer compares on hardware, we lose and
+   should not be in that comparison. What we sell is the **programme and the coaching** —
+   which SlimeVR does not have, has no path to, and is not trying to build. Their trackers
+   do nothing for a runner; they position an avatar in VR.
+
+---
+
+## 4.5 How Much Capital Does Each Volume Actually Need?
+
+**10,000 units does need investment. 1,000 does not.**
+
+| Line | 1,000 pods | 10,000 pods |
+|---|---|---|
+| Inventory (factory gate) | $23,500 | $132,000 |
+| Tooling (mould) | $3,000 (single cavity) | $12,000 (multi-cavity) |
+| Certification (module route) | $12,000 | $12,000 |
+| App + protocol development | $15,000–40,000 | same |
+| **Total to first shipment** | **≈ $55,000–80,000** | **≈ $170,000–200,000** |
+
+**1,000 pods is bootstrappable** — and Stryd's playbook removes most of even that:
+**they pre-sold ~1,600 units in 12 days at 5× their crowdfunding goal**, funding the
+inventory before committing to it. Pre-orders convert the largest line item from capital
+required into capital received.
+
+**Do not plan for 10,000 units.** Plan for 500–1,000, pre-sold, on 3D-printed or
+low-cavity-tooled enclosures. The $16/pod figure at 10k is a *destination*, not a
+starting condition, and reaching for it prematurely is how hardware startups die with
+warehouses full of inventory.
 
 ---
 
