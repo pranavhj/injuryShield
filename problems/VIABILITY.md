@@ -559,4 +559,4 @@ Nothing says stop. Considerably more than yesterday says this could work.
   conflicts with hardware-as-subscription and opens the clinic/rental option A′.
 - **2026-08-23** — Created. Kill register K1–K10, cheapest-first test ordering, unknown-unknowns
   practices, decision gates, three live options. Backing research: `market-teardown.md`,
-  `predictive-validity.md`, `buyer-and-liability.md`, `sensor-architecture.md`.
+  `predictive-validity.md`, `buyer-and-liability.md`, `archive/sensor-architecture.md`.

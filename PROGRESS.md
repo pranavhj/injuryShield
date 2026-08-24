@@ -19,7 +19,7 @@ Last session: 2026-08-23
 - Competitor analysis: Catapult, WHOOP, STATSports, formsense, Xsens, Athos (failed)
 - **Predictive validity audit** (`research/predictive-validity.md`) — Bahr 2016, Ruddy
   AUC 0.58, 23/25 null meta-analyses, ACWR RCT null, GRF↛tibial load, ARION RCT
-- **Sensor architecture research** (`research/sensor-architecture.md`) — placement error
+- **Sensor architecture research** (`research/archive/sensor-architecture.md`) — placement error
   data, sparse-IMU literature, BLE throughput limits
 - **Buyer / liability / structure research** (`research/buyer-and-liability.md`) — HS and
   NCAA budgets, workers' comp ROI, FDA wellness line, WHOOP economics, H-1B 2025 rule
@@ -46,7 +46,7 @@ Last session: 2026-08-23
 5. Rename — "InjuryShield" is the claim we can't make (TRACKER P4.4.6).
 
 **Still do not build hardware.** Sensor spec should be revisited only after item 1 —
-the field-validated configuration is two tibial pods, not the five in `sensor-architecture.md`.
+the field-validated configuration is two tibial pods, not the five in `archive/sensor-architecture.md`.
 
 ## Key Decisions
 - **Running only for v1 - because it is the only domain where we have a defensible claim.**

@@ -48,7 +48,7 @@ equipment, not wearables.**
 
 **Alive and healthy**
 - Catapult — US$140.7M revenue, +19% cc; ACV $133.8M +28%; EBITDA $24.7M +67%; margin
-  13%→18%; **94% recurring**; acquiring (Perch, IMPECT). *Correction: `competitors.md`
+  13%→18%; **94% recurring**; acquiring (Perch, IMPECT). *Correction: `archive/competitors.md`
   framed them as vulnerable. They are a profitable consolidator.*
 - WHOOP — $1B+ ARR, 2.5M members, >80% retention, LTV:CAC 4.5x
 - VALD — 4,000+ elite teams/universities/defence, fixed equipment
@@ -85,8 +85,8 @@ round; ~90% never reach market.
 - Created `problems/VIABILITY.md` — kill register K1–K10, cheapest-first test ordering,
   decision gates, unknown-unknowns practices
 - K2 (multi-pod architecture) opened at ~55% — directly tensions the 5–7 pod decision made
-  earlier the same day in `sensor-architecture.md`
+  earlier the same day in `archive/sensor-architecture.md`
 - K3 (value unproven even as coaching) opened at ~45%; K4 (platform absorption) ~40%
-- Corrections logged against `competitors.md`, `buyer-and-liability.md` §1, `market-sizing.md`
+- Corrections logged against `archive/competitors.md`, `buyer-and-liability.md` §1, `archive/market-sizing.md`
 
 **Next review due: 2026-11-23.**

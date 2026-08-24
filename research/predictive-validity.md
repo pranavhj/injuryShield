@@ -1,6 +1,6 @@
 # Predictive Validity — Does Any of This Actually Predict Injury?
 
-**Status: researched 2026-08-23. This file supersedes optimistic readings of `academic-papers.md`.**
+**Status: researched 2026-08-23. This file supersedes optimistic readings of `archive/academic-papers.md`.**
 
 This is the load-bearing question for the whole company. The short answer from the
 evidence base: **injury *prediction* does not work and probably will not. Real-time
@@ -129,7 +129,7 @@ correct about ACWR but must not imply we have cleared a bar nobody has cleared.
 
 ## 4. Claim 3 — Real-Time Feedback: WEAK POSITIVE (the one green shoot)
 
-**This is the most important paper for us and it is not in `academic-papers.md`.**
+**This is the most important paper for us and it is not in `archive/academic-papers.md`.**
 
 "The Effect of Wearable-Based Real-Time Feedback on Running Injuries and Running
 Performance: A Randomized Controlled Trial." PMC10905988.
@@ -238,7 +238,7 @@ n=7 — a feasibility study, so treat the effect sizes as directional.
 
 **Two pods. Both tibias. A phone. Audio feedback. Within-subject thresholds. Faded.**
 That is a published, feasible specification for the product, and it is materially simpler
-than the 5–7 pod architecture in `sensor-architecture.md`.
+than the 5–7 pod architecture in `archive/sensor-architecture.md`.
 
 ### Supporting: cadence manipulation
 A 2026 systematic review on cadence: a **5–10% increase** above self-selected produces lower
@@ -307,7 +307,7 @@ publish, publish precision, specificity, and the fraction of athlete-days flagge
 
 ---
 
-## 7. Why the Papers in `academic-papers.md` Read Better Than They Are
+## 7. Why the Papers in `archive/academic-papers.md` Read Better Than They Are
 
 Corrections to earlier readings, so they are not repeated:
 

@@ -24,7 +24,7 @@ The user specifically cited Fitbit Air as the form factor inspiration. This is o
 ## What We Can Learn
 1. **Screenless = dramatically smaller.** Our pods don't need screens either. All alerts via haptic + app.
 2. **Pod + band separation** — the pod is the electronics, the band is just a holder. EXACTLY our approach (pod + apparel/strap).
-3. **$99 price point at Google-scale production.** We need $35/pod at startup scale — BOM must be significantly lower since we have fewer sensors (no PPG, no SpO2).
+3. **$99 price point at Google-scale production.** Our landed cost is ~$29/pod at 1,000 units, ~$16 at 10,000 — see `bom-and-pricing.md`. (The old "$35/pod retail" target is retired; we sell a 2-pod Core kit at ~$249.)
 4. **Fast charge** — 5 min for a day is aspirational. Magnetic pogo pins likely.
 5. **7-day battery** — impressive but they have lower sampling rate (consumer use, not 200Hz sports). We'll get less battery life at higher sampling rates.
 

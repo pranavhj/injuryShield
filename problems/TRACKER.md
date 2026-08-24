@@ -255,7 +255,7 @@ Ordered by information gained per dollar. **Nothing here requires building hardw
 | BOM, volume tiers, certification, test hardware | `research/bom-and-pricing.md` |
 | Revenue models, why subscription fails | `research/unit-economics.md` |
 | Who pays, claim language, FDA, H-1B | `research/buyer-and-liability.md` |
-| Pod count, placement, compute split, BLE | `research/sensor-architecture.md` |
+| Pod count, placement, compute split, BLE | `research/archive/sensor-architecture.md` |
 | Why multi-point sensors haven't taken off | `research/crux-analysis.md` |
 | Standing market watch | `market/WATCHLIST.md` → `market/LOG.md` |
 

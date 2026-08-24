@@ -23,7 +23,7 @@ sessions. Sold outright at ~$249. No injury-prediction claim, ever.
 | D1 | **Not an injury predictor.** Product is gait retraining with real-time feedback | Locked | `predictive-validity.md` |
 | D2 | **Running only for v1** | Locked | `scope-and-expansion.md` |
 | D3 | **Core tier = 2 pods, both tibias.** Ladder: 2 / 3 / 5 / 7 as customer choice | Locked | `bom-and-pricing.md` §3 |
-| D4 | **Pods collect and stream; phone infers. No edge ML in v1** | Locked | `sensor-architecture.md` §2 |
+| D4 | **Pods collect and stream; phone infers. No edge ML in v1** | Locked | `archive/sensor-architecture.md` §2 |
 | D5 | **Within-subject baselines only.** Never population comparison | Locked | `predictive-validity.md` §7–8 |
 | D6 | **Removable pods. Never embedded in fabric** | Locked | `attachment-strategy.md` §1 |
 | D7 | **Shoe/lace mount at low end; straps at high end. No apparel line** | Locked | `attachment-strategy.md` §3–4 |
@@ -82,11 +82,11 @@ sessions. Sold outright at ~$249. No injury-prediction claim, ever.
 | `research/market-teardown.md` | **Current** — the competitive picture |
 | `research/buyer-and-liability.md` | **Current** except §3 (subscription — superseded by D8) |
 | `research/crux-analysis.md` | **Current** — still the best strategic analysis in the repo |
-| `research/sensor-architecture.md` | ⚠️ **PARTLY SUPERSEDED** — pod count wrong (says 5, now 2). Compute split and BLE data still valid |
-| `research/academic-papers.md` | ⚠️ **READ WITH CORRECTIONS** — Papers 1 and 2 misread; see `predictive-validity.md` §7 |
-| `research/competitors.md` | ⚠️ **SUPERSEDED** by `market-teardown.md`. Kept for the Athos detail |
-| `research/ecosystem-business-model.md` | ⚠️ **SUPERSEDED** on pricing and model by `unit-economics.md` |
-| `research/market-sizing.md` | ⚠️ **LOW VALUE** — top-down report numbers; the real constraints are elsewhere |
+| `research/archive/sensor-architecture.md` | ⚠️ **PARTLY SUPERSEDED** — pod count wrong (says 5, now 2). Compute split and BLE data still valid |
+| `research/archive/academic-papers.md` | ⚠️ **READ WITH CORRECTIONS** — Papers 1 and 2 misread; see `predictive-validity.md` §7 |
+| `research/archive/competitors.md` | ⚠️ **SUPERSEDED** by `market-teardown.md`. Kept for the Athos detail |
+| `research/archive/ecosystem-business-model.md` | ⚠️ **SUPERSEDED** on pricing and model by `unit-economics.md` |
+| `research/archive/market-sizing.md` | ⚠️ **LOW VALUE** — top-down report numbers; the real constraints are elsewhere |
 | `research/regulations.md` | Current but deferred — league rules are a year-3 concern |
 | `research/fitbit-air-reference.md` | Current — design reference only |
 | `market/WATCHLIST.md`, `market/LOG.md` | **Current** — quarterly discipline |

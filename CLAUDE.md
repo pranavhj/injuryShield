@@ -117,14 +117,63 @@ never a risk score, never a safety clearance.
 | Competitors, who died and why | `research/market-teardown.md` |
 | Who pays, claim language, FDA, H-1B | `research/buyer-and-liability.md` |
 | Why multi-point sensors haven't taken off | `research/crux-analysis.md` |
-| Compute split, BLE budget, flash sizing | `research/sensor-architecture.md` §2 — **§1 pod count is SUPERSEDED** |
+| Compute split, BLE budget, flash sizing | `research/archive/sensor-architecture.md` §2 — **§1 pod count is SUPERSEDED** |
 | League rules (deferred, year 3) | `research/regulations.md` |
 | Pod design reference | `research/fitbit-air-reference.md` |
 | Quarterly market review | `market/WATCHLIST.md` → log to `market/LOG.md` |
 
-**Stale files — do not read without their banner:** `competitors.md` (superseded),
-`ecosystem-business-model.md` (pricing reversed), `market-sizing.md` (low value),
-`academic-papers.md` (two papers misread). Each carries a warning at the top.
+**Stale files — do not read without their banner:** `archive/competitors.md` (superseded),
+`archive/ecosystem-business-model.md` (pricing reversed), `archive/market-sizing.md` (low value),
+`archive/academic-papers.md` (two papers misread). Each carries a warning at the top.
+
+## Available Automation
+
+```
+scripts/check-decisions.sh   — guards the corpus against self-contradiction.
+                               Checks archive banners, reversed-decision claims (advisory),
+                               DECISIONS.md freshness, and the research file cap.
+                               Run before committing research changes:
+                                 bash scripts/check-decisions.sh
+```
+
+## File Hygiene — Non-Negotiable
+
+The research corpus grew to 23 files / 4,900 lines and started contradicting itself. A
+stale file read in isolation gives a confident wrong answer, which is worse than no file.
+These rules exist to prevent that recurring.
+
+**1. `DECISIONS.md` is the single source of truth.**
+If any other file contradicts it, DECISIONS.md wins. It is ~90 lines and cheap to keep
+honest. The moment it drifts, every other rule here stops working.
+
+**2. When a decision changes, update `DECISIONS.md` in the SAME commit.**
+Not later, not in a follow-up. The research file that produced the change and the decision
+record move together or the repo lies.
+
+**3. Reversed decisions go in the "do not resurrect" table.**
+Record what it was, what it is now, and why it flipped. This stops a future session
+rediscovering a dead idea and re-adopting it. Ten decisions have already been reversed once.
+
+**4. A superseded file gets a banner at the top, immediately.**
+Format: `> ## WARNING SUPERSEDED — <date>` plus what is wrong, what is still valid, and
+where to go instead. Never leave a stale file unmarked. Never silently delete one — the
+reasoning has value even when the conclusion does not.
+
+**5. Cap the research directory at ~15 current files.**
+Past that, fold new findings into existing files instead of adding new ones. More files
+means more surface area for contradiction, and the entry cost of a session climbs.
+
+**6. Run `scripts/check-decisions.sh` before committing research changes.**
+It catches missing banners, live reversed-decision claims, and research files newer than
+DECISIONS.md. Cheap. Takes a second.
+
+**7. Stale files move to `research/archive/`.**
+Physical separation beats a banner alone — a grep hit at line 83 does not show the warning
+at line 3, but a path containing `/archive/` is visible in every result.
+
+**8. Never cite a number without its source file.**
+Every figure in this repo traces to a linked source. An unsourced number is a guess with
+false confidence, and this project has already had to correct two of those.
 
 ### Do NOT load all research files at once — they total 3000+ lines. Read only what's relevant to the current task.
 
@@ -160,12 +209,12 @@ Revised 2026-08-23. Struck-through rows were reversed by evidence — see TRACKE
 | Decision | Rationale | Source |
 |---|---|---|
 | **Core = 2 pods (both tibias); ladder 3/5/7 opt-in** | 2 tibias is the RCT-validated config. Higher tiers add joint angles as a customer choice. Placement matters more than count (ankle 3.90°, knee 6.35°, hip 5.93° RMSE optimized). | `bom-and-pricing.md` §3 |
-| **Pods collect, phone infers** | No use case needs sub-200 ms on-device inference. ACL rupture ~50 ms (can't pre-empt); gait cues need seconds; fatigue needs minutes. Phone logic ships in an app update; pod logic needs an OTA campaign. | `sensor-architecture.md` |
+| **Pods collect, phone infers** | No use case needs sub-200 ms on-device inference. ACL rupture ~50 ms (can't pre-empt); gait cues need seconds; fatigue needs minutes. Phone logic ships in an app update; pod logic needs an OTA campaign. | `archive/sensor-architecture.md` |
 | **Within-subject baselines only** | Fatigue responses are highly individual; cadence shows no consistent group-level change. IMU knee RMSE ~6° vs a 10° threshold = noise is 60% of signal. | `predictive-validity.md` §7–8 |
 | **No injury-risk claims; deviation-from-baseline only** | Liability is asymmetric — a false "safe" is company-ending. Also keeps us inside FDA general wellness. | `buyer-and-liability.md` §2 |
 | **Outright sale, ~$249 Core** | Subscription needs 9 months average customer life to break even against a 3-week intervention. Graduation becomes the success story. | `unit-economics.md` §2–3 |
-| 200 Hz distal / 100–150 Hz proximal | BLE fits 3–6 sensors @ 200 Hz. Joint angle needs less bandwidth than foot-strike detection. | `sensor-architecture.md` |
-| 64–128 MB flash per pod, log raw always | The dataset is the moat and the bottleneck. ~35–60 MB compressed per 4 hr session. | `sensor-architecture.md` |
+| 200 Hz distal / 100–150 Hz proximal | BLE fits 3–6 sensors @ 200 Hz. Joint angle needs less bandwidth than foot-strike detection. | `archive/sensor-architecture.md` |
+| 64–128 MB flash per pod, log raw always | The dataset is the moat and the bottleneck. ~35–60 MB compressed per 4 hr session. | `archive/sensor-architecture.md` |
 | Auto-calibration (no poses) | Motion-driven SO(3) alignment. Solves setup friction. | Paper 8 (Sensors 2026) |
 | Removable pods (NOT embedded in fabric) | Solves wash degradation. Athos failed with embedded. Also makes subscription refurbishment viable. | `crux-analysis.md` |
 | Sport-agnostic hardware | Same pods everywhere, sport-specific models. | Architecture decision |
@@ -176,7 +225,7 @@ Revised 2026-08-23. Struck-through rows were reversed by evidence — see TRACKE
 
 ## Connection to makingDollarsInIndia
 This project lives separately from `c:\Users\prana\projects\makingDollarsInIndia` but serves
-the same goal: earning USD from India. See `research/ecosystem-business-model.md` for the
+the same goal: earning USD from India. See `research/archive/ecosystem-business-model.md` for the
 India connection, and `research/buyer-and-liability.md` §4 for the corrected entity
 structure — note that Section 44ADA applies to an *individual professional*, not to a
 company, so the structure choice matters.

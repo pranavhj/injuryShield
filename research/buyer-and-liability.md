@@ -160,6 +160,12 @@ predictor. Track it as an outcome we observe and publish, never as a claim we ma
 
 ## 3. Hardware-as-Subscription (the WHOOP model)
 
+> **⚠️ SECTION SUPERSEDED — 2026-08-24.** This section argues for subscription on the
+> assumption of perpetual use. That assumption is false: the intervention is a finite
+> 2–3 week programme. Subscription needs 9 months of average customer life to break even.
+> **Current model is outright sale at ~$249** — see `research/unit-economics.md` and
+> `DECISIONS.md` D8. The WHOOP benchmark data below is still accurate and useful.
+
 The user's proposal to make money on subscription rather than hardware is correct, and the
 comparable is unambiguous.
 
@@ -247,7 +253,7 @@ completely standard setup. Note the specifics:
   arrangement defensible to both tax authorities.
 - India entity as a **wholly-owned subsidiary** of the US C-corp is cleaner than two
   independent companies with a services agreement, and is what investors expect.
-- The Section 44ADA presumptive-taxation route in `ecosystem-business-model.md` applies to
+- The Section 44ADA presumptive-taxation route in `archive/ecosystem-business-model.md` applies to
   an *individual professional*, not to a company. If the cofounder is a salaried employee
   of an Indian subsidiary, 44ADA does not apply. If they are an independent contractor
   billing the US entity, it may. **These are different structures — pick one deliberately.**

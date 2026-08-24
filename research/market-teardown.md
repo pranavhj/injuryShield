@@ -39,7 +39,7 @@ effectively 100%.**
 This is not proof it cannot work — `crux-analysis.md` argues the five barriers are
 addressable, and that argument still stands. But it is a far stronger prior against
 multi-pod than this project has been treating it, and it runs directly into the 5–7 pod
-decision made on 2026-08-23 in `sensor-architecture.md`.
+decision made on 2026-08-23 in `archive/sensor-architecture.md`.
 
 **The central unresolved trade of this company:**
 
@@ -132,7 +132,7 @@ FY26 (year ended 31 Mar 2026):
 | Free cash flow | $8.6M, nearly doubled; net cash >$7M |
 | Acquisitions | Perch (gym monitoring), IMPECT (match data) |
 
-**Correction to `competitors.md`.** It frames Catapult as vulnerable — post-session only,
+**Correction to `archive/competitors.md`.** It frames Catapult as vulnerable — post-session only,
 ACWR-dependent, ripe for disruption. The financials say otherwise: profitable, accelerating,
 94% recurring, and **actively consolidating the space through M&A.** They are a buyer, not
 a sitting duck.
@@ -274,11 +274,11 @@ watch item, not a one-time analysis.
 
 | File | Claim | Correction |
 |---|---|---|
-| `competitors.md` | Catapult vulnerable, real-time would cannibalise their dashboard | **Wrong.** $140.7M revenue, 18% EBITDA margin, 28% ACV growth, acquiring aggressively. Healthy consolidator. |
-| `competitors.md` | Missing most of the field | Absent: NURVV, ARION/ATO-Gear, Stryd, VALD, Playermaker, Zone7, Kitman, Sparta, StrongArm, Kinetic, Soter, Modjoul, Lumo, UA HealthBox |
+| `archive/competitors.md` | Catapult vulnerable, real-time would cannibalise their dashboard | **Wrong.** $140.7M revenue, 18% EBITDA margin, 28% ACV growth, acquiring aggressively. Healthy consolidator. |
+| `archive/competitors.md` | Missing most of the field | Absent: NURVV, ARION/ATO-Gear, Stryd, VALD, Playermaker, Zone7, Kitman, Sparta, StrongArm, Kinetic, Soter, Modjoul, Lumo, UA HealthBox |
 | `buyer-and-liability.md` §1 | HS/youth team market not viable | **Half-wrong.** Not viable as *institutional* purchase. Playermaker proves per-player parent-funded sales through clubs works at $249. |
-| `market-sizing.md` | TAM/SAM/SOM from market reports | Top-down report numbers are near-useless here. The real constraint is the 97% hardware failure rate and the one-sensor pattern in §0. |
-| `sensor-architecture.md` | 5–7 pods for trustworthy joint data | Still technically correct — but §0 shows it fights the strongest survival pattern in the market. Trade must be made explicitly. See VIABILITY K2. |
+| `archive/market-sizing.md` | TAM/SAM/SOM from market reports | Top-down report numbers are near-useless here. The real constraint is the 97% hardware failure rate and the one-sensor pattern in §0. |
+| `archive/sensor-architecture.md` | 5–7 pods for trustworthy joint data | Still technically correct — but §0 shows it fights the strongest survival pattern in the market. Trade must be made explicitly. See VIABILITY K2. |
 
 ---
 
