@@ -88,6 +88,7 @@ at 12 files and ~5k lines a server is overhead without a capability gain.
 | O7 | **Novice vs experienced: evidence is in novices, money is in experienced** | Target market | `demand-side.md` §5 |
 | O8 | **Is honest claim discipline a wedge or a handicap** vs Aletheia's bolder claims? | Positioning | `demand-side.md` §4 |
 | O9 | **$249 upfront vs Aletheia's $239/yr at $0 upfront** — which converts? | Pricing | `demand-side.md` §4 |
+| O10 | **No company has proven "outright sale + finite programme + zero ongoing revenue" direct-to-consumer** — every proven finite-programme precedent (Movn, Sword Health, VERA) sells to a payer with a bounded budget, not the consumer. RunScribe and Sensoria both abandoned the consumer channel entirely. Does this change Model D's (clinic) priority, or the D8 pricing structure itself (e.g. bundled year of access vs a hard one-time sale)? | D8, channel priority | `programme-model-precedents-bigco.md`, `-smallco.md` |
 
 ---
 
@@ -107,6 +108,8 @@ at 12 files and ~5k lines a server is overhead without a capability gain.
 | `research/market-teardown.md` | **Current** — the competitive picture |
 | `research/buyer-and-liability.md` | **Current** except §3 (subscription — superseded by D8) |
 | `research/crux-analysis.md` | **Current** — still the best strategic analysis in the repo |
+| `research/programme-model-precedents-bigco.md` | **Current** — added 2026-08-24. No large well-funded co. has proven outright sale + finite programme + zero ongoing revenue, direct-to-consumer |
+| `research/programme-model-precedents-smallco.md` | **Current** — added 2026-08-24. Same conclusion at small/bootstrapped scale; also corrects the Playermaker citation (VC-funded, not bootstrapped) |
 | `research/archive/sensor-architecture.md` | ⚠️ **PARTLY SUPERSEDED** — pod count wrong (says 5, now 2). Compute split and BLE data still valid |
 | `research/archive/academic-papers.md` | ⚠️ **READ WITH CORRECTIONS** — Papers 1 and 2 misread; see `predictive-validity.md` §7 |
 | `research/archive/competitors.md` | ⚠️ **SUPERSEDED** by `market-teardown.md`. Kept for the Athos detail |

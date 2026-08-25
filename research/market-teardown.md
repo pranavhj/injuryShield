@@ -198,6 +198,13 @@ is the payer.
 That is a real GTM path we had written off. It is a consumer sale wearing a team uniform,
 and it works.
 
+**Caveat added 2026-08-24:** Playermaker has raised **$45M+ in VC funding** (Wikipedia;
+$40-60M range per SGB Media, Tracxn), including FIFA EPTS certification and a Manchester City
+brand partnership. It is not a small/bootstrapped comparable — its GTM path is real, but a
+resource-constrained team should not assume it can replicate this distribution reach on this
+capital. No public renewal-rate data was found either. See
+`research/programme-model-precedents-smallco.md` §6.
+
 ### PlayerData — $12M Series A, integrated stack
 US Soccer, several MLS clubs, officials at every FIFA men's World Cup match. Building a
 combined stack: wearable + connected ball + AI video. **Direction of travel: sensors alone

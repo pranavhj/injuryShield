@@ -123,6 +123,19 @@ Sell the 2-pod kit with a structured programme and 12 months of app access. This
 **Playermaker's proven structure**: $249 including a one-year subscription, into 50+ D1
 colleges and 100+ US clubs.
 
+**Caveat added 2026-08-24:** Playermaker has raised $45M+ in VC funding — proven at *their*
+resource level, not a bootstrapped precedent. And more broadly: no company found in a
+dedicated precedent search (`research/programme-model-precedents-bigco.md`,
+`-smallco.md`) has proven "outright sale + genuinely finite programme + zero ongoing
+revenue" direct-to-consumer, at any scale. Every large player survives on a subscription
+layered over hardware; every small/bootstrapped running-hardware peer either never bundled a
+finite programme (Stryd, ARION) or had to abandon the consumer channel entirely to survive
+(RunScribe, Sensoria). The finite-programme *mechanism* has real support (Noom RCT,
+Reflexion Health VERA's 75-80% vs 15-40% adherence) — but only in programmes sold to a payer
+with a bounded budget (hospital, employer), never direct-to-consumer. This does not
+invalidate Model B's math below, but it should be read as an unproven combination, not a
+proven one.
+
 | Line | $249 | $299 | $349 |
 |---|---|---|---|
 | Revenue | $249 | $299 | $349 |
