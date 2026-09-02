@@ -112,6 +112,15 @@ still <10% of the market. Insurance denial rates are ~12.9% and climbing.
    apps that don't integrate create double-documentation burden. HIPAA compliance adds
    complexity.
 
+   **Top PT EMR systems (2026):** WebPT ($99/mo/user, most widely used for PT-specific),
+   SPRY (AI-powered, 4.7/5 rated), Raintree (enterprise/multi-location), Jane, Clinicient.
+   Cloud-based systems now 62.4% of market (up from 41% in 2019). Most do NOT have open
+   APIs for third-party device data import — integration may require FHIR/HL7 standards or
+   manual PDF report upload as a starting point. **MVP integration: generate a PDF or CSV
+   report the clinician can attach to the patient record.** Full API integration is a
+   later-stage investment ($15K–40K per EMR platform).
+   ([SPRY buyers guide](https://www.sprypt.com/blog/best-emr-physical-therapy-2025-buyers-guide))
+
 5. **Reimbursement uncertainty.** If a clinic can't bill for the service, the technology is
    a cost center. The good news: RTM codes now make our device billable.
 
