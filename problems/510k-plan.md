@@ -21,6 +21,35 @@
 - **Key note:** ViMove2 includes EMG; we don't. This is a SIMPLER device than the predicate, which is generally favorable for substantial equivalence arguments.
 - [ ] **Search for additional predicates:** BioSensics LEGSys, APDM Opal, VERABAND — for backup
 
+### 0.1b CRITICAL FINDING: 510(k) Exemption May Apply
+
+**21 CFR 882.5050** — Biofeedback Device (product code HCC) is **Class II, 510(k) EXEMPT**
+when ALL of these conditions are met:
+1. Battery powered — **YES** (our pods are battery powered)
+2. Prescription use — **YES** (prescribed by a physio in the clinic channel)
+3. Indicated for "relaxation training and muscle reeducation" — **MAYBE**
+
+**"Muscle reeducation"** is the key phrase. Running gait retraining involves relearning
+motor patterns (cadence, foot strike, impact reduction) — this is arguable as muscle
+reeducation. Healium recently (2026) registered as a Class II 510(k)-exempt biofeedback
+device using HCC. dorsaVi filed full 510(k)s, but they included EMG (product code IKN)
+which may have required it.
+
+**If we qualify as 510(k) exempt, the entire regulatory picture changes:**
+- No 510(k) submission needed ($6,517 fee gone)
+- No pre-submission meeting needed
+- No FDA review period (9-15 months gone)
+- Just need: FDA establishment registration ($11,423/yr) + device listing
+- Still need: IEC 62304, HIPAA, product liability insurance
+
+**THIS MUST BE THE FIRST QUESTION TO THE REGULATORY CONSULTANT.** If we frame our
+device as a biofeedback device for gait muscle reeducation (which it literally is —
+real-time audio signal corresponding to tibial acceleration), we may be exempt.
+
+Source: [21 CFR 882.5050](https://www.law.cornell.edu/cfr/text/21/882.5050),
+[FDA product code HCC](https://www.accessdata.fda.gov/scripts/cdrh/cfdocs/cfPCD/classification.cfm?ID=HCC),
+[Healium 510(k)-exempt registration](https://www.biospace.com/press-releases/healium-announces-fda-registration-of-healium-clinical-as-a-class-ii-510k-exempt-biofeedback-medical-device)
+
 ### 0.2 Find a regulatory consultant
 Budget: $12,000–20,000 for a focused 510(k) with a good predicate.
 

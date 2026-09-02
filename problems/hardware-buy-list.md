@@ -17,10 +17,25 @@
 - Price: ~$87–107 each → **~$175–215 for 2 units**
 - [mbientlab.com/shop](https://mbientlab.com/shop/)
 
-**Why this over alternatives:**
-- SlimeVR ($219 for a set) is cheaper per sensor but optimized for VR/full-body tracking, not clinical logging. 6-axis only (no magnetometer), no onboard flash.
-- Movella/Xsens DOT ($200/sensor) is overpriced for what we need at this stage.
-- mbientlab is specifically designed for clinical/research gait analysis — it's what many published gait studies use.
+**⚠️ mbientlab may be OUT OF STOCK. Alternative below.**
+
+### Alternative: Xsens DOT — 2 units
+- 9-axis IMU (accel + gyro + magnetometer)
+- 36 × 30 × 10mm, **10g** — almost exactly our target weight
+- IP68 waterproof/dustproof
+- 6-hour battery, BLE 5.0, up to 120 Hz on-device logging
+- **$132/unit, IN STOCK, ships within 2 weeks**
+- [shop.movella.com](https://shop.movella.com/us/product-lines/wearables/products/xsens-dot-sensor)
+- **Total for 2: $264**
+
+**Why Xsens DOT is actually BETTER for us:**
+- 10g weight — proves the form factor works (our target is <10g)
+- IP68 — can be worn in rain, sweat, no problem
+- Widely used in published gait research — credibility for demos
+- 120 Hz on-device logging (not as high as mbientlab's 800 Hz, but sufficient for gait events at walking/running pace)
+- **Downside:** 120 Hz max may not be enough for peak tibial acceleration detection (we want 200 Hz). Fine for demos and interviews, may need custom hardware for final product.
+
+**Recommendation: Buy 2× Xsens DOT ($264).** They're in stock, ship fast, and the 10g/IP68 form factor is exactly what we need to demo to clinics. We're not building the final product with these — we're showing clinicians what the data looks like.
 
 ## Priority 2: IMU Chip Samples (~$50–80)
 
