@@ -3,7 +3,7 @@
 **If any other file contradicts this one, THIS FILE WINS.** Everything else is the
 reasoning that produced these; reasoning files are dated and some are superseded.
 
-Last updated: **2026-08-24**
+Last updated: **2026-09-01**
 
 ---
 
@@ -36,6 +36,9 @@ sessions. Sold outright at ~$249. No injury-prediction claim, ever.
 | D14 | **Expansion axis is locomotion**, not "all movement." v2 = return-to-sport/ACL | Locked | `scope-and-expansion.md` §4 |
 | D15 | **Build for the platform, do not pitch the platform** | Locked | `scope-and-expansion.md` §6 |
 | D16 | **Rename before anything public.** "InjuryShield" is a claim we cannot make | Pending | TRACKER P4.3.6 |
+| D17 | **Primary channel is clinic/physio (Model D), not direct-to-consumer (Model B).** RTM billing (CPT 98977) makes the device a revenue generator for clinics. Consumer D2C remains secondary/parallel. | Locked | `clinic-channel-viability.md`, `clinic-channel-landscape.md` |
+| D18 | **510(k) is the regulatory plan.** dorsaVi ViMove is the predicate. Small business fee $6,517. Total $30–90K. Required for RTM billing. Phased: wellness first, file when demand proves out. | Locked | `clinic-regulatory-landscape.md` |
+| D19 | **Sensor must be invisible during running.** <10g, shoe-mounted, no movement restriction, no change to natural gait. The athlete forgets it's there. | Locked | TRACKER P8A.3 |
 
 ## Reversed decisions — do not resurrect
 
@@ -88,7 +91,9 @@ at 12 files and ~5k lines a server is overhead without a capability gain.
 | O7 | **Novice vs experienced: evidence is in novices, money is in experienced** | Target market | `demand-side.md` §5 |
 | O8 | **Is honest claim discipline a wedge or a handicap** vs Aletheia's bolder claims? | Positioning | `demand-side.md` §4 |
 | O9 | **$249 upfront vs Aletheia's $239/yr at $0 upfront** — which converts? | Pricing | `demand-side.md` §4 |
-| O10 | **No company has proven "outright sale + finite programme + zero ongoing revenue" direct-to-consumer** — every proven finite-programme precedent (Movn, Sword Health, VERA) sells to a payer with a bounded budget, not the consumer. RunScribe and Sensoria both abandoned the consumer channel entirely. Does this change Model D's (clinic) priority, or the D8 pricing structure itself (e.g. bundled year of access vs a hard one-time sale)? | D8, channel priority | `programme-model-precedents-bigco.md`, `-smallco.md` |
+| O10 | ~~Model D priority~~ **RESOLVED → D17.** Clinic channel is now primary. The D2C precedent gap was the deciding factor. | — | `programme-model-precedents.md` |
+| O11 | **D8 pricing structure for clinic channel** — outright sale to clinic, or monthly subscription? Clinics prefer subscription (maps to cash flow). VALD charges $3,600–5,100/yr. What's our price point? | D8, D17 | `clinic-channel-viability.md` §5 |
+| O12 | **Will 5 clinic owner interviews confirm RTM as purchase driver?** dorsaVi didn't have RTM. If RTM doesn't change clinic buying behavior, the whole Model D thesis weakens. | D17 | TRACKER P8A.2.4 |
 
 ---
 
@@ -108,13 +113,15 @@ at 12 files and ~5k lines a server is overhead without a capability gain.
 | `research/market-teardown.md` | **Current** — the competitive picture |
 | `research/buyer-and-liability.md` | **Current** except §3 (subscription — superseded by D8) |
 | `research/crux-analysis.md` | **Current** — still the best strategic analysis in the repo |
-| `research/programme-model-precedents-bigco.md` | **Current** — added 2026-08-24. No large well-funded co. has proven outright sale + finite programme + zero ongoing revenue, direct-to-consumer |
-| `research/programme-model-precedents-smallco.md` | **Current** — added 2026-08-24. Same conclusion at small/bootstrapped scale; also corrects the Playermaker citation (VC-funded, not bootstrapped) |
+| `research/programme-model-precedents.md` | **Current** — merged from bigco+smallco 2026-09-01. No company has proven outright sale + finite programme + zero ongoing revenue D2C. Playermaker citation corrected (VC-funded) |
+| `research/clinic-channel-landscape.md` | **Current** — added 2026-09-01. Competitive landscape for physio/clinic movement analysis |
+| `research/clinic-channel-viability.md` | **Current** — added 2026-09-01. Insurance/RTM billing, barriers, pricing, market size |
+| `research/clinic-regulatory-landscape.md` | **Current** — added 2026-09-01. FDA 510(k), HIPAA, liability, practical regulatory strategy |
 | `research/archive/sensor-architecture.md` | ⚠️ **PARTLY SUPERSEDED** — pod count wrong (says 5, now 2). Compute split and BLE data still valid |
 | `research/archive/academic-papers.md` | ⚠️ **READ WITH CORRECTIONS** — Papers 1 and 2 misread; see `predictive-validity.md` §7 |
 | `research/archive/competitors.md` | ⚠️ **SUPERSEDED** by `market-teardown.md`. Kept for the Athos detail |
 | `research/archive/ecosystem-business-model.md` | ⚠️ **SUPERSEDED** on pricing and model by `unit-economics.md` |
 | `research/archive/market-sizing.md` | ⚠️ **LOW VALUE** — top-down report numbers; the real constraints are elsewhere |
-| `research/regulations.md` | Current but deferred — league rules are a year-3 concern |
-| `research/fitbit-air-reference.md` | Current — design reference only |
+| `research/archive/regulations.md` | ⚠️ **ARCHIVED** 2026-09-01 — league rules deferred; clinical regulatory now in `clinic-regulatory-landscape.md` |
+| `research/archive/fitbit-air-reference.md` | ⚠️ **ARCHIVED** 2026-09-01 — design reference only, not decision-critical |
 | `market/WATCHLIST.md`, `market/LOG.md` | **Current** — quarterly discipline |

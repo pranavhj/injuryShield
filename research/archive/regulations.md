@@ -1,3 +1,8 @@
+> ## WARNING ARCHIVED — 2026-09-01
+> League-by-league regulations are deferred (year 3 per TRACKER). For FDA/clinical
+> regulatory landscape, see `research/clinic-regulatory-landscape.md` instead.
+> League rules in this file remain accurate reference material but are not decision-relevant now.
+
 # Sports Wearable Regulations by League — InjuryShield
 
 ## Summary

@@ -212,19 +212,73 @@ injury-prediction claim, ever. Running only — it is the only domain where we h
 
 ---
 
-## P7: REGULATORY
+## P7: REGULATORY — Rewritten 2026-09-01
 
-- [x] **P7.1** Phase 1 training/practice market — no approval needed anywhere.
-- [x] **P7.2** FDA: stay inside general wellness by claim discipline. A clinical claim is a 510(k)-class project.
-- [ ] **P7.3** FIFA EPTS certification — requirements, timeline, cost. Deferred.
-- [ ] **P7.4** NBA approved wearables list. Deferred.
-- [ ] **P7.5** NCAA 2026 guidelines — be early-compliant.
-- [ ] **P7.6** IEEE P3716 — involvement for credibility.
-- [ ] **P7.7** Privacy policy: GDPR, COPPA, state laws. Athlete owns their data.
+### P7.0: Strategy shift — 510(k) is the plan
+- [x] **P7.0.1** **"Stay wellness" is not viable for the clinic channel.** RTM billing (98977) requires FDA-cleared devices. Clinics won't bill with uncleared devices due to audit risk.
+- [ ] **P7.0.2** **File 510(k) using dorsaVi ViMove as predicate.** Same device class (IMU gait analysis, Class II). Small business fee: $6,517. Total cost: $30–90K. Timeline: 9–15 months.
+- [ ] **P7.0.3** **Phased approach:** launch consumer wellness (current plan) → build clinician data view → file 510(k) when clinic demand materializes → clearance unlocks RTM billing and hospital/health system sales.
+- [ ] **P7.0.4** **IEC 62304 software lifecycle compliance.** Required for 510(k). Must be in place before submission.
+- [ ] **P7.0.5** **Biocompatibility testing (ISO 10993)** — skin contact testing for wearable pods.
+- [ ] **P7.0.6** **EMC/EMI testing (IEC 60601-1-2)** — electromagnetic compatibility.
+
+### P7.1: HIPAA
+- [ ] **P7.1.1** **HIPAA compliance required if patient data flows through our servers.** Minimum viable year-1 cost: $5–20K.
+- [ ] **P7.1.2** BAAs with every cloud vendor (AWS/GCP) and every clinic customer.
+- [ ] **P7.1.3** Encryption at rest and in transit, role-based access, audit logging.
+
+### P7.2: Liability
+- [ ] **P7.2.1** Product liability insurance before any clinical sale. $5–15K/yr.
+- [ ] **P7.2.2** "Information only — clinician makes all decisions" framing in all materials.
+- [ ] **P7.2.3** Indemnification clauses in clinic contracts — mutual indemnification standard.
+
+### P7.3: League/sport-specific (deferred)
+- [x] **P7.3.1** Phase 1 training/practice market — no approval needed anywhere.
+- [ ] **P7.3.2** FIFA EPTS certification — deferred to year 3.
+- [ ] **P7.3.3** NBA, NCAA — deferred.
+- [ ] **P7.3.4** IEEE P3716 — deferred.
+- [ ] **P7.3.5** Privacy: GDPR, COPPA, state laws. Athlete owns their data.
 
 ---
 
-## P8: NEXT EXPERIMENTS — NEW
+## P8A: CLINIC CHANNEL (MODEL D) — NEW 2026-09-01
+
+### P8A.0: Why clinic channel
+- [x] **P8A.0.1** **Direct-to-consumer value prop is weak.** Self-guided biofeedback for $249 — founder wouldn't buy it. Prevention is invisible. "You didn't get injured" has zero emotional payoff.
+- [x] **P8A.0.2** **Professional oversight solves retention.** Prescribed device use: 80%+ adherence vs 50–70% self-directed. Physio IS the forcing function the consumer channel lacks.
+- [x] **P8A.0.3** **Insurance makes price invisible.** Patient doesn't pay $249 — absorbed into PT visits + RTM billing.
+- [x] **P8A.0.4** **Expansion beyond running is natural in clinic.** Physio sees all MSK conditions — knee rehab, hip replacement, low back pain, ACL. Same hardware, different protocols.
+
+### P8A.1: RTM billing — the revenue engine
+- [x] **P8A.1.1** **RTM code 98977 (MSK device supply): ~$52/month per patient.** + 98980 (treatment management, 20 min): ~$51/month. Monthly total: ~$120–150/patient.
+- [x] **P8A.1.2** **2026 CMS expansion helps us:** new code 98985 for 2–15 days/month (our 8-session programme fits), new code 98979 for 10–19 min management increments.
+- [ ] **P8A.1.3** **RTM requires FDA-cleared device.** Clinics won't bill with uncleared devices → 510(k) is the gateway.
+- [ ] **P8A.1.4** **Calculate clinic ROI pitch:** device subscription cost vs RTM revenue per enrolled patient. Target: device pays for itself in 2–3 months.
+- [ ] **P8A.1.5** **PTs can bill RTM under their own NPI for MSK (98977).** PTAs/OTAs contribute monitoring time under general supervision. Verify state-by-state scope.
+
+### P8A.2: dorsaVi lessons — problems we MUST solve differently
+Sourced from `research/clinic-channel-landscape.md`. dorsaVi does exactly what we'd do (IMU → clinics, 510(k) cleared) and is at AU$1.13M/yr after 19 years.
+
+- [ ] **P8A.2.1** **Sales cycle is brutal (1–18 months).** dorsaVi couldn't scale selling one clinic at a time. **Our mitigation:** RTM revenue pitch ("this device generates $31K/yr in new billing") is a stronger hook than dorsaVi had. Target small independent practices (1–3 month cycle), not hospital systems (6–18 months).
+- [ ] **P8A.2.2** **Clinicians don't change workflow.** >90% of PTs rely on visual observation despite 30–40% better outcomes with tech. **Our mitigation:** fit INTO existing workflow. Don't replace the assessment — add data to it. Must integrate with common EMR/EHR systems.
+- [ ] **P8A.2.3** **Camera alternatives eliminate sensor setup.** DARI Motion, Kinetisense = zero per-patient hardware. **Our mitigation:** cameras can't follow athletes outdoors. Our advantage is CONTINUOUS, OUTDOOR, REAL-WORLD data across thousands of strides — not a 10-step clinic walkthrough. Must articulate this clearly.
+- [ ] **P8A.2.4** **dorsaVi had no RTM billing.** RTM codes didn't exist until 2022, expanded 2026. This is our single biggest structural advantage vs dorsaVi's era. **Validate that RTM billing actually drives purchase decisions with 5 clinic owner interviews.**
+- [ ] **P8A.2.5** **Revenue per clinic is small.** Even at $5K/yr subscription, need thousands of clinics. **Our mitigation:** RTM billing means revenue scales with PATIENTS, not just clinic count. 1 clinic with 20 RTM patients = $31K/yr revenue for the clinic, of which we capture $3–6K. Still need volume.
+- [ ] **P8A.2.6** **Product must be dead simple.** dorsaVi's declining product investment hurt them. Our sensor must be invisible to the runner (<10g, shoe-mounted, unnoticeable during sprinting). Training time for clinician: max 1–2 hours. App must just work.
+
+### P8A.3: Sensor invisibility requirement
+- [ ] **P8A.3.1** **Pod must be unnoticeable during running, sprinting, cutting.** Target: <10g, no protrusion past shoe collar, no movement restriction, no change to natural gait.
+- [ ] **P8A.3.2** **Waterproof/sweatproof.** IP67 minimum.
+- [ ] **P8A.3.3** **Test with real runners:** can they tell the pod is there after 1 mile? After 5 miles? During sprints? Subjective comfort survey + biomechanical comparison (gait with vs without pod).
+
+### P8A.4: Partnership/acquisition scenarios
+- [ ] **P8A.4.1** **Hinge Health / Sword Health as potential partners or acquirers.** Their sensors are indoor-only (knee straps for squats/stretches). Running gait is a gap. But: they may build it themselves, they're moving toward camera-based tracking, and Hinge is in IPO process.
+- [ ] **P8A.4.2** **Don't build to be acquired.** Build the best running gait product → become a natural target. 510(k) clearance + proprietary dataset + proven clinical outcomes = acquisition value.
+- [ ] **P8A.4.3** **Hinge's user feedback on their sensors:** mixed. Accuracy complaints, app usability issues, sensor placement friction. Instructional videos removed in 2026. They're not great at hardware UX — possible opening.
+
+---
+
+## P9: NEXT EXPERIMENTS — Was P8, renumbered 2026-09-01
 
 Ordered by information gained per dollar. **Nothing here requires building hardware.**
 
@@ -276,10 +330,15 @@ Full operational guide: `validation/POSTING-PLAYBOOK.md`. Content ready in
 | Who pays, claim language, FDA, H-1B | `research/buyer-and-liability.md` |
 | Pod count, placement, compute split, BLE | `research/archive/sensor-architecture.md` |
 | Why multi-point sensors haven't taken off | `research/crux-analysis.md` |
+| Clinic channel competitive landscape | `research/clinic-channel-landscape.md` |
+| Clinic channel business model viability | `research/clinic-channel-viability.md` |
+| Clinic regulatory: FDA, HIPAA, 510(k), liability | `research/clinic-regulatory-landscape.md` |
+| "Outright sale + finite programme" precedents | `research/programme-model-precedents.md` |
 | Standing market watch | `market/WATCHLIST.md` → `market/LOG.md` |
 
 ---
 
 ## Changelog
+- **2026-09-01** — Major strategic shift: clinic channel (Model D) elevated to primary go-to-market. Added P8A (clinic channel problems, dorsaVi lessons, RTM billing, sensor invisibility, partnership scenarios). Rewrote P7 (regulatory) — 510(k) is now the plan, not a fallback; added HIPAA and liability subsections. Archived regulations.md and fitbit-air-reference.md; merged programme-model-precedents. Added 4 new research files to index. P8 renumbered to P9.
 - **2026-08-24** — Full revision after five research rounds. P3 (attachment) and P6 (scope) rewritten. Added P2.6 (manufacturing cost) and P8 (next experiments). Pod count became a customer-facing ladder. Pricing settled on outright sale. Running-only scope with locomotion as the expansion axis; gym form killed. Attachment settled: removable, shoe-mounted low end, no apparel line. Added P3.2.1 as the critical open tension (validated measurement site vs low-friction mount) and P4.2.6 (repeat-purchase rate) as the open commercial unknown.
 - **2026-08-23** — Restructured by kill criteria. Added P0. Killed prediction, ACWR, GRF-tissue-load, EMG, edge ML. Revised sensor count and compute architecture. Retired $35/pod pricing.

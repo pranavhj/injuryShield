@@ -1,3 +1,8 @@
+> ## WARNING ARCHIVED — 2026-09-01
+> Design reference only — not decision-critical. Pod form factor decisions live in
+> `research/attachment-strategy.md`. This file is still valid reference material for
+> physical dimensions and specs.
+
 # Fitbit Air — Design Reference for InjuryShield Pods
 
 The user specifically cited Fitbit Air as the form factor inspiration. This is our design benchmark.

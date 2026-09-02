@@ -135,6 +135,12 @@ scripts/check-decisions.sh   — guards the corpus against self-contradiction.
                                Run before committing research changes:
                                  bash scripts/check-decisions.sh
 
+scripts/tracker-viz.py                 — tracker visualizer + editor (Flask server).
+                                           python scripts/tracker-viz.py --open
+                                           Serves interactive dependency graph on :5111.
+                                           Edit tasks, create new ones, add deps, save.
+                                           --static for read-only HTML export.
+                                           Deps stored in problems/TRACKER-DEPS.json.
 scripts/posting/post_reddit.py         — post to Reddit. DRY RUN BY DEFAULT.
                                            python post_reddit.py --file posts/X.json
                                            add --post to actually submit
