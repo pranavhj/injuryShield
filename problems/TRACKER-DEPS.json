@@ -1,0 +1,447 @@
+[
+  {
+    "source": "P0.2.2",
+    "target": "P0.2.1",
+    "reason": "public framing needs product def"
+  },
+  {
+    "source": "P0.2.3",
+    "target": "P0.2.1",
+    "reason": "deviation spec needs product def"
+  },
+  {
+    "source": "P0.2.4",
+    "target": "P0.2.3",
+    "reason": "stats model needs deviation spec"
+  },
+  {
+    "source": "P0.3.2",
+    "target": "P0.2.1",
+    "reason": "data-collection design needs product def"
+  },
+  {
+    "source": "P0.3.3",
+    "target": "P0.3.2",
+    "reason": "injury labels need data-collection design"
+  },
+  {
+    "source": "P0.3.5",
+    "target": "P0.2.4",
+    "reason": "noise vs threshold needs stats model"
+  },
+  {
+    "source": "P0.3.6",
+    "target": "P0.3.2",
+    "reason": "raw logging is part of data-collection"
+  },
+  {
+    "source": "P0.4.1",
+    "target": "P0.2.1",
+    "reason": "kill criteria need product def"
+  },
+  {
+    "source": "P1.4",
+    "target": "P0.2.3",
+    "reason": "flag-rate rule needs deviation model"
+  },
+  {
+    "source": "P1.5",
+    "target": "P0.2.4",
+    "reason": "baseline drift needs variance model"
+  },
+  {
+    "source": "P1.6",
+    "target": "P0.2.4",
+    "reason": "per-athlete adaptation needs baseline model"
+  },
+  {
+    "source": "P1.9",
+    "target": "P8.2",
+    "reason": "adherence data from wear test"
+  },
+  {
+    "source": "P1.10",
+    "target": "P8.4",
+    "reason": "interviews ARE P8.4"
+  },
+  {
+    "source": "P1.11",
+    "target": "P0.2.3",
+    "reason": "physio claim review needs deviation wording"
+  },
+  {
+    "source": "P1.12",
+    "target": "P8.4a.2",
+    "reason": "community validation IS posting sequence"
+  },
+  {
+    "source": "P1.13",
+    "target": "P8.2",
+    "reason": "founder wear test IS P8.2"
+  },
+  {
+    "source": "P2.1.4",
+    "target": "P8.1",
+    "reason": "soft-tissue measurement needs test hardware"
+  },
+  {
+    "source": "P2.1.5",
+    "target": "P8.1",
+    "reason": "sparse-IMU eval needs test hardware"
+  },
+  {
+    "source": "P2.2.3",
+    "target": "P8.1",
+    "reason": "chip selection needs IMU samples"
+  },
+  {
+    "source": "P2.2.6",
+    "target": "P2.3.2",
+    "reason": "barometer decision needs power budget"
+  },
+  {
+    "source": "P2.3.2",
+    "target": "P2.2.3",
+    "reason": "power budget needs IMU chip selected"
+  },
+  {
+    "source": "P2.3.3",
+    "target": "P2.3.2",
+    "reason": "battery chemistry needs power budget"
+  },
+  {
+    "source": "P2.4.3",
+    "target": "P2.2.3",
+    "reason": "MCU selection needs IMU chip"
+  },
+  {
+    "source": "P2.4.4",
+    "target": "P2.4.3",
+    "reason": "inter-pod sync needs MCU"
+  },
+  {
+    "source": "P2.4.6",
+    "target": "P2.4.3",
+    "reason": "ring buffer firmware needs MCU"
+  },
+  {
+    "source": "P2.5.2",
+    "target": "P8.1",
+    "reason": "BLE tuning needs bench rig"
+  },
+  {
+    "source": "P2.6.5",
+    "target": "P2.3.3",
+    "reason": "UN38.3 testing needs battery cell chosen"
+  },
+  {
+    "source": "P2.6.6",
+    "target": "P3.2.2",
+    "reason": "enclosure design needs mount mechanism"
+  },
+  {
+    "source": "P3.2.1",
+    "target": "P8.1",
+    "reason": "placement experiment needs test hardware"
+  },
+  {
+    "source": "P3.2.2",
+    "target": "P3.2.1",
+    "reason": "mount mechanism needs placement decided"
+  },
+  {
+    "source": "P3.2.3",
+    "target": "P3.2.1",
+    "reason": "shoe compatibility depends on route chosen"
+  },
+  {
+    "source": "P3.2.4",
+    "target": "P3.2.1",
+    "reason": "pod protrusion depends on placement"
+  },
+  {
+    "source": "P3.2.5",
+    "target": "P3.2.2",
+    "reason": "mount-agnostic design needs mechanism"
+  },
+  {
+    "source": "P3.3.1",
+    "target": "P8.1",
+    "reason": "don/doff timing needs test hardware"
+  },
+  {
+    "source": "P3.3.2",
+    "target": "P2.3.3",
+    "reason": "dock design needs charging method"
+  },
+  {
+    "source": "P3.3.3",
+    "target": "P2.4.3",
+    "reason": "lost-pod alert needs MCU/firmware"
+  },
+  {
+    "source": "P3.3.4",
+    "target": "P2.6.3",
+    "reason": "spare pricing needs landed cost"
+  },
+  {
+    "source": "P4.2.5",
+    "target": "P8.4",
+    "reason": "CAC needs something concrete first"
+  },
+  {
+    "source": "P4.2.6",
+    "target": "P8.4",
+    "reason": "repeat-purchase is interview question"
+  },
+  {
+    "source": "P4.2.7",
+    "target": "P4.2.6",
+    "reason": "rental viability needs repeat-purchase data"
+  },
+  {
+    "source": "P4.2.8",
+    "target": "P4.2.6",
+    "reason": "monitoring tier needs repeat-purchase data"
+  },
+  {
+    "source": "P4.3.3",
+    "target": "P0.2.3",
+    "reason": "claim language needs deviation spec"
+  },
+  {
+    "source": "P4.3.4",
+    "target": "P0.2.3",
+    "reason": "no-cleared-to-play needs deviation spec"
+  },
+  {
+    "source": "P4.3.5",
+    "target": "P4.3.3",
+    "reason": "ToS needs claim-language guide"
+  },
+  {
+    "source": "P4.3.5",
+    "target": "P4.4.3",
+    "reason": "COPPA needs entity structure"
+  },
+  {
+    "source": "P4.3.6",
+    "target": "P0.2.2",
+    "reason": "rename before public framing"
+  },
+  {
+    "source": "P4.3.8",
+    "target": "P3.2.2",
+    "reason": "FTO search needs mount mechanism"
+  },
+  {
+    "source": "P4.3.9",
+    "target": "P2.4.3",
+    "reason": "open-source decision needs MCU"
+  },
+  {
+    "source": "P4.4.2",
+    "target": "P4.4.5",
+    "reason": "H-1B conditions need attorney"
+  },
+  {
+    "source": "P4.4.3",
+    "target": "P4.4.5",
+    "reason": "entity structure needs attorney"
+  },
+  {
+    "source": "P4.4.4",
+    "target": "P4.4.5",
+    "reason": "section 44ADA needs attorney"
+  },
+  {
+    "source": "P4.4.5",
+    "target": "P0.4.1",
+    "reason": "attorney spend needs kill criteria passed"
+  },
+  {
+    "source": "P5.1",
+    "target": "P3.2.2",
+    "reason": "unboxing time depends on mount"
+  },
+  {
+    "source": "P5.1",
+    "target": "P8.1",
+    "reason": "measuring unboxing needs hardware"
+  },
+  {
+    "source": "P5.2",
+    "target": "P2.4.3",
+    "reason": "auto-detection needs MCU/firmware"
+  },
+  {
+    "source": "P5.4",
+    "target": "P3.2.1",
+    "reason": "calibration drift depends on site"
+  },
+  {
+    "source": "P5.5",
+    "target": "P0.2.4",
+    "reason": "baseline sessions need stats model"
+  },
+  {
+    "source": "P5.6",
+    "target": "P0.2.3",
+    "reason": "cue wording needs deviation spec"
+  },
+  {
+    "source": "P5.7",
+    "target": "P5.6",
+    "reason": "comprehensibility needs cue design"
+  },
+  {
+    "source": "P5.8",
+    "target": "P5.6",
+    "reason": "alert fatigue needs cue design"
+  },
+  {
+    "source": "P5.9",
+    "target": "P0.2.4",
+    "reason": "session summary needs stats model"
+  },
+  {
+    "source": "P5.10",
+    "target": "P5.9",
+    "reason": "integrations need summary defined"
+  },
+  {
+    "source": "P5.11",
+    "target": "P5.6",
+    "reason": "programme UI needs cue design"
+  },
+  {
+    "source": "P6.5",
+    "target": "P8.2",
+    "reason": "v2 scoping needs wear test data"
+  },
+  {
+    "source": "P6.5",
+    "target": "P1.10",
+    "reason": "v2 needs interview insights"
+  },
+  {
+    "source": "P6.6",
+    "target": "P6.5",
+    "reason": "team-sport follows return-to-sport"
+  },
+  {
+    "source": "P6.8",
+    "target": "P6.5",
+    "reason": "tennis follows return-to-sport"
+  },
+  {
+    "source": "P6.9",
+    "target": "P3.2.5",
+    "reason": "platform arch needs agnostic pod"
+  },
+  {
+    "source": "P7.3",
+    "target": "P6.6",
+    "reason": "FIFA EPTS after team-sport scope"
+  },
+  {
+    "source": "P7.4",
+    "target": "P6.6",
+    "reason": "NBA after team-sport scope"
+  },
+  {
+    "source": "P7.5",
+    "target": "P6.6",
+    "reason": "NCAA after team-sport scope"
+  },
+  {
+    "source": "P7.6",
+    "target": "P6.5",
+    "reason": "IEEE after v2 direction set"
+  },
+  {
+    "source": "P7.7",
+    "target": "P4.4.3",
+    "reason": "privacy policy needs entity structure"
+  },
+  {
+    "source": "P8.2",
+    "target": "P8.1",
+    "reason": "wear test needs test hardware"
+  },
+  {
+    "source": "P8.3",
+    "target": "P8.1",
+    "reason": "placement experiment needs hardware"
+  },
+  {
+    "source": "P8.4",
+    "target": "P4.3.6",
+    "reason": "interviews need non-liability name"
+  },
+  {
+    "source": "P8.4a.1",
+    "target": "P8.4a.7",
+    "reason": "building standing needs sub verified"
+  },
+  {
+    "source": "P8.4a.2",
+    "target": "P8.4a.1",
+    "reason": "posting needs standing first"
+  },
+  {
+    "source": "P8.4a.3",
+    "target": "P8.4a.1",
+    "reason": "posting needs standing first"
+  },
+  {
+    "source": "P8.4a.3",
+    "target": "P8.4a.2",
+    "reason": "post 2 is +1 week after post 1"
+  },
+  {
+    "source": "P8.4a.4",
+    "target": "P8.4a.1",
+    "reason": "posting needs standing first"
+  },
+  {
+    "source": "P8.4a.4",
+    "target": "P8.4a.3",
+    "reason": "post 3 is +1 week after post 2"
+  },
+  {
+    "source": "P8.4a.5",
+    "target": "P8.4a.2",
+    "reason": "post 4 needs 2 prior posts"
+  },
+  {
+    "source": "P8.4a.5",
+    "target": "P8.4a.3",
+    "reason": "post 4 needs 2 prior posts"
+  },
+  {
+    "source": "P8.4a.6",
+    "target": "P8.4a.2",
+    "reason": "X thread staggered from Reddit"
+  },
+  {
+    "source": "P8.4a.8",
+    "target": "P8.4a.2",
+    "reason": "replying needs posts to exist"
+  },
+  {
+    "source": "P8.4a.9",
+    "target": "P8.4a.2",
+    "reason": "logging needs posts made"
+  },
+  {
+    "source": "P8.5",
+    "target": "P8.4",
+    "reason": "CAC needs concrete results"
+  },
+  {
+    "source": "P8.6",
+    "target": "P0.2.1",
+    "reason": "market review needs product def"
+  }
+]

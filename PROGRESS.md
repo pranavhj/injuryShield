@@ -6,16 +6,9 @@ Next: send drafts, phone clinics, wait for consultant + hardware responses.
 Last session: 2026-09-01
 
 ## Done
-- Clinic channel (Model D) elevated to primary (D17), D2C secondary
-- Clinic channel research complete: 3 files (landscape, viability, regulatory)
-- 510(k) plan + exemption finding (21 CFR 882.5050 HCC biofeedback)
-- LinkedIn outreach: sent connection requests to Bay Area PT clinic owners (exhausted free tier)
-- LinkedIn outreach guide created (validation/linkedin-outreach-guide.md)
-- Gmail drafts created: 6 regulatory consultants (Emergo, NAMSA, i3C Global, Medical Device Academy, SafeLink, i3C again with verified email)
-- Gmail drafts created: clinic outreach (Golden Hills PT + template with 6 more clinics)
-- Xsens DOT: requested from Movella (can't buy directly, requires quote/request)
-- Hardware buy list updated with Xsens DOT alternative
-- Interview script ready (validation/clinic-interview-script.md)
+- Clinic channel research + 510(k) plan + LinkedIn/Gmail outreach drafts
+- Xsens DOT requested, hardware buy list updated, interview script ready
+- Tracker visualizer built (scripts/tracker-viz.py) — dark mode, full CRUD, undo/redo
 
 ## Next
 - **FOUNDER:** Send all Gmail drafts (regulatory consultants + clinic outreach)
