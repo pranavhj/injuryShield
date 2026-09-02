@@ -219,7 +219,12 @@ injury-prediction claim, ever. Running only — it is the only domain where we h
 - [~] **P7.0.2** **File 510(k) using dorsaVi ViMove as predicate.**
   - **Consultant outreach status (2026-09-01):** Gmail drafts created for 5 firms: Emergo by UL, NAMSA, i3C Global (enquiry@i3cglobal.com), Medical Device Academy (lindsey@medicaldeviceacademy.com), SafeLink Consulting (info@safelinkconsulting.com). Key question: 510(k) vs exempt under 21 CFR 882.5050 HCC. Same device class (IMU gait analysis, Class II). Small business fee: $6,517. Total cost: $30–90K. Timeline: 9–15 months.
 - [ ] **P7.0.3** **Phased approach:** launch consumer wellness (current plan) → build clinician data view → file 510(k) when clinic demand materializes → clearance unlocks RTM billing and hospital/health system sales.
-- [ ] **P7.0.4** **IEC 62304 software lifecycle compliance.** Required for 510(k). Must be in place before submission.
+- [ ] **P7.0.4** **IEC 62304 software lifecycle compliance.** Required for 510(k) AND good practice even if exempt. Can start NOW with zero hardware or money.
+  - [ ] P7.0.4a Software Development Plan (SDP) — process, tools, version control, coding standards
+  - [ ] P7.0.4b Software Requirements Specification (SRS) — what the software must do
+  - [ ] P7.0.4c Software Architecture Document (SAD) — modules, data flow, interfaces
+  - [ ] P7.0.4d Risk Management File (ISO 14971) — hazards, mitigations, residual risk
+  - [ ] P7.0.4e Software safety classification (Class A/B/C) — determines documentation depth. Likely Class A (no injury contribution) or B (non-serious injury possible). Confirm with consultant.
 - [ ] **P7.0.5** **Biocompatibility testing (ISO 10993)** — skin contact testing for wearable pods.
 - [ ] **P7.0.6** **EMC/EMI testing (IEC 60601-1-2)** — electromagnetic compatibility.
 
@@ -341,6 +346,7 @@ Full operational guide: `validation/POSTING-PLAYBOOK.md`. Content ready in
 ---
 
 ## Changelog
+- **2026-09-01 (session 3)** — IEC 62304 expanded with sub-items (P7.0.4a-e). Viability gap analysis done — see below.
 - **2026-09-01 (session 2)** — Outreach phase: LinkedIn requests sent (exhausted free tier), 5 regulatory consultant Gmail drafts created, clinic outreach drafts created (Golden Hills + 6 more), Xsens DOT quote requested (can't buy directly), hardware buy list updated. P7.0.2 and P8.1 marked in-progress. P8.4 updated for clinic interviews.
 - **2026-09-01** — Major strategic shift: clinic channel (Model D) elevated to primary go-to-market. Added P8A (clinic channel problems, dorsaVi lessons, RTM billing, sensor invisibility, partnership scenarios). Rewrote P7 (regulatory) — 510(k) is now the plan, not a fallback; added HIPAA and liability subsections. Archived regulations.md and fitbit-air-reference.md; merged programme-model-precedents. Added 4 new research files to index. P8 renumbered to P9.
 - **2026-08-24** — Full revision after five research rounds. P3 (attachment) and P6 (scope) rewritten. Added P2.6 (manufacturing cost) and P8 (next experiments). Pod count became a customer-facing ladder. Pricing settled on outright sale. Running-only scope with locomotion as the expansion axis; gym form killed. Attachment settled: removable, shoe-mounted low end, no apparel line. Added P3.2.1 as the critical open tension (validated measurement site vs low-friction mount) and P4.2.6 (repeat-purchase rate) as the open commercial unknown.
