@@ -24,9 +24,12 @@
 - 36 × 30 × 10mm, **10g** — almost exactly our target weight
 - IP68 waterproof/dustproof
 - 6-hour battery, BLE 5.0, up to 120 Hz on-device logging
-- **$132/unit, IN STOCK, ships within 2 weeks**
-- [shop.movella.com](https://shop.movella.com/us/product-lines/wearables/products/xsens-dot-sensor)
-- **Total for 2: $264**
+- **$132/unit** — but **cannot buy directly online; requires quote/request from Movella**
+- [shop.movella.com](https://shop.movella.com/us/product-lines/wearables/products/xsens-dot-sensor) — request submitted 2026-09-01
+- **Alternative purchase:** [Unbound XR](https://unboundxr.com/xsens-dot-sensor) may sell individual units
+- **5-sensor set available:** [buy.xsens.com](https://buy.xsens.com/xsens-dot) — includes charger + SDK, but more than we need
+- Contact for custom orders: [email protected]
+- **Total for 2: ~$264**
 
 **Why Xsens DOT is actually BETTER for us:**
 - 10g weight — proves the form factor works (our target is <10g)

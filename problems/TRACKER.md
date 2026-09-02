@@ -216,7 +216,8 @@ injury-prediction claim, ever. Running only — it is the only domain where we h
 
 ### P7.0: Strategy shift — 510(k) is the plan
 - [x] **P7.0.1** **"Stay wellness" is not viable for the clinic channel.** RTM billing (98977) requires FDA-cleared devices. Clinics won't bill with uncleared devices due to audit risk.
-- [ ] **P7.0.2** **File 510(k) using dorsaVi ViMove as predicate.** Same device class (IMU gait analysis, Class II). Small business fee: $6,517. Total cost: $30–90K. Timeline: 9–15 months.
+- [~] **P7.0.2** **File 510(k) using dorsaVi ViMove as predicate.**
+  - **Consultant outreach status (2026-09-01):** Gmail drafts created for 5 firms: Emergo by UL, NAMSA, i3C Global (enquiry@i3cglobal.com), Medical Device Academy (lindsey@medicaldeviceacademy.com), SafeLink Consulting (info@safelinkconsulting.com). Key question: 510(k) vs exempt under 21 CFR 882.5050 HCC. Same device class (IMU gait analysis, Class II). Small business fee: $6,517. Total cost: $30–90K. Timeline: 9–15 months.
 - [ ] **P7.0.3** **Phased approach:** launch consumer wellness (current plan) → build clinician data view → file 510(k) when clinic demand materializes → clearance unlocks RTM billing and hospital/health system sales.
 - [ ] **P7.0.4** **IEC 62304 software lifecycle compliance.** Required for 510(k). Must be in place before submission.
 - [ ] **P7.0.5** **Biocompatibility testing (ISO 10993)** — skin contact testing for wearable pods.
@@ -282,14 +283,15 @@ Sourced from `research/clinic-channel-landscape.md`. dorsaVi does exactly what w
 
 Ordered by information gained per dollar. **Nothing here requires building hardware.**
 
-- [ ] **P8.1** **Buy test hardware, ~$600.**
-  - 2 × mbientlab MetaMotionS ($260) — 400 Hz logging to 512 MB onboard flash, CSV + Python/C++/JS SDKs. **Replicates the RCT-validated two-tibia protocol with zero firmware written.**
-  - 1 × SlimeVR set ($219, MIT/Apache, modifiable) — explores the 3/5/7 ladder cheaply.
-  - ~$120 of IMU samples (LSM6DSV16X / ICM-45686 / BMI270) — settles P2.2.3 on our own task.
-  - **Skip Movella/Xsens** — $8,500 + $13,500/yr buys nothing extra at this stage.
+- [~] **P8.1** **Buy test hardware, ~$255–345.**
+  - ~~mbientlab MetaMotionS~~ — **OUT OF STOCK.**
+  - **Xsens DOT** — $132/unit, 10g, IP68, 120 Hz, 9-axis. Quote requested from Movella 2026-09-01. Cannot buy directly online. Alternatives: Unbound XR, or buy the 5-sensor set from buy.xsens.com.
+  - ~$50–80 of IMU chip samples (LSM6DSV16X / ICM-45686 / BMI270) — settles P2.2.3 on our own task.
+  - ~$30–50 mounting supplies (clips, adhesive pads, velcro, digital scale).
 - [ ] **P8.2** **30-day founder wear test.** Primary metric: **days actually worn out of 30**, unprompted. Secondary: don/doff seconds at 2/3/5/7 pods (P3.3.1). Also captures first within-subject baseline data.
 - [ ] **P8.3** **Resolve P3.2.1** — tibia vs shoe vs insole placement for peak tibial acceleration. This decides whether the low-friction Core tier can deliver the validated measurement.
-- [ ] **P8.4** **20 runner interviews.** Not "would you buy this." Ask: when did you last change how you run, what prompted it, what would make you trust the advice, **and would you buy a second programme.**
+- [~] **P8.4** **Clinic owner interviews (5 minimum) + runner interviews (20).** Clinic interviews: LinkedIn requests sent (exhausted free tier), Gmail drafts ready for Golden Hills PT + 6 more clinics, phone numbers collected. Runner interviews: not started.
+  - **Clinic outreach status:** LinkedIn connection requests sent. Email drafts ready. Phone: Golden Hills (408) 274-0888, Silver Creek (408) 325-6251. Script: `validation/clinic-interview-script.md`.
 
 ### P8.4a: Community validation — staged sequence
 Full operational guide: `validation/POSTING-PLAYBOOK.md`. Content ready in
@@ -339,6 +341,7 @@ Full operational guide: `validation/POSTING-PLAYBOOK.md`. Content ready in
 ---
 
 ## Changelog
+- **2026-09-01 (session 2)** — Outreach phase: LinkedIn requests sent (exhausted free tier), 5 regulatory consultant Gmail drafts created, clinic outreach drafts created (Golden Hills + 6 more), Xsens DOT quote requested (can't buy directly), hardware buy list updated. P7.0.2 and P8.1 marked in-progress. P8.4 updated for clinic interviews.
 - **2026-09-01** — Major strategic shift: clinic channel (Model D) elevated to primary go-to-market. Added P8A (clinic channel problems, dorsaVi lessons, RTM billing, sensor invisibility, partnership scenarios). Rewrote P7 (regulatory) — 510(k) is now the plan, not a fallback; added HIPAA and liability subsections. Archived regulations.md and fitbit-air-reference.md; merged programme-model-precedents. Added 4 new research files to index. P8 renumbered to P9.
 - **2026-08-24** — Full revision after five research rounds. P3 (attachment) and P6 (scope) rewritten. Added P2.6 (manufacturing cost) and P8 (next experiments). Pod count became a customer-facing ladder. Pricing settled on outright sale. Running-only scope with locomotion as the expansion axis; gym form killed. Attachment settled: removable, shoe-mounted low end, no apparel line. Added P3.2.1 as the critical open tension (validated measurement site vs low-friction mount) and P4.2.6 (repeat-purchase rate) as the open commercial unknown.
 - **2026-08-23** — Restructured by kill criteria. Added P0. Killed prediction, ACWR, GRF-tissue-load, EMG, edge ML. Revised sensor count and compute architecture. Retired $35/pod pricing.

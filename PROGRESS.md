@@ -1,34 +1,31 @@
 # InjuryShield
 
 ## State
-Currently: Clinic channel (Model D) elevated to primary go-to-market. Research complete.
-Next: founder actions (interviews, hardware buy, 510(k) consultant outreach).
+Currently: Outreach phase — LinkedIn requests sent, Gmail drafts ready, Xsens DOT requested.
+Next: send drafts, phone clinics, wait for consultant + hardware responses.
 Last session: 2026-09-01
 
 ## Done
-- Killed D2C as primary — founder wouldn't buy it, self-guided $249 biofeedback has weak value prop
-- Clinic channel research: 3 new files (landscape, viability, regulatory)
-- dorsaVi lessons documented as problems to solve (P8A.2)
-- RTM billing (CPT 98977) identified as revenue engine — $120-150/mo/patient to clinic
-- 510(k) pathway mapped — dorsaVi predicate, $30-90K, 9-15 months
-- D17 (clinic primary), D18 (510(k) plan), D19 (sensor invisibility) locked
-- Corpus consolidated to 15 files, check-decisions clean
-- Interview script created (validation/clinic-interview-script.md)
-- 510(k) plan created (problems/510k-plan.md)
-- Hardware buy list updated (problems/hardware-buy-list.md)
-- Repo made public: github.com/pranavhj/injuryShield
-- Programme model precedent research (bigco + smallco, merged)
-- Playermaker citation corrected ($45M+ VC, not bootstrapped)
-- First-principles analysis of setup friction vs retention problem
+- Clinic channel (Model D) elevated to primary (D17), D2C secondary
+- Clinic channel research complete: 3 files (landscape, viability, regulatory)
+- 510(k) plan + exemption finding (21 CFR 882.5050 HCC biofeedback)
+- LinkedIn outreach: sent connection requests to Bay Area PT clinic owners (exhausted free tier)
+- LinkedIn outreach guide created (validation/linkedin-outreach-guide.md)
+- Gmail drafts created: 6 regulatory consultants (Emergo, NAMSA, i3C Global, Medical Device Academy, SafeLink, i3C again with verified email)
+- Gmail drafts created: clinic outreach (Golden Hills PT + template with 6 more clinics)
+- Xsens DOT: requested from Movella (can't buy directly, requires quote/request)
+- Hardware buy list updated with Xsens DOT alternative
+- Interview script ready (validation/clinic-interview-script.md)
 
 ## Next
-- **FOUNDER:** 5 clinic owner interviews (validation/clinic-interview-script.md)
-- **FOUNDER:** Buy test hardware ~$255-345 (problems/hardware-buy-list.md)
-- **FOUNDER:** Email 3 regulatory consultants for 510(k) quotes (problems/510k-plan.md)
-- **FOUNDER:** Apply for FDA small business determination
-- Search FDA 510(k) database for dorsaVi K-number
-- 30-day founder wear test once hardware arrives
-- Rename — "InjuryShield" is a claim we can't make (D16)
+- **FOUNDER:** Send all Gmail drafts (regulatory consultants + clinic outreach)
+- **FOUNDER:** Phone nearby clinics directly — (408) 274-0888 Golden Hills, (408) 325-6251 Silver Creek
+- **FOUNDER:** Follow up on Xsens DOT request; if slow, try Unbound XR or buy 5-sensor set
+- **FOUNDER:** Continue LinkedIn outreach (upgrade to Premium or wait for monthly reset)
+- **FOUNDER:** Reddit standing comments (validation/comment-drafts.md) — parallel track
+- Wait for consultant responses → first question: 510(k) vs exempt
+- Wait for Xsens DOT → 30-day founder wear test
+- Incorporate Delaware C-corp (needed before FDA SBD)
 
 ## Key decisions
 - D17: Clinic/physio channel is primary, D2C is secondary
