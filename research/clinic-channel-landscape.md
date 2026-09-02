@@ -377,3 +377,210 @@ Technology could improve steps 3 (in-clinic form monitoring) and 4–5 (home adh
 - [PT CPT Codes 2026 (Sprypt)](https://www.sprypt.com/blog/physical-therapy-cpt-codes-reference-sheet)
 - [Physiotherapy Equipment Market (Grand View Research)](https://www.grandviewresearch.com/industry-analysis/physiotherapy-equipment-market)
 - [Wearable Physiotherapy Market (Verified Market Reports)](https://www.verifiedmarketreports.com/product/wearable-physiotherapy-market/)
+
+---
+
+## K12 Competitive Update — 2026-09-01
+
+### Aletheia Run
+
+**Status: Alive and actively developing.** Aletheia Run is a sacral-mounted single-IMU
+sensor + app for running gait analysis, based in Eugene, Oregon.
+
+| Metric | Value |
+|---|---|
+| App Store rating | 4.9/5 (iOS) |
+| Number of ratings | 24 (iOS, as of Sep 2026) |
+| Price | $239/year subscription (sensor + charger + belt included free) |
+| Last app update | Aug 9, 2026 (v2.0.10) |
+| Platform | iOS only; Android "coming soon" |
+| Business model | Subscription — 30-day free trial, then $239/yr |
+
+**Key developments:**
+- Launched a **completely redesigned app in June 2026** with adaptive training, 170+ strength
+  and mobility exercises, phone-free tracking, and "Force Portrait" visualization
+  ([LetsRun, Jun 2026](https://www.letsrun.com/news/2026/06/train-smarter-stay-healthier-the-all-new-aletheia-run-app-is-here/))
+- The sensor is a single sacral pod (base of spine), worn via running belt — measures forces
+  in 3D and generates a "Force Portrait" showing efficiency, variation, impact, braking,
+  sway, endurance, and warmup metrics
+  ([Aletheia.run](https://www.aletheia.run/membership))
+- Offers an in-lab analysis option in Eugene, OR combining sensor data with 3D motion
+  capture and pressure mapping
+  ([Aletheia.run services](https://www.aletheia.run/running-analysis-services))
+- Positive but sparse user reviews; users report improvements in running form and reduction
+  in injuries
+  ([App Store](https://apps.apple.com/us/app/6479916698?see-all=reviews&platform=iphone))
+
+**Revenue indicators:** No public revenue or funding data found. The company appears
+bootstrapped. 24 iOS ratings after 1+ year suggests a very small user base — likely
+hundreds, not thousands. The $239/yr subscription is close to our $249 one-time price point,
+but it's recurring.
+
+**Threat level: Low.** Small user base, single-platform (iOS only), single-sensor (sacral
+only — no tibial measurement). Their "Force Portrait" is an interesting visualization
+approach. The subscription model with included hardware is worth noting as a competitive
+pricing strategy.
+
+### Ochy
+
+**Status: Alive, moderate traction, AI/camera-based (no hardware).**
+
+| Metric | Value |
+|---|---|
+| Google Play rating | 4.64/5 (340 ratings) |
+| Google Play downloads | 72K–100K total |
+| Recent download velocity | ~5,500/month (last 30 days) |
+| Last update | Jul 7, 2026 (Android); Jun 1, 2026 (iOS) |
+| Platform | iOS + Android |
+| Business model | Freemium app (camera-based, no hardware required) |
+| Parent company | MWM (French app publisher) |
+
+([AppBrain](https://www.appbrain.com/app/running-gait-analysis-ochy/fr.ochy.app);
+[Google Play](https://play.google.com/store/apps/details?id=fr.ochy.app&hl=en_US))
+
+**Key observations:**
+- Ochy uses **phone camera + AI pose estimation** — no wearable sensor needed. Users record
+  themselves running (or have someone record them) and the app analyzes gait.
+- 100K downloads is meaningful for a niche running analysis app, but monthly velocity
+  (~5.5K) suggests growth has plateaued
+- Backed by MWM, a French app studio — this gives it more staying power than a solo
+  bootstrapped startup
+- The camera-only approach means zero hardware cost and zero setup friction, but it cannot
+  do real-time feedback during a run (requires video recording + post-hoc analysis)
+
+**Threat level: Low-to-moderate.** Different category — camera-based post-hoc analysis vs
+our real-time wearable biofeedback. Not a direct competitor for the same user need.
+But it proves demand exists for running gait analysis and shows what "good enough" looks
+like without hardware.
+
+### RunScribe
+
+**Status: Alive but static.** The store is back online (previously password-protected
+as noted in clinic-channel-landscape.md).
+
+| Metric | Value |
+|---|---|
+| Store status | Open — products available on shop.runscribe.com |
+| Products available | RunScribe Plus, RunScribe Red, Gait Lab bundles (foot-only and foot+sacral) |
+| User base | 1,500+ clinicians/coaches/gait labs (unchanged from prior research) |
+| Funding | Unfounded (no disclosed rounds) |
+| Founded | 2014 |
+
+([RunScribe store](https://shop.runscribe.com/products/runscribe-gait-lab);
+[Tracxn](https://tracxn.com/d/companies/runscribe/__2Web_lp0nmD2Q0Fq8i04RjjWOGD8XSgJ2MUlK-yxbqA))
+
+**Key observations:**
+- The store being re-opened (vs password-protected in Aug 2026 research) is a mild positive
+  signal — they haven't shut down
+- Product line has expanded to include "RunScribe Red" variants alongside the original Plus
+- Still claiming 1,500+ users — this number hasn't changed, suggesting no meaningful growth
+- RUNALYZE added RunScribe data import support in Sep 2025, indicating the product still
+  has an active technical community
+- The company appears to be a lifestyle/niche business, not a growth company
+
+**Threat level: Low.** RunScribe has been around since 2014 and plateaued at 1,500 users.
+They are the closest hardware analog to us (shoe-mounted IMU pods) but have not found
+scale. Their continued existence at small scale is consistent with the "the market exists
+but is small" thesis from our prior analysis.
+
+### Sensoria Health
+
+**Status: Alive, pivoted to clinical RPM. Tiny but persistent.**
+
+| Metric | Value |
+|---|---|
+| Employees | 1–10 (unchanged) |
+| Focus | Clinical RPM — smart socks for Parkinson's, diabetic foot ulcers, TKR/ACL rehab |
+| Products | Smart socks (gait), smart boots (diabetic), knee brace (ROM), cold compression plug |
+| Founded | ~2010 |
+
+([Sensoria Health](https://www.sensoriahealth.com/);
+[Shepherd Center partnership](https://news.shepherd.org/smart-socks-innovation-to-expand-accessibility-and-precision-of-rehabilitation-for-people-with-multiple-sclerosis/))
+
+**Key observations:**
+- Sensoria has fully pivoted away from consumer fitness (smart socks for runners) to
+  **clinical RPM for neurological and surgical rehab populations** (MS, Parkinson's,
+  diabetic foot, post-surgical)
+- They partnered with Shepherd Center (major rehab hospital) in 2024 to use smart socks for
+  MS rehabilitation assessment — this is a credible clinical partnership
+- Their product line has expanded beyond socks to include a knee brace with ROM sensors and
+  a cold compression therapy plug
+- At 1–10 employees after 14+ years, this is a survival-mode company, not a growth company
+- The smart textiles approach remains niche — wash durability and clinical validation costs
+  are ongoing barriers
+
+**Threat level: Negligible.** Different market (clinical neuro/diabetic RPM), different
+technology (smart textiles), and minimal scale. Their pivot away from consumer running
+confirms that smart textiles for runners didn't work.
+
+### New Entrants in Running Gait Analysis (2025–2026)
+
+#### Kiprun / Movmenta — SOLLO Smart Sensor (Decathlon)
+
+The most notable new entrant. Decathlon's running brand Kiprun announced the **Kipnext
+Connect** shoe with an embedded SOLLO sensor by Movmenta (UK startup, founded 2022).
+
+| Detail | Value |
+|---|---|
+| What it does | Measures midsole cushion degradation (NOT gait analysis) |
+| How it works | NFC-based — hold phone over shoe, no battery, no charging, no pairing |
+| Weight | ~3 grams |
+| Price | €218 (~$257) for the shoe with embedded sensor |
+| Launch | Debuted at Paris Marathon expo; retail launch end of 2026 |
+| Partnership | Arkema (materials company) + Movmenta announced strategic partnership Sep 2025 |
+
+([T3](https://www.t3.com/active/running/decathlon-kiprun-kipnext-connect-announcement-0426);
+[Arkema](https://www.arkema.com/global/en/media/newslist/news/global/products/2025/20250923-arkema-movmenta-partnership/);
+[Marathon Handbook](https://marathonhandbook.com/kipruns-new-smart-shoe-tells-you-when-its-time-for-a-new-pair/))
+
+**Threat level: None for us.** This measures shoe wear, not gait mechanics. Not a competitor.
+But it shows Decathlon is investing in running sensor tech, and Movmenta's batteryless NFC
+approach is technically interesting.
+
+#### Heel2Toe by PhysioBiometrics (Canada)
+
+Launched October 2025. A therapeutic wearable for **older adults** — attaches to shoe side,
+beeps with each "good" heel-strike step. Contains three IMUs for gait cycle assessment.
+
+([Canadian Healthcare Technology](https://www.canhealth.com/2025/10/29/startup-launches-wearable-to-improve-gait/))
+
+**Threat level: None.** Different market (elderly fall prevention), different product
+category (therapeutic device). But the real-time audio biofeedback approach is identical to
+our planned coaching cue mechanism — same concept, different population.
+
+#### Harvard OTD Wearable Gait System
+
+Harvard's Office of Technology Development has a **wearable gait analysis system for
+measuring overstriding in runners** listed for licensing. No commercial product yet.
+
+([Harvard OTD](https://otd.harvard.edu/explore-innovation/technologies/wearable-gait-analysis-system-for-measuring-overstriding-in-runners/))
+
+**Threat level: Low (for now).** Academic IP, not a product. But if a well-funded company
+licenses this, it could become a direct competitor.
+
+#### Smart Insole (academic, not commercial)
+
+A 22-pressure-sensor smart insole with solar-powered batteries enabling real-time gait
+analysis via Bluetooth and ML was published in April 2025. No commercial entity identified.
+
+([TechXplore](https://techxplore.com/news/2025-04-wearable-smart-insole-track.html))
+
+### Competitive Landscape Summary
+
+| Company | Status | Threat | Key Change Since Last Review |
+|---|---|---|---|
+| **Aletheia Run** | Active, small | Low | Major app redesign Jun 2026; still tiny (24 ratings) |
+| **Ochy** | Active, moderate traction | Low-moderate | 100K downloads; camera-only, no hardware |
+| **RunScribe** | Active, plateaued | Low | Store re-opened; 1,500 users unchanged |
+| **Sensoria** | Active, pivoted to clinical | Negligible | Fully pivoted away from consumer running |
+| **Kiprun/Movmenta** | New entrant (shoe wear) | None | Not gait analysis; shoe degradation sensor |
+| **Heel2Toe** | New entrant (elderly) | None | Same biofeedback concept, different population |
+
+**Net assessment:** No new direct competitor has emerged in the "wearable IMU for running
+gait retraining" space since the last review. Aletheia Run is the closest, but they are
+single-sensor (sacral), subscription-based ($239/yr), and have negligible traction (24 iOS
+ratings). The running gait analysis space remains fragmented between camera-based post-hoc
+apps (Ochy) and small IMU hardware companies (RunScribe, Aletheia Run) — none has found
+meaningful scale. The biggest shifts are happening outside our direct space: Decathlon
+investing in shoe-embedded sensors, and clinical RPM companies (Sensoria) abandoning
+consumer running entirely.

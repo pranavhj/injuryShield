@@ -321,6 +321,425 @@ $299 with a real programme attached, hardware sale is simply the better model.
 
 ---
 
+## 9. Clinic Channel Unit Economics (Model D — Deep Dive)
+
+**Added 2026-09-01. Resolves O11 partially. Complements the sketch in §5 above.**
+
+Decision D17 made the clinic/physio channel the primary go-to-market. This section models the
+economics in detail: what a clinic earns, what we earn, and how the numbers move under
+stress.
+
+### 9.1 Pod Utilisation and Per-Patient Hardware Cost
+
+**Assumptions:**
+- Programme: 8 sessions over 2–3 weeks per patient
+- Turnaround between patients: 2–3 days (charging, cleaning, scheduling)
+- Each patient cycle = ~3 weeks active + ~0.5 weeks downtime = **~3.5 weeks per patient**
+- Clinic may not run pods at 100% utilisation (vacations, no-shows, seasonal demand)
+- **Effective utilisation: 70%** (conservative — accounts for scheduling gaps)
+
+| Line | Value |
+|---|---|
+| Weeks per year | 52 |
+| Weeks per patient cycle | 3.5 |
+| Max patients per pod set per year (100% util.) | 14.9 |
+| **Patients per pod set per year (70% util.)** | **~10** |
+| At 85% utilisation (mature clinic) | ~13 |
+
+**Pod lifespan estimate:**
+
+LiPo batteries rated at 300–500 cycles to 80% capacity. At ~100 mAh our pod charges roughly
+every 2–3 sessions. Over an 8-session programme, each pod charges ~3–4 times. At 10 patients
+per year, that is 30–40 charge cycles per year. The battery is therefore NOT the limiting
+factor — at 500 cycles, the battery lasts **12–17 years** of clinic use.
+
+The actual limiting factors are:
+- **Connector wear** (magnetic pogo — rated ~5,000–10,000 cycles; ~15+ years at clinic use)
+- **Enclosure / strap degradation** (clinic cleaning chemicals, physical handling)
+- **Obsolescence** (firmware, BLE standard, app compatibility)
+
+**Working estimate: 3-year pod lifespan in clinic use** — conservative, driven by
+obsolescence and wear rather than component failure. This gives ~30 patients per pod set
+over its life.
+
+| Line | Value |
+|---|---|
+| Pod set COGS (landed, 1k units) | $90 |
+| Patients over 3-year lifespan | ~30 |
+| **Effective per-patient hardware cost** | **$3.00** |
+| If lifespan is only 2 years (~20 patients) | $4.50 |
+| If lifespan is 4 years (~40 patients) | $2.25 |
+
+**Hardware cost per patient is negligible.** The value is entirely in software, cloud,
+and the RTM billing infrastructure.
+
+---
+
+### 9.2 Clinic Subscription Pricing Model
+
+**What the clinic earns (RTM reimbursement per enrolled patient):**
+
+2026 Medicare Part B national rates (Physitrack / Tenovi):
+
+| Code | Description | Rate |
+|---|---|---|
+| 98975 | RTM setup + patient education (billed once) | $21.71 |
+| 98977 | MSK device supply, 16+ days/month | $39.75 |
+| 98985 | MSK device supply, 2–15 days/month (NEW 2026) | $39.75 |
+| 98980 | Treatment management, first 20 min/month | $53.77 |
+| 98981 | Each additional 20-min block | $41.08 |
+| 98979 | Treatment management, 10–19 min (NEW 2026) | $26.05 |
+
+**Per-patient monthly revenue to the clinic:**
+
+| Scenario | Monthly RTM Revenue |
+|---|---|
+| Base: 98977 + 98980 (16+ days, 20 min review) | **$93.52** |
+| First month (add 98975 setup) | $115.23 |
+| Light-touch: 98985 + 98979 (2–15 days, 10–19 min) | $65.80 |
+| High-touch: 98977 + 98980 + 98981 (40+ min) | $134.60 |
+
+**Our 8-session programme maps to ~1 month of RTM billing.** A patient using pods 8 days
+in a month qualifies for 98985 (2–15 days) at minimum. If the clinic stages sessions
+across 16+ days, they qualify for the higher 98977 rate.
+
+**What we charge the clinic:**
+
+Three subscription tiers, benchmarked against VALD ($3,600–5,100/yr) and dorsaVi ($59–550/mo):
+
+| Tier | Monthly | Annual | Includes |
+|---|---|---|---|
+| **Starter** | $99/mo | $1,188/yr | 1 pod set, software, cloud, basic support |
+| **Growth** | $149/mo | $1,788/yr | 2 pod sets, RTM documentation templates, priority support |
+| **Pro** | $199/mo | $2,388/yr | 3 pod sets, white-label reports, dedicated onboarding, EMR export (PDF/CSV) |
+
+**Why this is below VALD ($3,600–5,100/yr):** We are unproven, have no clinical validation
+studies, and no brand recognition. Entering below the established price ceiling is
+necessary. We can raise prices as clinical evidence and references accumulate.
+
+**Clinic margin per patient (base case: Growth tier, 10 patients/year):**
+
+| Line | Per patient/month | Notes |
+|---|---|---|
+| RTM revenue (98977 + 98980) | +$93.52 | Medicare base; private payers often higher |
+| Clinician time cost (~25 min @ $45/hr) | −$18.75 | Review data, document, call patient |
+| Our subscription (amortised: $149 ÷ ~3 concurrent patients) | −$49.67 | See note below |
+| **Clinic net margin per patient/month** | **+$25.10** | Before overhead |
+
+**Note on amortisation:** Our 8-session programme runs ~3 weeks. At 70% utilisation, a
+clinic runs ~3 patients concurrently with 2 pod sets (staggered starts). The subscription
+cost is shared across these concurrent patients.
+
+**At higher utilisation (10 patients/year, each for 1 month of RTM billing):**
+
+| Line | Annual |
+|---|---|
+| RTM revenue: 10 patients x $93.52 x 1 month each | $935 |
+| First-month setup bonus: 10 x $21.71 | $217 |
+| Our subscription cost | −$1,788 |
+| Clinician time: 10 x $18.75 | −$188 |
+| **Clinic annual net from RTM** | **−$824** |
+
+**The problem:** At only 10 patients per year, each generating just 1 month of RTM billing,
+the clinic loses money. The RTM revenue does not cover the subscription.
+
+**The fix — extend RTM beyond the 8-session programme:**
+
+The programme is 8 sessions over 2–3 weeks, but RTM billing does not require the patient
+to be in the programme. Post-programme check-ins (patient runs with pods once per week,
+clinic reviews data monthly) can sustain RTM billing for 2–3 additional months. This is
+clinically defensible — monitoring whether gait changes persist.
+
+**Revised model: 3 months of RTM per patient (1 month active + 2 months monitoring):**
+
+| Line | Annual |
+|---|---|
+| RTM revenue: 10 patients x $93.52 x 3 months | $2,806 |
+| Setup: 10 x $21.71 | $217 |
+| Our subscription | −$1,788 |
+| Clinician time: 10 patients x 3 months x $18.75 | −$563 |
+| **Clinic annual net** | **+$672** |
+
+**At 15 patients/year (85% pod utilisation):**
+
+| Line | Annual |
+|---|---|
+| RTM revenue: 15 x $93.52 x 3 | $4,208 |
+| Setup: 15 x $21.71 | $326 |
+| Our subscription | −$1,788 |
+| Clinician time: 15 x 3 x $18.75 | −$844 |
+| **Clinic annual net** | **+$1,902** |
+
+**At 20 patients/year (Pro tier, 3 pod sets):**
+
+| Line | Annual |
+|---|---|
+| RTM revenue: 20 x $93.52 x 3 | $5,611 |
+| Setup: 20 x $21.71 | $434 |
+| Our subscription (Pro) | −$2,388 |
+| Clinician time: 20 x 3 x $18.75 | −$1,125 |
+| **Clinic annual net** | **+$2,532** |
+
+**Break-even for the clinic:**
+- Growth tier ($149/mo): **~8 patients/year at 3 months RTM each**
+- Pro tier ($199/mo): **~10 patients/year at 3 months RTM each**
+- If only 1 month RTM per patient: **~20 patients/year** — requires near-100% utilisation
+
+**Conclusion: the RTM pitch only works if we help clinics bill 2–3 months per patient,
+not just the 1-month programme.** This is the most important operational design decision
+for the clinic channel.
+
+---
+
+### 9.3 Our Economics (What We Capture Per Clinic)
+
+**Revenue per clinic per year:**
+
+| Tier | Monthly | Annual Revenue |
+|---|---|---|
+| Starter | $99 | $1,188 |
+| Growth | $149 | $1,788 |
+| Pro | $199 | $2,388 |
+
+**COGS per clinic per year:**
+
+| Line | Starter | Growth | Pro |
+|---|---|---|---|
+| Hardware (amortised over 3 years) | $30 | $60 | $90 |
+| Replacement reserve (10%/yr of hardware) | $9 | $18 | $27 |
+| Cloud / HIPAA infra (per clinic share) | $25 | $25 | $25 |
+| Support (email + onboarding, amortised) | $100 | $100 | $150 |
+| **Total COGS per clinic/year** | **$164** | **$203** | **$292** |
+
+**HIPAA infrastructure cost assumption:** At minimum viable HIPAA ($5,000–10,000/yr for a
+startup), spread across 50+ clinics = $100–200 per clinic. At 200 clinics = $25–50. Using
+$25/clinic assumes 200+ clinics — at fewer clinics this cost is higher.
+
+**Contribution margin per clinic per year:**
+
+| Tier | Revenue | COGS | Contribution | Margin % |
+|---|---|---|---|---|
+| Starter | $1,188 | $164 | **$1,024** | 86% |
+| Growth | $1,788 | $203 | **$1,585** | 89% |
+| Pro | $2,388 | $292 | **$2,096** | 88% |
+
+**CAC per clinic:**
+
+B2B SaaS CAC for healthcare ranges widely. For small independent clinics (our initial
+target), we estimate:
+
+| Channel | Est. CAC | Notes |
+|---|---|---|
+| Referral / word-of-mouth | $200–400 | Cheapest, but slow to start |
+| Content marketing + inbound | $500–800 | Blog, webinars, conference presence |
+| Inside sales (outbound) | $800–1,500 | Founder-led; 1–3 month cycle |
+| Field sales + demo | $1,500–2,500 | Higher touch; needed for larger practices |
+| **Blended base case** | **$900** | Matches §5 estimate |
+
+Benchmark: median B2B SaaS CAC is $702 self-serve, $11,400 sales-led. At $900 blended
+we are assuming founder-led sales to independent clinics — no sales team.
+
+**Payback period:**
+
+| Tier | CAC | Monthly contribution | Payback |
+|---|---|---|---|
+| Starter | $900 | $85 | **10.6 months** |
+| Growth | $900 | $132 | **6.8 months** |
+| Pro | $900 | $175 | **5.1 months** |
+
+**LTV at 36-month average clinic life:**
+
+| Tier | 36-mo contribution | LTV:CAC |
+|---|---|---|
+| Starter | $3,072 | 3.4:1 |
+| Growth | $4,755 | **5.3:1** |
+| Pro | $6,288 | **7.0:1** |
+
+All tiers exceed the 3:1 LTV:CAC threshold for B2B SaaS profitability. Growth tier is the
+sweet spot — high enough margin, low enough price to reduce sales friction.
+
+**Clinics needed for revenue milestones (Growth tier):**
+
+| Target ARR | Clinics needed | Notes |
+|---|---|---|
+| $100K | 56 | Founder-feasible with 12–18 months sales effort |
+| $500K | 280 | Requires 1–2 dedicated salespeople |
+| $1M | 559 | ~1.4% of US independent PT clinics (~39,000) |
+| $3M | 1,677 | ~4.3% penetration — ambitious but within reach |
+| $10M | 5,593 | ~14% penetration — requires enterprise deals or multi-location chains |
+
+**At Pro tier the numbers improve:**
+
+| Target ARR | Clinics (Pro) |
+|---|---|
+| $1M | 419 |
+| $3M | 1,257 |
+| $10M | 4,189 |
+
+---
+
+### 9.4 CAC Comparison: Clinic vs Consumer
+
+| Metric | Consumer (D2C) | Clinic (B2B) |
+|---|---|---|
+| **CAC** | $80–150 | $800–1,500 |
+| **Revenue per sale** | $249 (one-time) | $1,788/yr (recurring) |
+| **LTV (3 yr)** | $249 + ~$13/yr renewal = ~$275 | $5,364 |
+| **LTV:CAC** | 1.8–3.4:1 | 3.6–6.7:1 |
+| **Payback** | Immediate (day one) | 6–11 months |
+| **Revenue type** | One-time (with tiny renewal tail) | Recurring |
+| **Sales motion** | Performance marketing, SEO, content | Founder-led outbound, demos, referrals |
+| **Scalability** | Self-serve (if CAC holds) | Sales-constrained |
+| **Churn impact** | None (already paid) | Direct revenue loss |
+
+**Key insight: clinic CAC is 10x higher but LTV is 20x higher.** The unit economics
+are structurally better, but the sales motion is slower and harder for a solo founder.
+
+**Consumer CAC is the more dangerous unknown.** Consumer wearable CAC of $80 is an
+assumption — actual could be $150+ (which kills Model B). Clinic CAC is more predictable
+because the sales process is direct and measurable from the first demo.
+
+---
+
+### 9.5 Sensitivity Analysis
+
+#### What if RTM reimbursement rates drop 20%?
+
+RTM rates are set by CMS annually. A 20% cut would reduce 98977+98980 from $93.52 to
+$74.82/month.
+
+| Scenario | Clinic annual net (Growth, 10 patients, 3 mo RTM) |
+|---|---|
+| Current rates ($93.52/mo) | +$672 |
+| **−20% rates ($74.82/mo)** | **−$889** |
+| To break even at −20%: need | **15 patients/year** |
+
+**Impact: a 20% rate cut makes the pitch unviable at 10 patients/year.** The clinic needs
+15+ patients. This is achievable at 85% utilisation with 2 pod sets, but it removes the
+margin of safety. Our response: emphasise non-RTM revenue streams (cash-pay assessments,
+97032 biofeedback billing, patient retention value).
+
+**On our side:** our subscription revenue is unaffected. The risk is indirect — clinics
+that can't make RTM work will churn.
+
+#### What if only 5 patients per clinic enrol?
+
+| Line | 5 patients, 3 mo RTM | 5 patients, 1 mo RTM |
+|---|---|---|
+| RTM revenue | $1,403 | $468 |
+| Setup fees | $109 | $109 |
+| Our subscription (Growth) | −$1,788 | −$1,788 |
+| Clinician time | −$281 | −$94 |
+| **Clinic net** | **−$557** | **−$1,305** |
+
+**At 5 patients the clinic loses money on every scenario.** This is the minimum viable
+patient load problem — if a clinic cannot fill the pods, the subscription is a cost centre.
+
+**Implication for us:** clinic churn will be high among low-volume practices. Target clinics
+with existing running/sports patient flow. Pre-qualify: "How many running-related patients
+do you see per month?" If the answer is <2, do not sell.
+
+**On our side at 5 patients/clinic (assuming they still pay for 12 months before churning):**
+
+| Line | Value |
+|---|---|
+| Revenue (12 months x $149) | $1,788 |
+| COGS | −$203 |
+| CAC | −$900 |
+| **Contribution** | **+$685** |
+
+We are still contribution-positive even if the clinic churns at 12 months. But chronic
+churn at 12 months means we are in a CAC treadmill — constantly replacing clinics. The
+business works only if average clinic life is 24+ months.
+
+#### What if pod replacement is needed every 6 months?
+
+This would mean 2 replacements per year per pod set instead of once every 3 years.
+
+| Line | 3-year lifespan (base) | 6-month lifespan |
+|---|---|---|
+| Hardware cost per year (Growth, 2 sets) | $60 | $360 |
+| Replacement reserve | $18 | $0 (already replacing) |
+| Total COGS per clinic/year | $203 | $485 |
+| Contribution margin | $1,585 (89%) | $1,303 (73%) |
+
+**Even at 6-month replacement, contribution margin stays above 70%.** This is because
+the hardware is cheap relative to the subscription revenue. Pod durability matters for
+customer experience and brand perception, but it does not break the economics.
+
+#### Combined worst case: −20% RTM + 5 patients + 6-month pods
+
+| Line | Value |
+|---|---|
+| Clinic cannot justify subscription | Churn at 6–12 months |
+| Our revenue (6 months x $149) | $894 |
+| COGS (6 months, including pod replacement) | −$243 |
+| CAC | −$900 |
+| **Our contribution** | **−$249** |
+
+**The combined worst case is a $249 loss per clinic — manageable individually but fatal
+at scale.** This scenario requires all three things to go wrong simultaneously. If any
+one of them is at base case, we remain contribution-positive.
+
+#### What if private payers reimburse higher than Medicare?
+
+Medicare rates are typically the floor. Private payer RTM rates are often 10–30% higher.
+
+| Payer | Est. 98977+98980/mo | Clinic net (Growth, 10 pts, 3 mo) |
+|---|---|---|
+| Medicare (base) | $93.52 | +$672 |
+| Private (+20%) | $112.22 | +$2,233 |
+| Private (+30%) | $121.58 | +$3,014 |
+
+**Private payer mix dramatically improves clinic economics.** Clinics with 50%+ private
+payers will see meaningfully better margins — and be stickier customers.
+
+---
+
+### 9.6 Clinic Channel — Summary Table
+
+| Metric | Base Case | Optimistic | Pessimistic |
+|---|---|---|---|
+| Patients per pod set/year | 10 | 13 | 5 |
+| RTM months per patient | 3 | 3 | 1 |
+| RTM rate (98977+98980) | $93.52/mo | $112/mo (+20% private) | $74.82/mo (−20%) |
+| **Clinic annual net** | **+$672** | **+$3,014** | **−$1,305** |
+| Our subscription (Growth) | $1,788/yr | $2,388/yr (Pro) | $1,188/yr (Starter) |
+| Our COGS per clinic | $203 | $292 | $164 |
+| **Our contribution per clinic** | **$1,585** | **$2,096** | **$1,024** |
+| CAC | $900 | $400 (referral) | $1,500 (field sales) |
+| **LTV:CAC (36 mo)** | **5.3:1** | **15.7:1** | **2.0:1** |
+| Clinics for $1M ARR | 559 | 419 | 842 |
+| Clinics for $3M ARR | 1,677 | 1,257 | 2,525 |
+
+---
+
+### 9.7 Critical Dependencies and Open Questions
+
+1. **RTM billing duration per patient is the single biggest lever.** 1 month vs 3 months
+   per patient is the difference between the clinic losing money and making money. We must
+   design the post-programme monitoring protocol to sustain 2–3 months of RTM billing. This
+   is clinically defensible (monitoring persistence of gait changes) but must be explicit
+   in our product design and clinic training.
+
+2. **Minimum viable patient load is ~8/year (Growth tier, 3 months RTM).** Below this,
+   the clinic loses money and will churn. Pre-qualification of clinics by running/sports
+   patient volume is essential.
+
+3. **510(k) may be required for RTM billing.** Decision D18 addresses this — phased
+   approach, wellness first, file when demand proves out. But some payers may require
+   FDA clearance before covering RTM with our device. This is an open risk.
+
+4. **HIPAA infrastructure is a fixed cost that hurts at low clinic counts.** At 10 clinics,
+   HIPAA costs $500–1,000 per clinic per year. At 200 clinics, $25–50. The early clinics
+   subsidise the infrastructure build-out.
+
+5. **Churn rate is unknown.** The model assumes 36-month average clinic life. If average
+   life is 18 months, LTV:CAC drops to 2.6:1 (Growth) — still viable but tight. If 12
+   months, LTV:CAC is 1.8:1 — below the 3:1 threshold.
+
+---
+
 ## Sources
 - [Fitbit Air BOM and margin breakdown](https://the5krunner.com/2026/05/15/fitbit-air-cost-breakdown/)
 - [Fanstel nRF52840 module pricing](https://www.fanstel.com/bm840) · [ICM-42688-P distributors](https://octopart.com/part/invensense/ICM-42688-P)
@@ -328,3 +747,14 @@ $299 with a real programme attached, hardware sale is simply the better model.
 - [FDA cuts red tape on CDS software](https://www.arnoldporter.com/en/perspectives/advisories/2026/01/fda-cuts-red-tape-on-clinical-decision-support-software) · [Latham analysis of the 2026 loosening](https://www.lw.com/en/insights/fda-issues-updated-guidance-loosening-regulatory-approach-to-certain-digital-health-tools) · [FDA Law Blog on CDS + wellness updates](https://www.thefdalawblog.com/2026/01/a-busy-day-in-the-cdrh-neighborhood-updates-to-the-cds-and-general-wellness-guidance-documents/)
 - [VALD ForceDecks in PT clinics](https://valdhealth.com/products/forcedecks) · [Practitioner review, cash-based practice](https://www.morganmeese.com/post/honest-vald-review-for-cash-based-practices)
 - [Playermaker pricing and traction](https://www.forbes.com/sites/robertkidd/2021/01/27/why-playermaker-is-taking-its-soccer-technology-to-amateur-players/)
+- [Physitrack RTM revenue ROI for PT practices](https://www.physitrack.com/insights/rtm-revenue-roi-pt-practice) — 2026 Medicare Part B RTM rates, per-patient revenue, case study
+- [Tenovi RTM CPT codes 2026](https://www.tenovi.com/rtm-cpt-codes-2026/) — code descriptions, billing rules
+- [247 Medical Billing RTM codes 2026](https://www.247medicalbillingservices.com/blog/new-rtm-codes-for-physical-therapy-2026-cpt-98985-98979-reimbursement-rates-247-mbs) — new 98985/98979 codes
+- [MovementRx RTM CPT codes](https://mymovementrx.com/rtm-cpt-codes/) — rates and billing guide
+- [B2B SaaS CAC benchmarks 2026](https://www.data-mania.com/blog/cac-benchmarks-for-b2b-tech-startups-2025/) · [SaaS CAC by segment](https://unbuiltlab.com/learn/benchmarks/saas-cac-benchmarks)
+- [LTV:CAC ratio benchmarks](https://www.saashero.net/strategy/b2b-saas-ltv-cac-benchmarks/) — 3:1 minimum, median 3.2:1
+- [Healthcare SaaS CAC trends](https://firstpagesage.com/reports/average-cac-for-startups-benchmarks/)
+- [LiPo battery cycle life](https://www.grepow.com/blog/charging-cycles-of-lithium-ion-polymer-batteries.html) · [LiPo 500 cycle expectancy](https://www.lipobattery.us/lipo-batterys-life-expectancy-after-500-cycles/) — 300–500 cycles, 80% capacity at 500
+- [HIPAA compliance cost for startups 2026](https://www.accountablehq.com/post/hipaa-compliance-cost-for-startups-what-to-budget-in-2026) — $5K–25K year one, $2K–10K ongoing
+- [PT clinic software pricing 2026](https://www.sprypt.com/blog/multi-location-pt-clinic-software-pricing) — $200–500/mo solo, $1K–5K/mo multi-provider
+- [RTM adoption: 81% of clinicians use remote monitoring (2023)](https://www.sprypt.com/blog/how-remote-monitoring-is-transforming-physical-therapy) — 305% increase since 2021

@@ -320,3 +320,151 @@ The clinic channel won't produce Hinge Health scale ($588M) because that require
 employer channel. But it could produce a sustainable, profitable business at $1–10M ARR
 if execution is strong — which is a better outcome than dorsaVi achieved because they
 didn't have RTM billing as a revenue driver.
+
+---
+
+## RTM Billing Reality Check — Researched 2026-09-01
+
+### Adoption Rate: How Many PT Clinics Actually Bill RTM?
+
+**Short answer: very few.** No comprehensive industry-wide survey exists, but the strongest
+data point comes from APTA PPS 2025: **only 1.6% of Medicare patients are receiving RTM.**
+This was presented by Dr. Andrew Gorecki (Superior Physical Therapy) and framed as evidence
+that "most clinics are failing to implement it correctly."
+([Movement Rx / APTA PPS 2025](https://mymovementrx.com/rtm-outcomes-profitability-apta-2025/))
+
+Additional context:
+- RTM codes were introduced by CMS in **January 2022** — they are only ~4 years old
+- The US RTM market was valued at ~$387M in 2024 with 17.2% CAGR projected through 2030
+  ([Actuvi](https://www.actuvi.com/blog/the-surge-in-remote-therapeutic-monitoring-a-market-on-the-rise))
+- Multiple RTM platform vendors describe awareness among outpatient PT clinic owners as
+  "surprisingly low" ([PhyxUp](https://blog.phyxuphealth.com/remote-therapeutic-monitoring-rtm-in-physical-therapy-a-complete-guide/))
+- VMG Health (PT M&A advisory) identifies RTM as a growth opportunity for PT operators but
+  does not cite an adoption percentage ([VMG Health](https://vmghealth.com/insights/blog/remote-therapeutic-monitoring-implications-for-physical-therapy-operators/))
+
+**Implication for us:** The 1.6% number is both a warning and an opportunity. Warning:
+clinics aren't adopting this even when the codes exist. Opportunity: clinics that DO adopt
+see large revenue gains (see below), and "we help you bill RTM" is a genuine value prop.
+But it means our sales motion includes *teaching clinics how to bill RTM*, not just selling
+hardware — which adds cost and complexity to the sales cycle.
+
+### Common RTM Claim Denial Reasons
+
+The five most common denial triggers for RTM claims
+([PhyxUp](https://blog.phyxuphealth.com/rtm-claim-denials-2026/)):
+
+| # | Denial Reason | Details |
+|---|---|---|
+| 1 | **Data transmission days mismatch** | Billing 98977 (16+ days) when actual monitored days are fewer. Must use 98985 (2–15 days) instead. Most frequent denial trigger. |
+| 2 | **Missing or backdated patient consent** | Consent must be documented (verbal or written) and dated at enrollment, not at billing time. |
+| 3 | **Incomplete time logs** | Treatment management codes (98979/98980/98981) require timestamped start/end, specific activity performed, and who performed it. Self-attestation is not accepted. |
+| 4 | **Mutually exclusive code billing** | Billing both 98977 AND 98985 in the same 30-day period, or both 98979 AND 98980. Only one from each pair per period. |
+| 5 | **Outdated 2025 code logic** | CMS introduced new codes and thresholds effective Jan 1, 2026 (98985 for 2–15 days, 98979 for 10–19 min). Clinics still using pre-2026 billing logic trigger denials. |
+
+PhyxUp claims their billing engine targets a denial rate of **<4%**, implying the industry
+average is materially higher. No published industry-wide RTM denial rate was found.
+
+**Implication for us:** If we bundle our hardware with an RTM billing workflow, we need to
+either (a) partner with an RTM platform that handles claim logic, or (b) build our own
+compliance layer — which is costly. The documentation burden (consent, time logs, day
+counts) is non-trivial and falls on the clinic staff, not on us.
+
+### Does CPT 98977 Require an FDA-Cleared Device?
+
+**This is the critical question, and the answer is nuanced.**
+
+Per CMS rules, the device used for RTM must be a **"medical device" as defined by the FDA
+FD&C Act** — but this does **NOT** mean it must go through the FDA "clearance" (510(k)) or
+"approval" (PMA) process.
+([HealthSnap](https://healthsnap.io/resources/rtm-billing-overview/))
+
+Specifically, the device must fall into one of these categories:
+1. Subject to current FDA **"enforcement discretion"** (many wellness/fitness devices)
+2. **Registered** with the FDA
+3. **Cleared** via 510(k) submission
+4. **Approved** via PMA application
+
+The FDA definition of "medical device" also **includes Software as a Medical Device (SaMD)**.
+This means a software-only app on the patient's phone could theoretically qualify, provided
+it meets the FDA's definition of a medical device (intended for diagnosis, cure, mitigation,
+treatment, or prevention of disease).
+
+**What this means for us:** We do NOT necessarily need full 510(k) clearance to bill 98977.
+If our device + app is positioned as a "general wellness" product under FDA enforcement
+discretion (which our current "biofeedback for gait retraining" framing supports), it may
+qualify. However, this is a grey area:
+
+- "Enforcement discretion" means the FDA *could* regulate it but currently *chooses not to*.
+  This is not the same as a formal exemption.
+- Some payers may independently require FDA clearance even if CMS does not.
+- The risk is that a payer audits a claim and decides our device doesn't meet their internal
+  definition of a qualifying medical device.
+
+**Bottom line:** The 510(k) is not legally required for RTM billing, but it provides
+defensibility. A registered device under enforcement discretion is the minimum viable path.
+**Legal review required before committing to this strategy.**
+
+### RTM Billing Platforms for PT Clinics
+
+A competitive market of RTM software platforms has emerged. Key players (2026):
+
+| Platform | Key Differentiator | Notes |
+|---|---|---|
+| **MedBridge** | Bundles clinician education + HEP + RTM; largest brand in PT education | Broad feature set but RTM is add-on to education platform |
+| **Limber Health** (acquired by Net Health) | RTM-first; MIPS/QCDR reporting; value-based care workflows | Enterprise-oriented, service-managed model |
+| **Physitrack** | Global scale; Epic integration; ISO compliance | Best for large health systems; less suited for small clinics |
+| **Wibbi** | Integrates with 75+ EMRs; updated for 2026 codes | Strong integration story |
+| **Orva** | All 6 RTM codes in one workflow; built for ortho/rehab | Streamlined billing logic |
+| **PhyxUp Health** | Claims automation; targets <4% denial rate | Small-clinic focused; billing engine emphasis |
+| **Movement Rx** | Transparent pricing; licensed virtual monitoring team | Outsources monitoring staff to the clinic |
+| **AC Health** | RTM cheat sheets and workflow guides | Education-forward approach |
+
+([Physitrack](https://www.physitrack.com/insights/best-rtm-software-physical-therapy);
+[Movement Rx](https://mymovementrx.com/best-rtm-software-for-physical-therapy-clinics-2026-buyers-guide/);
+[Hemscap](https://hemscap.com/blogs/81/top-5-rtm-platforms-for-physical-therapy-in-2026))
+
+**Implication for us:** We would NOT build an RTM billing platform — we'd integrate with
+one. The question is whether our device data can feed into these platforms' workflows. Most
+accept data via API or manual entry. A clean integration with MedBridge or Limber Health
+would be the highest-leverage partnership.
+
+### Average RTM Patients Per Clinic (Among Those That Bill RTM)
+
+Hard numbers are scarce, but converging signals:
+
+- Clinics typically **launch with 10–20 patients** in the first month
+  ([Wibbi](https://wibbi.com/resource/how-to-implement-rtm-in-a-physical-therapy-practice/))
+- At 40 patients, spreadsheet-based workflows still work; at 100–200, they break and
+  require dedicated software
+  ([Physitrack](https://www.physitrack.com/insights/best-rtm-software-physical-therapy))
+- A 30–40% enrollment rate (of eligible patients) is referenced as a reasonable target
+  ([Movement Rx](https://mymovementrx.com/rtm-outcomes-profitability-apta-2025/))
+- Average Medicare reimbursement is ~$119/patient/month across RTM codes at that
+  enrollment rate
+- Superior Physical Therapy's case study: profit per case increased **277%** (from ~$91–104
+  to $362–393) after implementing RTM across 2,223 tracked patients
+  ([Movement Rx / APTA PPS 2025](https://mymovementrx.com/rtm-outcomes-profitability-apta-2025/))
+
+**Implication for us:** A realistic target is 10–30 RTM patients per clinic using our pods.
+At ~$120/patient/month RTM reimbursement, that's $1,200–3,600/month in new clinic revenue.
+The 277% profit-per-case increase is a compelling sales stat — but it comes from one case
+study at one clinic chain, not an industry-wide average. Use with attribution, not as a
+universal claim.
+
+### RTM Reality Check: Net Assessment
+
+| Factor | Finding | Impact on Us |
+|---|---|---|
+| Adoption rate | ~1.6% of Medicare patients in RTM | Market is early; education cost is high |
+| FDA device requirement | FD&C Act definition, NOT 510(k) clearance | We may qualify under enforcement discretion; legal review needed |
+| Top denial reasons | Day-count mismatches, missing consent, incomplete logs | Compliance burden falls on clinic; we need platform integration |
+| Billing platforms | 8+ competing platforms; no dominant winner | Partner, don't build; integrate with MedBridge or Limber |
+| Patients per clinic | 10–30 typical; 40+ needs software | Revenue per clinic is real but modest |
+| Profit impact | 277% increase in one case study | Compelling sales pitch if validated by more data |
+
+**The RTM revenue model is real but early-stage.** The codes exist, the reimbursement is
+real, and clinics that adopt see meaningful revenue. But adoption is extremely low (1.6% of
+Medicare patients), the compliance burden is non-trivial, and we'd be selling into a market
+that mostly doesn't know RTM exists yet. This means our sales pitch has to include "here's
+what RTM is and how to bill it" before we can get to "here's our device." That's a longer,
+more expensive sales cycle than "plug in our device and start billing."
