@@ -1,29 +1,25 @@
 # InjuryShield
 
 ## State
-Currently: Outreach phase — LinkedIn requests sent, Gmail drafts ready, Xsens DOT requested.
-Next: send drafts, phone clinics, wait for consultant + hardware responses.
-Last session: 2026-09-01
+**PROJECT ABANDONED — 2026-09-05**
+Reason: value problem, not execution problem. Category graveyard too deep, no viable business model.
+Founder pivoting to cricket adjudication project.
 
-## Done
-- Clinic channel research + 510(k) plan + LinkedIn/Gmail outreach drafts
-- Xsens DOT requested, hardware buy list updated, interview script ready
-- Tracker visualizer built (scripts/tracker-viz.py) — dark mode, full CRUD, undo/redo
+## What Was Learned
+- Research-first methodology works: killed the project at ~$0 cost, not ~$50K
+- Wearable hardware for running form is a value trap — ~dozen funded teams tried, one survived
+- Clinic channel (RTM billing) doesn't rescue a product nobody values enough to buy
+- Hinge Health removing sensors is the strongest signal: the winning move was deleting hardware
+- Chan 2018 (HR 0.38) is real science — the intervention works, but the business doesn't
+- dorsaVi: 18 years, FDA clearance, penny stock — market doesn't want this
 
-## Next
-- **FOUNDER:** Send all Gmail drafts (regulatory consultants + clinic outreach)
-- **FOUNDER:** Phone nearby clinics directly — (408) 274-0888 Golden Hills, (408) 325-6251 Silver Creek
-- **FOUNDER:** Follow up on Xsens DOT request; if slow, try Unbound XR or buy 5-sensor set
-- **FOUNDER:** Continue LinkedIn outreach (upgrade to Premium or wait for monthly reset)
-- **FOUNDER:** Reddit standing comments (validation/comment-drafts.md) — parallel track
-- Wait for consultant responses → first question: 510(k) vs exempt
-- Wait for Xsens DOT → 30-day founder wear test
-- Incorporate Delaware C-corp (needed before FDA SBD)
+## Transferable Assets
+- Kill-register methodology (VIABILITY.md)
+- Wearable hardware economics knowledge (BOM, certification, volume pricing)
+- FDA 510(k) / regulatory pathway research
+- RTM billing / clinic channel research
+- Competitive landscape documentation
+- Research discipline: cheapest test first, never report sensitivity without flag rate
 
-## Key decisions
-- D17: Clinic/physio channel is primary, D2C is secondary
-- D18: 510(k) is the regulatory plan (dorsaVi predicate, $30-90K)
-- D19: Sensor must be invisible during running (<10g, shoe-mount)
-- RTM billing is the sales pitch: "device pays for itself in 2-3 months"
-- O11: Clinic pricing model undecided (subscription vs per-assessment)
-- O12: Must validate RTM as actual purchase driver (5 interviews)
+## Repo
+Public at github.com/pranavhj/injuryShield — kept as reference for the space.

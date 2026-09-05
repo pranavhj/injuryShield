@@ -3,11 +3,40 @@
 **If any other file contradicts this one, THIS FILE WINS.** Everything else is the
 reasoning that produced these; reasoning files are dated and some are superseded.
 
-Last updated: **2026-09-01**
+Last updated: **2026-09-05**
 
 ---
 
-## What we are building
+## PROJECT ABANDONED — 2026-09-05
+
+**Decision: stop pursuing the running gait wearable.** After comprehensive research across
+evidence, competitors, unit economics, clinic channel viability, and regulatory paths, the
+honest conclusion is that this is a value problem, not an execution problem. The category
+has been tried by ~dozen well-funded teams; one survived (Stryd) by not selling form insight.
+
+**What killed it (in order of importance):**
+1. **Value gap.** Founder wouldn't buy it themselves at $249. "Nobody wants to spend money
+   to be told they're doing something wrong."
+2. **The graveyard.** Lumo ($16.3M), NURVV ($23M+), Athos (~$50M) — all dead doing this.
+   dorsaVi: 18 years, FDA clearance, penny stock.
+3. **Platform absorption.** Watches already give cadence, GCT, stride, power. The gap
+   (bilateral asymmetry) is real but not worth $249 to consumers.
+4. **Clinic channel doesn't rescue it.** Hinge Health deliberately removed sensors (margin
+   66%→81%). Pear Therapeutics had FDA clearance and went bankrupt. RTM adoption is 1.6%.
+5. **The science works but the business doesn't.** Chan 2018 HR 0.38 is real. But a 3-week
+   intervention that makes itself unnecessary conflicts with every revenue model.
+
+**What was NOT wasted:**
+- Deep understanding of wearable hardware economics, FDA/510(k), RTM billing
+- Research methodology (kill-register, cheapest-test-first) transfers to any project
+- Evidence that "a day of research beats a month of building" — K1 would have killed this
+  in year 3; it cost one day to find in year 0
+
+**The repo stays public as a reference** for anyone researching this space.
+
+---
+
+## What we WERE building (archived)
 
 **A two-pod running gait-retraining programme.** Pods mount to the shoe. The phone does all
 inference. Eight sessions over 2–3 weeks with real-time audio cues on peak tibial
