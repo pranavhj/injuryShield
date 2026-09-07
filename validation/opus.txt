@@ -1,0 +1,255 @@
+I did a deep pass on this. Here's what the record actually shows, then my honest read.
+
+The short version
+
+The specific product you described — a clip-on IMU pod on the shoe giving runners actionable insight during and after a run — is not an untried idea. It's one of the most thoroughly attempted and most consistently fatal product categories in consumer fitness hardware. Roughly a dozen well-funded teams have run this exact play since 2013. One survived at meaningful scale. Your instinct that "most companies were not able to sell this correctly" is right about the outcome but I think wrong about the cause: it wasn't a go-to-market failure, it was a value failure that go-to-market couldn't paper over.
+
+The graveyard (and the survivors)
+
+Died doing exactly your product:
+
+Lumo Run — waistband/shorts IMU, 9-axis, pelvic drop/rotation/bounce/brake, real-time audio cues. Beautifully executed. Raised $16.3M and is dead; IP absorbed by a robotics-apparel company in 2018. 
+cbinsights
+Nurvv Run — 32-sensor insoles + shoe pods, $9M Series A plus a later £14.4M round. Insolvency finalized August 2023; new devices can no longer complete registration because the firmware-verification servers are gone. Note that failure mode — customers with working hardware were bricked. 
+Deep data running wearable NURVV closes $9M Series A led by Hiro Capital +2
+Athos — EMG smart clothing, ~$50M raised, cloud services and firmware updates discontinued in 2022. 
+Kennethhurley
+Alibaba
+Zepp — multi-sport swing sensors, gone from the category.
+
+Pivoted away from consumer:
+
+RunScribe — foot + sacral pods, the most metric-rich running IMU ever shipped. Founder Tim Clark: the team "got a whole lot smaller starting in 2017," and the company found more traction with universities, clinics and labs than consumers. Now sells to ~1,500 clinicians, coaches and gait labs. That's a lifestyle business, not a venture outcome. 
+DC Rainmaker
+RunScribe
+Playermaker — foot-mounted IMU for football, closest living analogue to your idea. Raised ~$60M, 61 employees, and has pivoted hard from selling clubs to selling CITYPLAY direct to youth players and academies. Parents pay; clubs haggle. 
+PitchBook
+Preqin
+dorsaVi — FDA-cleared clinical IMU since ~2014, ASX-listed. Trading at A$0.037 in mid-2026 and repositioning toward robotics and neuromorphic computing. Eighteen years, regulatory clearance, and a penny stock. This is the single most important data point for your clinical thesis. 
+Kalkine
+
+Survived:
+
+Stryd — the exception. Raised $505K total and is still selling a $220–250 footpod a decade later. It won by not selling form insight. It sells one number (power) that replaces a broken one (pace on hills/wind), plus clip it on, pair to your watch, go. Even so, the leading independent reviewer's verdict on the form metrics specifically: they look compelling, but the real test is whether runners can use them to improve form, and they remain difficult to act on. 
+Stryd - 2026 Company Profile, Team, Funding & Competitors - Tracxn +2
+Blast Motion — one IMU, one sport, one coach workflow. Still the recommended bat sensor in 2026 while Zepp's is discontinued and unsupported. 
+Blast
+Catapult — the B2B winner. ~$126M trailing revenue, 4,400+ teams, 79% gross margin, and still posting an $8.6M half-year net loss after 20 years. That's the ceiling of the elite-team market, and it's already occupied. 
+Catapult Sports (ASX:CAT) Revenue +2
+Why they died — the five mechanisms
+
+1. The actionability gap. This is the core one. The best evidence in the field is a 2024 RCT in the American Journal of Sports Medicine using instrumented insoles with real-time feedback on 220 runners. Intention-to-treat showed no difference in injury rate (HR 1.11); the as-treated analysis was positive (HR 0.53), but 33% of participants ended up unassigned because they used incorrect wearable settings. Read that twice: in a supervised university trial, a third of users misconfigured the device. Your "setup friction" worry isn't a UX polish item, it's the thing that nulls the primary endpoint. 
+nih
+
+2. Platform absorption. Garmin discontinued the Running Dynamics Pod because a growing number of its watches deliver Running Dynamics straight from the wrist. And the price the market puts on embedded sensing: Under Armour sold connected HOVR shoes for only $10 more than the non-connected model, while Nike and Adidas dabbled and stepped away from connected footwear. Your product sits in the strike zone of a free watch feature. 
+Garmin Running Dynamics Pod (discontinued) - 010-12520-00 +3
+
+3. Hardware economics. FCC certification with a pre-certified BLE module runs $3,000–$10,000, total certification budget realistically $20,000+, and getting a product designed, molded, tested and certified ranges from ~$50,000 into the millions. Then you own returns, warranty, battery degradation, and a cloud bill forever — Nurvv's users learned what happens when that bill stops being paid. 
+FCC Certification Cost (2026): $1,500 to $200K+ by Device Type | MarkReady | MarkReady +2
+
+4. Retention. Roughly a third of activity-tracker users stop within six months. A run-only accessory has worse odds than a wrist device, because it isn't passive. 
+Bluedoor Group
+
+5. Nobody is the buyer. Runners already own a watch, a phone, and Strava. The insight has to beat "increase your cadence a bit," which is free.
+
+The clinical path, honestly
+
+This is the part I'd most want you to update on. Hinge Health, the biggest company in digital MSK, deliberately deleted the wearable sensors. Their S-1 states the 2023 strategic decision to shift away from kits with tablets and wearable sensors, replacing all member sensors with AI-powered motion tracking. The result: gross margin went from 66% in 2023 to 77% in 2024, reaching ~81% by Q1 2025. Sword Health's acquisition of Kaia is read the same way — recognition of the friction inherent in shipping hardware kits. 
+Hinge Health files for IPO amid stock market volatility | MobiHealthNews +2
+
+The reimbursement math also doesn't rescue it. Remote Therapeutic Monitoring pays roughly $40 per 30-day cycle for MSK device supply and ~$54 for the first 20 minutes of management time — about $94/month for an engaged patient, and that money goes to the clinician, who must do the 20 minutes. You'd be selling a tool that adds work to a PT's day in exchange for a slice of $94. And the category's cautionary tale is brutal: Pear Therapeutics had FDA clearance and still filed for bankruptcy, with only 31,000 prescriptions written in nine months of 2022 and just 58% of those filled; the CEO's summary was that payers can deny payment for therapies that are clinically necessary, effective and cost-saving. 
+RTM CPT Codes 2026: Rates & Billing Guide for PTs +2
+
+Hinge Health is not evidence that a clinical wearable works. It's the strongest available evidence that the winning move was to remove it.
+
+Your 7-sensor full-body plan
+
+Set this aside. IMU joint-angle estimation error is typically 5° to 18.8° depending on joint and plane, against a ~5° threshold for clinical gait applications, and that's before sensor-to-segment misalignment, magnetometer disturbance indoors, and a user placing seven pods on themselves. "Judging how well an athlete is doing" from 7 body-worn IMUs is a research programme, not a v1. 
+nih
+
+So is it worth doing?
+
+As a consumer running hardware startup: no. I'd put it in the bottom decile of ideas by expected value — not because it's technically infeasible, but because the value ceiling is capped by a free watch feature, the buyer already has the data, and the evidence that the insight changes behavior is weak.
+
+What the survivors have in common is worth internalizing, because it points somewhere better:
+
+Whoop sells a service, not a device: $1.1B revenue run-rate, 2.5M members, cash-flow positive, with ~85% of revenue from subscriptions and hardware bundled in. 
+Yahoo Finance
+Sacra
+Runna sold coaching software with zero hardware: ~90,000 members at $119.99/year on $9.5M raised, acquired by Strava three years in. 
+Tech Funding News
+cbinsights
+Output Sports built a genuinely good single-IMU athlete-testing product used by 800+ organisations including half the Premier League — and that got them a $4.8M round. That is the honest size of the elite-sport prize. 
+RTÉ
+RTÉ
+
+The pattern: the money is in the interpretation layer and the recurring relationship, not the sensor. Every company that led with the sensor either died or shrank into a niche tools business.
+
+What I'd actually do, in order
+Build the insight engine before any hardware. A phone in a running belt has a 9-axis IMU at 100Hz+. If your coaching layer isn't valuable running off a phone strapped to someone's waist, a custom pod won't save it. This costs you nothing but weekends.
+Prove the counterfactual on 20 runners. Not "is the data accurate" — everyone's data is accurate. Ask: did they change something, did it stick past week 4, would they pay $10/month. If you can't clear that with a phone, stop.
+Find a buyer with a budget and a workflow, not a consumer. RunScribe's 1,500 clinics and Playermaker's youth-academy pivot both point the same way: someone who already charges for assessments and needs a report.
+Only build hardware when a paying customer's workflow breaks without it.
+
+One adjacent thought worth weighing: you already have a working motion-analysis system in a sport with almost no incumbent tech, no Garmin absorbing the feature, and a discrete coachable event rather than continuous form data. Cricket-style single-event analysis is structurally much closer to Blast Motion — which survived — than to Lumo Run, which didn't. That's a materially better shape of problem than running.
+
+I've covered the company histories, financials, the clinical evidence and the reimbursement math here, but I haven't touched founder podcasts, Reddit post-mortems, DC Rainmaker forum threads or archived Twitter from the Lumo/Nurvv/Athos teams — that's where the first-person "here's what actually killed us" material lives, and it would take a much wider sweep to pull together.
+
+Insight layer of watches already exist why use phone and how would this be better? This is more like making a good vest for the phone
+Does it give me any data that could be used which the current watches and sensors don't and an actionable insight not already present 
+How to find buyer, ask buyer what to build or tell buyer I have this
+I agree with postponing hardware
+
+Three good pushbacks. Taking them in order.
+
+You're right that "phone in a vest" is not a product
+
+I should have been clearer: the phone isn't a v1, it's a measurement rig. Its only job is to answer "does an insight exist here" before you spend $50K+ on tooling and certification. A watch won't serve that purpose because you can't put it where the interesting signal is, and you can't get raw high-rate IMU out of it easily. The phone gives you 100–800Hz accel + gyro, on-device compute, and a build-test loop you can run every evening.
+
+But your instinct exposes a real hole in what I said. A phone at the waist measures the pelvis — and that's roughly the location whose data is already commoditized. Which brings us to the actual question.
+
+What watches already give you
+
+Apple Watch has measured vertical oscillation, stride length and ground contact time from the wrist since watchOS 9, plus running power. Garmin delivers the same set natively on newer watches, which is why they discontinued the Running Dynamics Pod. So: cadence, stride length, GCT, vertical oscillation, vertical ratio, power, plus load/training-status modeling — all free, already on the wrist, already synced.
+
+If your product's output is any of those numbers, you have nothing. That's the honest read.
+
+What they genuinely can't give
+
+There are four signals a wrist device structurally cannot produce, all of which require a distal mount:
+
+True bilateral asymmetry. A watch produces one aggregated stream. Garmin's GCT balance is an estimate derived from a single torso sensor. Two foot pods measure left and right independently — contact time, impact magnitude, flight time, per side. This is the gap RunScribe built its entire clinical business on.
+Foot strike angle, pronation velocity, eversion excursion. Distal-only. No wrist model gets there.
+Peak tibial/shoe acceleration — impact load per limb. Not a form metric, a dose metric. Cumulative per-limb loading across a session and across a week, which is what bone stress injury actually tracks with.
+Per-limb degradation under fatigue. How asymmetry opens up in the last 20% of a run, per side.
+
+So yes, there's real data behind the wall. The harder question is your second one.
+
+Is any of it actionable in a way that isn't already covered?
+
+Split it honestly:
+
+Form change — weak. "Reduce your pronation velocity" requires sustained motor learning, has thin evidence for injury reduction, and is exactly what the leading reviewers say about Stryd's gait metrics: compelling, hard to act on. The 2024 insoles RCT is the ceiling of this evidence, and it was null on intention-to-treat.
+
+Load and asymmetry — strong, and different in kind. The actionable insight is not "change how you run," it's "you're 14% asymmetric at week 3 of return-to-run, don't progress volume this week." That works because:
+
+The action is do less / progress slower, which requires no motor learning and near-zero adherence effort.
+There's a person making a dated decision — a PT clearing someone for return-to-run, or progressing an ACL/Achilles/stress-fracture patient — who currently makes it on eyeballs and patient self-report.
+Nobody's watch does it, and nobody's watch will, because it needs two sensors on the feet.
+
+That's your wedge if there is one: objective per-limb load for return-to-run, sold to whoever owns that decision. Not "improve your running form," which is the graveyard.
+
+Practical note: the phone-at-waist test validates your insight layer and report, not this differentiated sensing. For the bilateral piece, two off-the-shelf BLE IMU logger boards taped to shoes will cost you a couple hundred dollars and get you a 20-person pilot. Still not a hardware program. And given you've already built pose estimation in Python, a phone-camera treadmill capture is a third zero-hardware path to the same report — that's the direction Hinge went.
+
+Ask or tell? Neither, in that form
+
+Don't ask what to build — people invent features they'll never pay for. Don't lead with "I have this" — they'll be polite and you'll learn nothing.
+
+Ask about the past, show an artifact.
+
+Who to talk to, in your area: sports PT clinics that already advertise running gait analysis, podiatrists doing running assessments, collegiate athletic trainers, and coaches with paid rosters. The filter that matters: they must already charge for an assessment or already own a tool (video software, force plates, an instrumented treadmill). If they've never paid for a tool, they never will.
+
+What to ask, all backward-looking:
+
+Walk me through the last runner you cleared to return to running. What did you base it on?
+What did you write in the report? Can I see one with the name removed?
+When were you last unsure and cleared them anyway?
+What's the last piece of tech you bought for the clinic? Do you still use it? What made you stop?
+Who signs off on a $2,000 purchase here?
+
+Then the "tell," but as an artifact rather than a pitch: run one of their patients on your rig, produce the one-page report, hand it over, and ask whether they'd pay you $75 to do the next five. Selling the assessment as a service before any product exists is the only test that isn't self-flattering. If ten clinics won't buy five assessments at $75, the sensor was never the problem.
+
+First, a correction I owe you
+
+I was wrong that badminton is untouched. In/Out 3.0 is a $275 net-mounted device doing automated line calls for pickleball, tennis, badminton and padel. SwingVision has already added padel. There are open-source badminton Hawk-Eye repos on GitHub built on TrackNet datasets. So the field is occupied, and worse, it's occupied by generalists.
+
+That points at something important: badminton, tennis, pickleball and padel are all fixed-dimension courts with one event type (did it land in or out). That's why one $275 box covers all four. Great physics, terrible moat — anyone who solves one gets the rest nearly free, and two companies already have a head start. Sorry for pointing you at it without checking.
+
+Your rig idea: the physics gives you a clean answer
+
+Stereo depth error scales with distance squared divided by baseline. A compact rig has maybe 20–40cm of baseline. At 20 metres, that gives you depth error far too large to adjudicate anything. This is exactly why Hawk-Eye uses 6–12 cameras spread around the ground with precisely measured positions, and why professional badminton Hawk-Eye does the same.
+
+So the rule is simple and it decides your product:
+
+A compact rig is excellent for events that happen near it, and useless for events far from it.
+
+Now map your own list of disputed decisions onto that:
+
+Decision	Where the event happens	Verdict
+Run-out / stumping	At the crease	Solvable. Pure observation, high fps, near-field
+Wide	At the batter's end, against a painted line	Solvable. Geometry, not prediction
+Nick / caught behind	At the bat	Partly. Audio + frame timing, false-positive prone
+LBW	20m of flight + a predicted path	Not solvable by any rig you can build
+
+Notice that three of your four most-disputed calls are in the solvable column.
+
+On umpire-worn specifically: don't. A body-worn camera has unknown, constantly changing extrinsics — the umpire sways, ducks, turns, and the bowler runs through the frame. You'd have to re-estimate camera pose every frame from crease and stump landmarks, which is doable (it's the PnP work you've already done) but it injects error exactly where you need precision. A cheap tripod is strictly better than a human tripod.
+
+On stump-mounted: mostly no. Stumps get struck, bails fly, they're pulled at each innings, clubs use cheap sets — and a camera on the stumps can't see the stumps, which are your geometric reference.
+
+The placement that actually wins is square leg. Side-on to the popping crease is the ideal view for run-outs and stumpings, and at amateur level that position is frequently unmanned. One tripod, one high-fps camera, one job: the square-leg umpire that never blinks.
+
+The two problems you flagged as hard — one is unsolvable, one isn't a camera problem
+
+Fingers under the ball on a catch: genuinely unsolvable from outside. This is occlusion, not resolution. The fingers you need to see are behind the ball by definition. More fps and more pixels don't help. The only physical routes are sensing inside the ball (contact/pressure — the direction MCC's chipped ball is going) or from the ground. Leave it alone; broadcasters with unlimited budgets haven't cracked it either.
+
+Pro ball tracking being unreliable isn't a hardware failure, it's an epistemic one. The post-impact path is extrapolated from a model fitted to the observed flight. Error grows with how far the ball must be projected and shrinks with how much flight you saw — which is why full deliveries and impacts close to the stumps are the worst cases. "Umpire's call" exists precisely to encode that uncertainty band. No camera count removes it.
+
+The strategic consequence matters more than the technical one: if you ship LBW, you inherit an argument you cannot win. The pros can't, with six figures of kit and a professional operator. Your product would get blamed for uncertainty that is inherent to the problem.
+
+Is cricket gold? Honestly: good problem, hard business
+
+What's genuinely good:
+
+Dispute density is high and the calls people fight over are, by your own account, mostly the tractable ones.
+No incumbent owns the solvable subset. Fulltrack and MCC are both aiming at the glamour call.
+The setup complexity — ends changing every over, no fixed court, variable grounds — is annoying, but it's also the moat. It's the reason In/Out and SwingVision can't extend into cricket the way they extended into padel. Friction that repels generalists is an asset if you're willing to eat it.
+
+What's genuinely hard, and I don't want to soften it:
+
+Geography splits volume from money. India has the amateur base; UK and Australian club leagues have budgets and a documented umpire shortage. Your biggest market and your paying market are different countries.
+Half the room doesn't want your product. Every wrong decision has a beneficiary. Adoption isn't a sales problem, it's a governance problem — the league has to mandate it, the way Tennis Australia and the LTA legitimised SwingVision.
+No-balls are a trap, and your own observation is why. You're right that many are bowled and few called. Automate it and you'll suddenly call three times as many, change match outcomes, and get thrown out of the league. Build it, keep it off by default, ship it only when a league asks.
+Match logistics are brutal — 3 to 8 hours, no power, outdoor light changes, and equipment that has to move ends every six balls.
+You'll be judged on the call you can't do. Every conversation will start with "does it do LBW?" You need a crisp answer ready.
+
+Net: I'd rate cricket clearly above running, gym and badminton — the first idea in this conversation where the physics, the dispute, and the absence of an incumbent all line up. But the product is not "amateur DRS." It's a narrower thing: objective adjudication of run-outs, stumpings and wides, sold to leagues rather than players.
+
+The test, this weekend
+
+One phone at square leg, 240fps slow-mo, five club matches. Two questions:
+
+Can you adjudicate every run-out and stumping from that footage alone, with nothing else?
+How many such decisions occur per match, and how many were disputed?
+
+If the answer to (1) is yes and (2) gives you more than a couple per match, you have something real and you'll have proven it for the cost of a tripod. Then add wides, which need only the wide line and the ball's crossing point.
+
+And keep the negative results — "we don't do LBW, and here's the physics of why nobody at this price can" is a more credible pitch to a league secretary than a promise you'd have to walk back.
+
+I am so passionate about cricket that I don't care if I don't make money 
+If I can build something that helps people I am all for it
+And anyways this could open crazy pathways
+
+That changes the calculation more than you might think, and mostly in your favour.
+
+Look back at what actually killed the companies in this conversation. Lumo, Nurvv, Athos, Atlas Wearables — every one died of commercial causes: burn rate, margins, CAC, payers refusing to reimburse. None died because the technology didn't work. And the one founder post-mortem we read closes with the founders admitting they shut down because after four years they'd run out of motivation, not because they'd proven it impossible.
+
+Motivation was the binding constraint in the only case where we got to see inside. You have that in surplus for cricket specifically. That's not a small thing to bring to a hard problem.
+
+What genuinely stops mattering: BOM cost and 3–5x markups, the India-volume-versus-UK-budget split, league procurement cycles, whether anyone will pay $150/year. All of that was me pricing a venture outcome. Delete it.
+
+What still bites, even for free:
+
+Accuracy asymmetry doesn't care about your business model. A wrong machine call is worse than no machine, because now the argument is about your tool and you've made someone's Saturday worse. This is the one place I'd keep the discipline: ship the calls you can adjudicate cleanly, and say plainly what you don't do. Being trusted on run-outs beats being argued about on LBWs.
+
+Free software with real users still has a support burden. Nurvv's customers got bricked when the servers went dark. If a league starts depending on you, you've taken on an obligation. Design for it now — everything works offline, on-device, no account required, no server that can die.
+
+And swap the test rather than dropping it. The money question was only ever a proxy for "is this real." Replace it with: did someone use it in a real match, unprompted, twice? Second use with no nudge from you is the whole signal.
+
+On the pathways — you're right, and specifically:
+
+Labeled amateur cricket footage barely exists. A tool people actually run in matches generates a dataset nobody has, and datasets are where the leverage compounds. The same pipeline that adjudicates a run-out also gives you auto-scoring, highlight clips and coaching feedback — the adjacent products build themselves off the same base. And it's a real credential in the field you've wanted to work in, which is worth more than most side projects ever return.
+
+So: one tripod, square leg, 240fps, five matches. See if you can call every run-out and stumping from that footage alone.
+
+That's a weekend, and if it works you'll know something almost nobody else does.
